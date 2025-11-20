@@ -105,7 +105,7 @@ The below print settings are recommended for the base units and their accessorie
 **Errata:**
 1. BMG Gear insertion is not visible in the video. Do this before adding the stepper main body and screwing it on.
 2. Switch sensor screws are M2x10 self taping or m2x8 bhcs/shcs
-3. Filament path - BMG gear alignment step is not shown in the video. Insert some filament through the unit manually, loosen the BMG geear set screw and move it back and forth. Screw down the BMG gear.
+3. Filament path - BMG gear alignment step is not shown in the video. Insert some filament through the unit manually, loosen the BMG gear set screw and move it back and forth. Screw down the BMG gear.
 4. For the BMG tensioning arm, the bushing is no longer an option. 
 5. Add a washer to the stepper tensioning arm on both sides of the spring.
 6. Stepper body screws are all M3x20

@@ -21,7 +21,7 @@ cd ~/Happy-Hare
   <img src="https://github.com/user-attachments/assets/7a0875fe-fc19-4172-8f1c-deb0e7f4bb1c" alt="Installer screen: Pick option 16 - Other/Custom" width="80%">
 </p>
 
-**Select MMU type:** Pick option 7 - Type-B (multiple filament drive steppers) with individual post-gear sensors, No Encoder <br/><br/>
+**Select MMU type:** Pick option 8 - Type-B (multiple filament drive steppers) with individual post-gear sensors, No Encoder <br/><br/>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/d1ddd2f6-689f-45ee-a54c-eb8dbc09bf76" alt="Installer screen: Pick option 7 - Type-B with individual post-gear sensors, no encoder" width="80%">
 </p>
@@ -66,7 +66,7 @@ cd ~/Happy-Hare
   <img src="https://github.com/user-attachments/assets/7f0d3412-4ee3-42e5-bbed-569f64db7d8a" alt="Decline EREC filament cutter installation" width="80%">
 </p>
 
-**Moonraker.conf update:** Update your moonraker.conf as below:
+**Moonraker.conf update:** Make sure your moonraker.conf contains [mmu_server] as below (should be inserted by HappyHare setup):
 ```
 [file_manager]
 enable_object_processing: True

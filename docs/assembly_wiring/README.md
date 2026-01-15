@@ -13,6 +13,10 @@
   - [Part 4: Electronics Assembly Guide](#part-3-base-assembly-guide)
   - [Part 5: EMU Sync Assembly images](#part-5-emu-sync-assembly-images)
 - [Wiring Instructions and Diagrams](#wiring-instructions-and-diagrams)
+- [Wiring key dimensions](#wiring-key-dimensions)
+  - [Base wiring dimensions](#base)
+  - [PCB Hatch wiring dimensions](#pcb-hatch-wiring-dimensions)
+  - [DIY Hatch (no pcb) wiring dimensions](#diy-hatch-no-pcb-wiring-dimensions)
 
 <p align="center">
   <img src="/docs/assets/images/EMU_multi_lane_unit.png" width="100%">
@@ -218,3 +222,25 @@ Key factors to consider:
 Depending on the combined power consumption, you may need to consider whether a PSU upgrade is needed. 
 
 As a rule of thumb, a 12 lane EMU build with 4 Z steppers and 2 AB steppers running moderately high currents and high print speeds on a Voron 2.4 may require a 350Watt power supply to ensure adequate power headroom.
+
+## Wiring key dimensions
+
+This parts describes the recommended wire length for easy assembly and maintenance.
+
+### Base wiring dimensions
+
+<p align="center">
+  <img src="../assets/wiring_diagrams/EMU Base wiring dimensions.jpg" width="95%">
+</p>
+
+### PCB Hatch wiring dimensions
+
+> Comming soon 🚀
+
+### DIY Hatch (no pcb) wiring dimensions
+
+> These wiring dimensions assume you mount the BME sensor on the led cover and connect `5V` and `Ground` of the BME sensor to the led out `5V` and `Ground`.
+
+<p align="center">
+  <img src="../assets/wiring_diagrams/EMU DIY Hatch wiring dimensions.jpg" width="95%">
+</p>

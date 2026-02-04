@@ -1,9 +1,12 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0">
   <diagram name="Page-1" id="WvMdALbgueBpKcp1xE3T">
-    <mxGraphModel dx="3108" dy="1828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1480" dy="870" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="Cm4zVHf6E8FwC6TeaPlo-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=3;" value="" vertex="1">
+          <mxGeometry height="240" width="800" x="200" y="1200" as="geometry" />
+        </mxCell>
         <mxCell id="BtDu1ZTm_e0BdGGvr-r0-368" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=3;" value="" vertex="1">
           <mxGeometry height="360" width="800" x="200" y="280" as="geometry" />
         </mxCell>
@@ -15,9 +18,6 @@
         </mxCell>
         <mxCell id="BtDu1ZTm_e0BdGGvr-r0-186" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=3;" value="" vertex="1">
           <mxGeometry height="80" width="800" x="200" y="720" as="geometry" />
-        </mxCell>
-        <mxCell id="BtDu1ZTm_e0BdGGvr-r0-178" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeWidth=3;" value="" vertex="1">
-          <mxGeometry height="240" width="800" x="200" y="1200" as="geometry" />
         </mxCell>
         <mxCell id="BtDu1ZTm_e0BdGGvr-r0-53" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2D7600;strokeWidth=5;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fillColor=#60a917;jumpStyle=gap;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="BtDu1ZTm_e0BdGGvr-r0-143">
           <mxGeometry relative="1" as="geometry">
@@ -195,28 +195,16 @@
             <mxPoint x="696.76" y="1370" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="BtDu1ZTm_e0BdGGvr-r0-174" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#006EAF;strokeWidth=5;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fillColor=#1ba1e2;jumpStyle=gap;">
+        <mxCell id="BtDu1ZTm_e0BdGGvr-r0-175" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=5;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fillColor=#60a917;jumpStyle=gap;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="505" y="1309.74" as="sourcePoint" />
-            <mxPoint x="225" y="1309.74" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="BtDu1ZTm_e0BdGGvr-r0-175" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2D7600;strokeWidth=5;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fillColor=#60a917;jumpStyle=gap;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="505" y="1329.74" as="sourcePoint" />
-            <mxPoint x="225" y="1329.74" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="BtDu1ZTm_e0BdGGvr-r0-176" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeWidth=5;jumpStyle=gap;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="505" y="1289.74" as="sourcePoint" />
-            <mxPoint x="225" y="1289.74" as="targetPoint" />
+            <mxPoint x="500" y="1330" as="sourcePoint" />
+            <mxPoint x="230" y="1330" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="BtDu1ZTm_e0BdGGvr-r0-177" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#B20000;strokeWidth=5;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fillColor=#e51400;jumpStyle=gap;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="225" y="1269.74" as="sourcePoint" />
-            <mxPoint x="505" y="1269.74" as="targetPoint" />
+            <mxPoint x="230" y="1270" as="sourcePoint" />
+            <mxPoint x="500" y="1270" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="BtDu1ZTm_e0BdGGvr-r0-179" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;fontStyle=1;fontSize=20;" value="&lt;font&gt;Pigtail : base to box cable&lt;/font&gt;" vertex="1">
@@ -229,7 +217,7 @@
           <mxGeometry height="40" width="110" x="790" y="1220" as="geometry" />
         </mxCell>
         <mxCell id="BtDu1ZTm_e0BdGGvr-r0-182" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;fontStyle=1;fontSize=20;" value="&lt;font&gt;All 350mm&lt;/font&gt;" vertex="1">
-          <mxGeometry height="40" width="120" x="310" y="1360" as="geometry" />
+          <mxGeometry height="40" width="120" x="310" y="1390" as="geometry" />
         </mxCell>
         <mxCell id="BtDu1ZTm_e0BdGGvr-r0-183" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;fontStyle=1;fontSize=20;" value="&lt;font&gt;All 300mm&lt;/font&gt;" vertex="1">
           <mxGeometry height="40" width="120" x="790" y="1400" as="geometry" />
@@ -427,6 +415,21 @@
             <mxPoint x="993.2700000000002" y="515" as="sourcePoint" />
             <mxPoint x="926.2" y="565" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="Cm4zVHf6E8FwC6TeaPlo-10" edge="1" parent="1" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=none;startArrow=none;rounded=0;startFill=0;endFill=0;strokeWidth=5;strokeColor=light-dark(#006eaf, #ededed);segment=100;" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="230" y="1310" as="sourcePoint" />
+            <mxPoint x="500" y="1290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Cm4zVHf6E8FwC6TeaPlo-11" edge="1" parent="1" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=none;startArrow=none;rounded=0;startFill=0;endFill=0;strokeWidth=5;strokeColor=light-dark(#2d7600, #ededed);segment=100;" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="230" y="1290" as="sourcePoint" />
+            <mxPoint x="500" y="1310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Cm4zVHf6E8FwC6TeaPlo-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="For the BOM steppers, the green and blue wires are swapped on one side of the cable" vertex="1">
+          <mxGeometry height="30" width="270" x="230" y="1350" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

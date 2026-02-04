@@ -428,7 +428,7 @@
             <mxPoint x="500" y="1310" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Cm4zVHf6E8FwC6TeaPlo-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="For the BOM steppers, the green and blue wires are swapped on one side of the cable" vertex="1">
+        <mxCell id="Cm4zVHf6E8FwC6TeaPlo-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="For the BOM steppers, the green and blue wires are swapped on one side of the cable&lt;div&gt;If using other steppers : see data sheet&lt;/div&gt;" vertex="1">
           <mxGeometry height="30" width="270" x="230" y="1350" as="geometry" />
         </mxCell>
       </root>

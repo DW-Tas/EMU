@@ -401,7 +401,7 @@
         <mxCell id="BtDu1ZTm_e0BdGGvr-r0-359" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Add a slim tube to easily identify return cable" vertex="1">
           <mxGeometry height="30" width="88.75" x="291.25" y="1738" as="geometry" />
         </mxCell>
-        <mxCell id="BtDu1ZTm_e0BdGGvr-r0-360" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;fontStyle=1;fontSize=20;" value="3 Pin JST&lt;div&gt;PFS&lt;/div&gt;" vertex="1">
+        <mxCell id="BtDu1ZTm_e0BdGGvr-r0-360" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;fontStyle=1;fontSize=20;" value="3 Pin JST&lt;div&gt;PSF&lt;/div&gt;" vertex="1">
           <mxGeometry height="60" width="110" x="871.19" y="345" as="geometry" />
         </mxCell>
         <mxCell id="BtDu1ZTm_e0BdGGvr-r0-362" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;fontStyle=1;fontSize=20;" value="or" vertex="1">

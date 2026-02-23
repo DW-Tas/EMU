@@ -7,8 +7,8 @@ This is a provisional sofware setup guide for the EMU using Happy Hare v3. This 
 - [Installing Happy Hare](#installing-happy-hare)
 - [Configuring the EMU hardware](#configuring-the-emu-hardware)
 - [Configuring Happy Hare parameters](#configuring-happy-hare-parameters)
-- [Configuring PFS and Flowguard](#configuring-pfs-and-flowguard)
-- [EMUSync PFS insights](#emusync-pfs-insights)
+- [Configuring PSF and Flowguard](#configuring-psf-and-flowguard)
+- [EMUSync PSF insights](#emusync-psf-insights)
 
 ## Installing Happy Hare
 Install Happy Hare. More detailed instructions can be found here: https://github.com/moggieuk/Happy-Hare/wiki/Installation
@@ -317,7 +317,7 @@ toolhead_switch_pin: ^EBBCan: PB5
 sync_feedback_tension_pin: ^mmu0:MMU_TENSION         # Compression is when you pull the bowden tubes (entry/exit) away from each other. Tension when you push the tubes together.
 sync_feedback_compression_pin: ^mmu0:MMU_COMPRESSION
 
-# Section below if using the Proportional (PFS) version of the EMU Sync. Run the calibration routine (MMU_CALIBRATE_PSENSOR) and
+# Section below if using the Proportional (PSF) version of the EMU Sync. Run the calibration routine (MMU_CALIBRATE_PSENSOR) and
 # update the sync_feedback_analog_max_compression, sync_feedback_analog_max_tension and sync_feedback_analog_neutral_point accordingly.
 # Comment out/delete the dual switch section above and uncomment the section below to use.
 #sync_feedback_analog_pin: mmu0:MMU_TH
@@ -705,7 +705,7 @@ variable_min_toolchange_z       : 15.0 # Be safe and dont scratch the bed
 variable_park_travel_speed      : 450  # Travel a bit faster to avoid stringing
 ```
 
-## Configuring PFS and Flowguard
+## Configuring PSF and Flowguard
 EMU and Happy Hare supports using a [proportional sync feedback sensor](https://github.com/DW-Tas/EMU/tree/main/STL/Tension-compression-sensor/Proportional%20Sync%20Feedback%20(PSF)%20Version) to accurately measure filament tension in the bowden tube. This is used in place of and instead of the dual switch EMUSync. The sensor [is available to purchase from Aliexpress](https://www.aliexpress.com/item/1005010470743517.html).
 
 The proportional sensor offers the below key advantages:
@@ -713,7 +713,7 @@ The proportional sensor offers the below key advantages:
 2. Precise syncronisation between the extruder and EMU steppers
 3. Real time detection of both clogs and tangles
 
-### PFS Configuration:
+### PSF Configuration:
 The sensor is plugged in [as per the wiring diagram](https://github.com/DW-Tas/EMU/tree/main/docs/assembly_wiring#wiring-instructions-and-diagrams) - ground and signal plug into the EBB thermistor port and 5V to any unused 5V pins on the EBB.
 
 **Step 1:** Comment out or delete the below section in the mmu_hardware.cfg file: 
@@ -724,7 +724,7 @@ The sensor is plugged in [as per the wiring diagram](https://github.com/DW-Tas/E
 
 **Step 2:** Uncomment or add the below section right below in the mmu_hardware.cfg file:
 ```
-# Section below if using the Proportional (PFS) version of the EMU Sync. Run the calibration routine (MMU_CALIBRATE_PSENSOR) and
+# Section below if using the Proportional (PSF) version of the EMU Sync. Run the calibration routine (MMU_CALIBRATE_PSENSOR) and
 # update the sync_feedback_analog_max_compression, sync_feedback_analog_max_tension and sync_feedback_analog_neutral_point accordingly.
 # Comment out/delete the dual switch section above and uncomment the section below to use.
 sync_feedback_analog_pin: mmu0:MMU_TH
@@ -733,7 +733,7 @@ sync_feedback_analog_max_tension:     0.0982
 sync_feedback_analog_neutral_point:   0.5275
 ```
 **Step 3:** Restart and test the sensor. 
-1. Pull the bowden tube and expand the EMUSync PFS sensor. While holding in the expanded position run the below macro in the printer console: `MMU_QUERY_PSENSOR`.
+1. Pull the bowden tube and expand the EMUSync PSF sensor. While holding in the expanded position run the below macro in the printer console: `MMU_QUERY_PSENSOR`.
 2. Compress the sensor by pushing the ends together and run the same macro again. Record both values.
 > [!IMPORTANT]
 > You should see a **max raw value** greater than ~0.9 and a **min raw value** or less than ~0.1. If the values do not change when expanding and compressing the sensor recheck your wiring!
@@ -780,7 +780,7 @@ Save and restart.
 
 <img width="436" height="780" alt="image" src="https://github.com/user-attachments/assets/077a016e-9157-475b-a02c-4390ebe10665" />
 
-### EMUSync PFS insights:
+### EMUSync PSF insights:
 You can use the sync sensor to visualise your printer's extrusion consistency, checking whether you are pushing the hotend to its limits. To do so, enable logging `sync_feedback_debug_log: 1` in the mmu_parameters.cfg file and restart. Run a print and after it is complete, execute the below command in the printer shell `~/Happy-Hare/utils/plot_sync_feedback.sh ~/printer_data/logs/sync_5.jsonl` where sync_N being the lane number in use.
 
 You can read more on how to interpret the sync feedback telemetry data in the [Happy Hare wiki](https://github.com/moggieuk/Happy-Hare/wiki/Synchronized-Gear-Extruder#interpreting-telemetry).

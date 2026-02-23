@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0" pages="2">
   <diagram name="EBB42" id="16e2658f-23c8-b752-8be9-c03fbebb8bbe">
-    <mxGraphModel dx="2228" dy="1875" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="4285" dy="3085" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -142,7 +142,7 @@
             <mxPoint x="1604" y="330" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="_jCXwLNJDohk4VRd4KaM-79" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=26;fontStyle=1" value="PFS&amp;nbsp;&lt;div&gt;Sensor&lt;/div&gt;" vertex="1">
+        <mxCell id="_jCXwLNJDohk4VRd4KaM-79" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=26;fontStyle=1" value="PSF&amp;nbsp;&lt;div&gt;Sensor&lt;/div&gt;" vertex="1">
           <mxGeometry height="180" width="200" x="-43" y="1356.5" as="geometry" />
         </mxCell>
         <mxCell id="_jCXwLNJDohk4VRd4KaM-95" parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=26;fontStyle=1" value="Tension" vertex="1">
@@ -419,7 +419,7 @@
         <mxCell id="1D1S_J9D-k8tyDPlJHbX-66" parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=50;fontStyle=1" value="Sync Feedback" vertex="1">
           <mxGeometry height="60" width="500" x="-188" y="539.5" as="geometry" />
         </mxCell>
-        <mxCell id="1D1S_J9D-k8tyDPlJHbX-67" parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=50;fontStyle=1" value="&lt;font style=&quot;color: rgb(153, 153, 153);&quot;&gt;PFS Sensor (optional - replaces sync feedback sensor)&lt;/font&gt;" vertex="1">
+        <mxCell id="1D1S_J9D-k8tyDPlJHbX-67" parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=50;fontStyle=1" value="&lt;font style=&quot;color: rgb(153, 153, 153);&quot;&gt;PSF Sensor (optional - replaces sync feedback sensor)&lt;/font&gt;" vertex="1">
           <mxGeometry height="60" width="802" x="-324" y="1207" as="geometry" />
         </mxCell>
         <mxCell id="1D1S_J9D-k8tyDPlJHbX-84" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=18;" value="V" vertex="1">

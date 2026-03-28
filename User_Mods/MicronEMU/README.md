@@ -11,3 +11,8 @@ Print using upstream settings, including painting fuzzy skin.
 ## Acknowledgements
 
 Many thanks to @hartk for providing the rough-cut of the Micron EMU base. @burkfers cut the button holes, did diverse polishing, and tested.
+
+## Showcase
+
+M.239 wearing EMU.0012 as a hat by @TheMeanCanEHdian
+![A MicronEMU EMU.0012 on top of M.239 by TheMeanCanEHdian](assets/M.239.png)

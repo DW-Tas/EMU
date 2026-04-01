@@ -437,35 +437,35 @@ Start by completely deleting the content of that file and hitting save.
 The below starter setup is for an 8 lane unit. To set up a lower lane count, paste the complete content below and delete the corresponding `[gcode_button mmu_eject_button_N]` sections. If you have more than 8 lanes, add more blocks following the patterns below.
 ```
 [gcode_button mmu_eject_button_0]
-pin: ~mmu0:EJECT_BUTTON
+pin: ^mmu0:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=0
 
 [gcode_button mmu_eject_button_1]
-pin: ~mmu1:EJECT_BUTTON
+pin: ^mmu1:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=1
 
 [gcode_button mmu_eject_button_2]
-pin: ~mmu2:EJECT_BUTTON
+pin: ^mmu2:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=2
 
 [gcode_button mmu_eject_button_3]
-pin: ~mmu3:EJECT_BUTTON
+pin: ^mmu3:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=3
 
 [gcode_button mmu_eject_button_4]
-pin: ~mmu4:EJECT_BUTTON
+pin: ^mmu4:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=4
 
 [gcode_button mmu_eject_button_5]
-pin: ~mmu5:EJECT_BUTTON
+pin: ^mmu5:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=5
 
 [gcode_button mmu_eject_button_6]
-pin: ~mmu6:EJECT_BUTTON
+pin: ^mmu6:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=6
 
 [gcode_button mmu_eject_button_7]
-pin: ~mmu7:EJECT_BUTTON
+pin: ^mmu7:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=7
 ```
 

@@ -9,6 +9,8 @@
 The EMU supports any number of lanes and base configurations; whether it is a **single lane setup** to assist filament loading, a **dual lane configuration** for endless spool, or a **multi-lane, multi base unit setup** for multi-material printing. It is also **expandable**, with no re-printing of parts required when upgrading from a 2 lane to a multiple lane setup.
 
 > [!TIP]
+> ### EMU Kits
+> Officially certified kits [are now available here](https://www.aliexpress.com/item/1005012001238187.html).
 > ### Crossbow Filament Cutter And A4T Toolhead
 > Make the EMU part of a complete system with the [Crossbow Filament Cutter](https://github.com/DW-Tas/Crossbow-Filament-Cutter) and the [A4T Toolhead](https://github.com/Armchair-Heavy-Industries/A4T).
 

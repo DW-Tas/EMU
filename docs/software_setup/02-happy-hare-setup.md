@@ -768,7 +768,7 @@ sync_feedback_boost_multiplier: 3	# % "twolevel" extra gear speed boost for find
 sync_feedback_extrude_threshold: 5	# Extruder movement (mm) for updates
 ```
 
-**Step 5:** Calibrate the sensor.
+**Step 5:** Calibrate the sensor. This has to be done [after the main unit calibration sequence has been performed](https://github.com/DW-Tas/EMU/blob/main/docs/software_setup/03-calibration-and-startup.md). 
 1. Load filament from any lane to the toolhead using a Tx (T0,T1 etc) command.
 2. In the console run `MMU_CALIBRATE_PSENSOR`
 3. Note down the produced values

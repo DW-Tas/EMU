@@ -566,18 +566,18 @@ log_m117_messages: 1
 ```
 gear_from_spool_speed: 250
 gear_from_spool_accel: 120
-#gear_from_buffer_speed: 250 # This is not necessary. Delete this line as there is no buffer.
-#gear_from_buffer_accel: 120 # This is not necessary. Delete this line as there is no buffer.
+gear_from_buffer_speed: 250 
+gear_from_buffer_accel: 120 
 gear_unload_speed: 250
 gear_unload_accel: 120
 
-gear_short_move_speed: 100
-gear_short_move_accel: 100
+gear_short_move_speed: 80
+gear_short_move_accel: 80
 gear_short_move_threshold: 100
-gear_homing_speed: 100
+gear_homing_speed: 80
 
 extruder_load_speed: 16
-extruder_unload_speed: 20
+extruder_unload_speed: 16
 extruder_sync_load_speed: 16
 extruder_sync_unload_speed: 20
 extruder_homing_speed: 16
@@ -600,7 +600,7 @@ gate_homing_endstop: mmu_gear
 gate_homing_max: 600
 gate_preload_homing_max: 600
 gate_preload_parking_distance: 1
-gate_unload_buffer: 100
+gate_unload_buffer: 200
 gate_parking_distance: 1          # park the filament 1mm before the stepper exit switch. Do not increase this value beyond this as you are then risking the filament walking past the stepper gears.
 gate_autoload: 1
 gate_final_eject_distance: 100
@@ -617,11 +617,11 @@ bowden_allowable_load_delta: 10.0
 bowden_pre_unload_test: 0	
 bowden_pre_unload_error_tolerance: 60 
 ```
-**Extruder homing:** The below values are tuned to improve overall feeding reliability. The extruder homing max value has been increased, allowing for slight slippage during the bowden load to be compensated for. In addition, the homing buffer has been increased reducing the fast load speed 50mm before the filament arrives at the toolhead, to reduce possibility of filament impacting the gears.</br>
+**Extruder homing:** The below values are tuned to improve overall feeding reliability. The extruder homing max value has been increased, allowing for slight slippage during the bowden load to be compensated for. In addition, the homing buffer has been increased reducing the fast load speed 30mm before the filament arrives at the toolhead, to reduce possibility of filament impacting the gears.</br>
 ```
 extruder_homing_max: 400			# Larger than the default HH value. This allows for homing to complete even if the filament skips steps during the load/
 extruder_homing_endstop: extruder	
-extruder_homing_buffer: 50
+extruder_homing_buffer: 30
 extruder_collision_homing_current: 100
 
 extruder_force_homing: 0
@@ -631,10 +631,10 @@ extruder_force_homing: 0
 In addition, the below settings have been adjusted to allow more tolerance in case of the extruder delaying grabbing the filament, which improves feeding reliability and allows for more "flex" in a slightly miss-tuned setup</br>
 ```
 toolhead_homing_max: 250			# Increased from default of 40, to allow more tolerance in the extruder not grabbing the filament immediately.
-toolhead_unload_safety_margin: 90	# Increased from the default of 10, to ensure filament is for sure clear of the extruder during unload.
+toolhead_unload_safety_margin: 50	# Increased from the default of 10, to ensure filament is for sure clear of the extruder during unload.
 toolhead_post_load_tighten: 0		# this is ignored as EMU is a Type B MMU - set to 0
 toolhead_post_load_tension_adjust: 1	# Adjust tension post load to attemt to centre the sync feedback sensor. 
-toolhead_entry_tension_test: 0		# Not required - toolhead sensor ensures feeding has happened.
+toolhead_entry_tension_test: 1		# confirm load has occurred using thr sunc sensor if toolhead sensor is not present.
 ```
 **Tip Forming:** A toolhead cutter is highly recommended. Venture into tip forming at your own risk!</br>
 ```
@@ -649,14 +649,12 @@ force_purge_standalone: 0 		# Use slicer purging (purge block) - set to 1 for bl
 purge_macro: 			            # Replace this with BLOBIFIER when set up. Leave empty if not using the blobifier. 
 extruder_purge_current: 100		# leave this unchanged. If the extruder is skipping during purging with the blobifier you are most likely exceeding your hotend flow limit.
 ```
-**Motor sync:** Setup sync feedback sensor (EMUSync) here. The sync multiplier high and low values allow for +/- 10% tolerance in rotation distance variation between your EMU lane and your extruder. If you find you need more than this for the unit to stay in sync then most likely either your extruder or EMU lane is not calibrated correctly.</br>
+**Motor sync:** Setup sync feedback sensor (EMUSync) here. Adjust the below values leaving the rest unchanged.</br>
 ```
 sync_gear_current: 50			    # 50% EMU stepper current during printing -> ~0.4A when printing. Higher than 0.5A can cause PLA to clog the EMU stepper in hot environments.
 sync_feedback_enabled: 1		    # Enable EMU Sync sync feedback sensor
-sync_feedback_buffer_range: 12		# EMU Sync switch to switch distance
-sync_feedback_buffer_maxrange: 25	# EMU Sync max travel
-sync_multiplier_high: 1.10		    # over-feed by 10% when in tension
-sync_multiplier_low: 0.90		    # under-feed by 10% when in compression
+sync_feedback_buffer_range: 10		# EMU Sync switch to switch distance in mm. PFS is 16mm
+sync_feedback_buffer_maxrange: 25	# EMU Sync max travel. PFS is 16mm
 ```
 **Filament Management:** Disable clog detection (as the encoder is not fitted to the unit) and enable endless spool (automated failover to the next available spool as defined in the gate map, administered via the Mainsail UI or Klipperscreen).</br>
 ```

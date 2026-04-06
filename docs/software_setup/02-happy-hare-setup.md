@@ -617,10 +617,14 @@ bowden_allowable_load_delta: 10.0
 bowden_pre_unload_test: 0	
 bowden_pre_unload_error_tolerance: 60 
 ```
-**Extruder homing:** The below values are tuned to improve overall feeding reliability. The extruder homing max value has been increased, allowing for slight slippage during the bowden load to be compensated for. In addition, the homing buffer has been increased reducing the fast load speed 30mm before the filament arrives at the toolhead, to reduce possibility of filament impacting the gears.</br>
+**Extruder homing:** The below values are tuned to improve overall feeding reliability. The extruder homing max value has been increased, allowing for slight slippage during the bowden load. In addition, the homing buffer has been increased, reducing the bowden fast load speed 30mm before the filament arrives at the toolhead. This reduces possibility of filament impacting the gears.</br>
+
+> [!IMPORTANT]
+> Depending on your toolhead of choice you may need to adjust the below extruder_homing_endstop parameter. If your toolhead has an entry sensor, set this to extruder_homing_endstop: extruder. If it doesnt, and you are using the EMU Sync with dual switches, set this value to extruder_homing_endstop: filament_compression. Finally if you're using the PSF and your toolhead doesnt have an entry sensor set this value to extruder_homing_endstop: proportional
+
 ```
 extruder_homing_max: 400			# Larger than the default HH value. This allows for homing to complete even if the filament skips steps during the load/
-extruder_homing_endstop: extruder	
+extruder_homing_endstop: extruder	# or proportional or filament_compression. See note above.
 extruder_homing_buffer: 30
 extruder_collision_homing_current: 100
 
@@ -665,11 +669,20 @@ endless_spool_eject_gate: -1		# Eject filament in the current gate
 ```
 Here you can also configure spoolman filament management (highly recommended - instructions here:https://github.com/moggieuk/Happy-Hare/wiki/Spoolman-Support). </br></br>
 
-**Calibration:** While happy hare can auto calibrate both the bowden tube length and lane rotation distance, I personally recommend a manual calibration for run to run consistency. Therefore all automated calibrations are disabled to ensure run-to-run consistency.</br>
+**Calibration:** 
+The Happy Hare software together with the advanced sensors the EMU utilises enable a number of auto-calibration features that simplify initial start up. These features remove the need for any calibration of the unit.
+
+To enable the auto calibration routines set the below parameters in the mmu_parameters.cfg file. These auto calibrations have the below pre-requisites:
+1. You are using a **toolhead with an entry sensor**, ie a switch based sensor is present before the extruder and you have enabled `extruder_homing_endstop: extruder` in mmu_parameters.cfg
+2. **OR** you are using the **EMU Sync with dual switches** and you have enabled `extruder_homing_endstop: filament_compression` in mmu_parameters.cfg
+3. **OR** you are using the **EMU Sync with PSF** and [the newly developed code here](https://github.com/moggieuk/Happy-Hare/pull/936) and you have enabled `extruder_homing_endstop: proportional` in mmu_parameters.cfg
+
+If you are not satisfied with the automatically calibrated values, [the above calibrations can also be executed manually as described in this page](https://github.com/DW-Tas/EMU/blob/main/docs/software_setup/03-calibration-and-startup.md).
+
 ```
-autocal_bowden_length: 0	# Disable automated bowden length calibration
+autocal_bowden_length: 1	# Disable automated bowden length calibration
 autotune_bowden_length: 0	# Disable automated bowden length tuning
-skip_cal_rotation_distance: 0	# Require gate rotation distance calibration
+skip_cal_rotation_distance: 1	# Require gate rotation distance calibration
 autotune_rotation_distance: 0	# Disable automated gate calibration/tuning.
 skip_cal_encoder: 0		# Encoder not fitted
 autotune_encoder: 0		# Encoder not fitted
@@ -715,7 +728,7 @@ update_aht10_commands: 0	# BTT ViViD specific setting. Leave at 0.
 ```
 
 ### Setting up the EMU software parameters in mmu/base/mmu_macro_vars.cfg
-Unlike the hardware setup files, do not delete the content of this file. The below are some common settings that I have found usefull to change from default. However, the **detailed guide on Happy hare must be followed to set up your cut tip macro and to configure the system for your specific printer setup**. For more read here: https://github.com/moggieuk/Happy-Hare/wiki/Configuring-mmu_macro_vars.cfg
+Unlike the hardware setup files, do not delete the content of this file. The below are some common settings that I have found useful to change from default. However, the **detailed guide on Happy hare must be followed to set up your cut tip macro and to configure the system for your specific printer setup**. For more read here: https://github.com/moggieuk/Happy-Hare/wiki/Configuring-mmu_macro_vars.cfg
 
 > [!WARNING]
 > **WARNING: DO NOT RUN A PRINT WITHOUT CONFIGURING THE ABOVE.** The stock cut tip macro will most likely not work for your setup and you will crash the hotend on the cutter.

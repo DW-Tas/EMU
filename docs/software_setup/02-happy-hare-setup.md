@@ -223,7 +223,7 @@ environment_sensors:   temperature_sensor Lane_0,
 [tmc2209 stepper_mmu_gear]
 uart_pin: mmu0:MMU_GEAR_UART
 run_current: 0.8		
-hold_current: 0.2	
+hold_current: 0.15
 interpolate: False
 sense_resistor: 0.110	
 stealthchop_threshold: 1		

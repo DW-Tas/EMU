@@ -1,10 +1,10 @@
-# EMU - BOM, Printing, Assembly and Wiring Guide
+# EMU – Printing, Assembly and Wiring
+
+This page covers printing the parts, assembling the EMU and wiring the electronics. It is meant to be read in conjunction with the assembly videos linked below.
 
 ## Table of Contents
-- [EMU - BOM, Printing, Assembly and Wiring Guide](#emu---bom-printing-assembly-and-wiring-guide)
+- [EMU – Printing, Assembly and Wiring](#emu--printing-assembly-and-wiring)
   - [Table of Contents](#table-of-contents)
-  - [BOM](#bom)
-  - [Recommended Upgrades](#recommended-upgrades)
   - [Print Settings](#print-settings)
     - [Filamentalist components and Lane stepper components:](#filamentalist-components-and-lane-stepper-components)
     - [Dry Box components:](#dry-box-components)
@@ -25,18 +25,6 @@
 <p align="center">
   <img src="/docs/assets/images/EMU_multi_lane_unit.png" width="100%">
 </p>
-
-## BOM  
-The EMU Bill of Materials can be found here: [Draft BOM](https://docs.google.com/spreadsheets/d/1jYJXBgpc_iLDfC17fC2LTYKrSEy5ocPbGEQ_EEOGCvI)
-
-### EMU Kits
-Officially certified kits [are now available here](https://www.aliexpress.com/item/1005012001238187.html).
-
-## Recommended Upgrades
-While entirely optional, the below upgrades are highly recommended. 
-1. [PCB hatch boards](https://github.com/DW-Tas/EMU/tree/main/PCB%20(recommended%20options)/hatch_board) - simplifies wiring, sealing of the box and reduces soldering need.
-2. [Eject button multi-LED PCB](https://github.com/DW-Tas/EMU/tree/main/PCB%20(recommended%20options)/multi_led_button) - simplifies wiring and displays animated effects when loading / unloading filament.
-3. [Proportional Sync Feedback Sensor](https://www.aliexpress.com/item/1005010470743517.html) - allows for clog, tangle detection and more accurate syncronisation between the EMU and the extruder.
 
 ## Print Settings
 
@@ -125,7 +113,7 @@ The below print settings are recommended for the base units and their accessorie
 <br/>
 **Errata:**
 1. BMG Gear insertion is not visible in the video. Do this before adding the stepper main body and screwing it on.
-2. Switch sensor screws are M2x10 self taping
+2. Switch sensor screws are M2x10 self-tapping
 3. Filament path - BMG gear alignment step is not shown in the video. Insert some filament through the unit manually, loosen the BMG gear set screw and move it back and forth. Screw down the BMG gear.
 4. For the BMG tensioning arm, the bushing is no longer an option. 
 5. Add a washer to the stepper tensioning arm on both sides of the spring.
@@ -153,7 +141,7 @@ The below print settings are recommended for the base units and their accessorie
 2. The board and wago connectors now thread into heatset inserts from the top of the unit.
 
 ### Part 4: Electronics Assembly Guide
-[![EMU Elecrronics Assembly Guide](https://img.youtube.com/vi/Iang2JYkTh8/0.jpg)](https://www.youtube.com/watch?v=Iang2JYkTh8)
+[![EMU Electronics Assembly Guide](https://img.youtube.com/vi/Iang2JYkTh8/0.jpg)](https://www.youtube.com/watch?v=Iang2JYkTh8)
 <br/>
 
 **Errata:**
@@ -161,7 +149,7 @@ The below print settings are recommended for the base units and their accessorie
 2. External combiner sensor is no longer required. That wiring part can be omitted.
 3. Encoder is no longer required in the default setup. That wiring part can be omitted.
 4. In the video, LED wiring is performed using the legacy method where a single LED chain was being created tied to the first EBB board. Current wiring approach wires each lane's LED's to the corresponding lane EBB, effectively moving away from one chain to N chains, where N is the number of lanes in the system. This simplifies wiring greatly and contains the wiring for each lane within the lane itself.
-5. CANbus entry wires (Yellow/Green) are now connected directly to the first lane EBB42/36, ommiting the WAGO connectors. Only the power wires and LED signal wire are now connected to the WAGO connectors.
+5. CANbus entry wires (Yellow/Green) are now connected directly to the first lane EBB42/36, omitting the WAGO connectors. Only the power wires and LED signal wire are now connected to the WAGO connectors.
 
 ### Part 5: EMU Sync Assembly images
 <table>
@@ -244,13 +232,13 @@ This parts describes the recommended wire length for easy assembly and maintenan
 ### Base wiring dimensions
 
 <p align="center">
-  <img src="../assets/wiring_diagrams/EMU Base wiring dimensions.jpg" width="95%">
+  <img src="/docs/assets/wiring_diagrams/EMU Base wiring dimensions.jpg" width="95%">
 </p>
 
 ### PCB Hatch wiring dimensions
-> These dimensions are for the latest version of the PCB (Post sensor at the rear). If you have the older board (Post Sensor at the center) [refer to this image](../assets/wiring_diagrams/EMU%20PCB%20Hatch%20wiring%20dimensions%20-%20Old%20PCB.jpg) for sensor wire lengths.
+> These dimensions are for the latest version of the PCB (Post sensor at the rear). If you have the older board (Post Sensor at the center) [refer to this image](/docs/assets/wiring_diagrams/EMU%20PCB%20Hatch%20wiring%20dimensions%20-%20Old%20PCB.jpg) for sensor wire lengths.
 <p align="center">
-  <img src="../assets/wiring_diagrams/EMU PCB Hatch wiring dimensions.jpg" width="95%">
+  <img src="/docs/assets/wiring_diagrams/EMU PCB Hatch wiring dimensions.jpg" width="95%">
 </p>
 
 
@@ -259,5 +247,9 @@ This parts describes the recommended wire length for easy assembly and maintenan
 > These wiring dimensions assume you mount the BME sensor on the led cover and connect `5V` and `Ground` of the BME sensor to the led out `5V` and `Ground`.
 
 <p align="center">
-  <img src="../assets/wiring_diagrams/EMU DIY Hatch wiring dimensions.jpg" width="95%">
+  <img src="/docs/assets/wiring_diagrams/EMU DIY Hatch wiring dimensions.jpg" width="95%">
 </p>
+
+---
+
+← [Step 1: Sourcing](/docs/sourcing.md) | [Step 3: EMU Board Setup →](/docs/software_setup/01-board-setup.md)

@@ -1,6 +1,6 @@
-# EMU Happy Hare Hardware and Software Setup Guide
+# EMU Happy Hare Hardware and Software Setup
 
-This is a provisional sofware setup guide for the EMU using Happy Hare v3. This guide is meant to be read in conjunction with the Happy Hare setup guide as found here: https://github.com/moggieuk/Happy-Hare/wiki
+This section covers adding lanes to an existing EMU installation. It is meant to be read in conjunction with the [Happy Hare wiki](https://github.com/moggieuk/Happy-Hare/wiki).
 
 ## Table of Contents
 
@@ -132,7 +132,7 @@ gcode: MMU_CHANGE_TOOL TOOL=N
 
 Add additional temperature sensor, fan and BME sensor definitions and update the custom fan control macro to use them
 
-Finally dont forget to execute the 2 calibrations for the new lanes - MMU_CALIBRATE_BOWDEN and  MMU_CALIBRATE_GEAR as descibed in the calibration section.
+Finally dont forget to execute the 2 calibrations for the new lanes - MMU_CALIBRATE_BOWDEN and  MMU_CALIBRATE_GEAR as described in the calibration section.
 
 ```
 [temperature_sensor Lane_N]
@@ -160,5 +160,6 @@ variable_fans:    "......,_emu_fan_N"
 ...
 ```
 
+---
 
-
+← [Documentation Hub](/docs)

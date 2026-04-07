@@ -1,6 +1,6 @@
-# Calibration and startup guide
+# Calibration and Startup
 
-This page contains the software calibration and first start up instructions. This guide is meant to be read in conjunction with the Happy Hare setup guide as found here: https://github.com/moggieuk/Happy-Hare/wiki
+This section covers the software calibration and first startup instructions. It is meant to be read in conjunction with the [Happy Hare wiki](https://github.com/moggieuk/Happy-Hare/wiki).
 
 ## Table of Contents
 
@@ -89,6 +89,6 @@ MMU_CALIBRATE_BOWDEN
 ```
 The unit calibration is now done and the unit is ready to be used!
 
+---
 
-
-
+← [Step 4: Happy Hare Setup](/docs/software_setup/02-happy-hare-setup.md) | [Step 6: Slicer Setup →](/docs/software_setup/05-slicer-setup.md)

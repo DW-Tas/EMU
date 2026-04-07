@@ -1,6 +1,6 @@
-# EMU Board Setup Guide
+# EMU Board Setup
 
-This is a provisional sofware setup guide for the EMU using Happy Hare v3. This guide is meant to be read in conjunction with the Happy Hare setup guide as found here: https://github.com/moggieuk/Happy-Hare/wiki
+This section covers flashing Katapult and Klipper to the EBB boards over CAN bus for Happy Hare v3. It is meant to be read in conjunction with the [Happy Hare wiki](https://github.com/moggieuk/Happy-Hare/wiki).
 
 ## Table of Contents
 
@@ -76,7 +76,7 @@ python3 ~/katapult/scripts/flashtool.py -i can0 -f ~/klipper/out/klipper.bin -u 
 Repeat step 2 (connect via USB),3 (set in DFU mode),4 (lsusb to confirm DFU),6 (flash katapult),8 (install the board),9 (pick the UUID),10 (flash klipper) for each subsequent board. Please note that as the boards are the same you do not need to re-run the menu config and make process.
 
 > [!IMPORTANT]
-> Remember to note down the UUID - Lane values for your reference. This combination will be used later in the guide to set up Happy Hare.
+> Remember to note down the UUID - Lane values for your reference. This combination will be used later to set up Happy Hare.
 
 ## Updating the boards with the latest klipper version
 ```
@@ -85,7 +85,11 @@ cd ~/klipper
 make clean
 make menuconfig
 make
-python3 ~/katapult/scripts/flashtool.py -i can1 -u youruuid -r
-python3 ~/katapult/scripts/flashtool.py -i can1 -u youruuid -f ~/klipper/out/klipper.bin
+python3 ~/katapult/scripts/flashtool.py -i can0 -u youruuid -r
+python3 ~/katapult/scripts/flashtool.py -i can0 -u youruuid -f ~/klipper/out/klipper.bin
 ```
 Repeat the last two steps for each EBB board. Note the uuid used with the lane number in your documentation. This will be used later.
+
+---
+
+← [Step 2: Printing, Assembly and Wiring](/docs/assembly_wiring) | [Step 4: Happy Hare Setup →](/docs/software_setup/02-happy-hare-setup.md)

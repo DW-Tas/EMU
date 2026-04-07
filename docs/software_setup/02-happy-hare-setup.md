@@ -1,6 +1,6 @@
-# Happy Hare Setup Guide
+# Happy Hare Setup
 
-This is a provisional sofware setup guide for the EMU using Happy Hare v3. This guide is meant to be read in conjunction with the Happy Hare setup guide as found here: https://github.com/moggieuk/Happy-Hare/wiki
+This section covers installing and configuring Happy Hare for the EMU. It is meant to be read in conjunction with the [Happy Hare wiki](https://github.com/moggieuk/Happy-Hare/wiki).
 
 ## Table of Contents
 
@@ -53,7 +53,7 @@ cd ~/Happy-Hare
   <img src="https://github.com/user-attachments/assets/e1668ab6-4c4b-4392-bc74-ed01228eb570" alt="Include MMU config files in printer.cfg" width="80%">
 </p>
 
-**(Optional) Mini 12864 screen support:** If you have a Mini 12864 screen, enabe the Happy Hare screen menu <br/><br/>
+**(Optional) Mini 12864 screen support:** If you have a Mini 12864 screen, enable the Happy Hare screen menu <br/><br/>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/83d4cb41-0651-4f1d-aebf-6e1c41ed148a" alt="Enable Happy Hare menu for Mini 12864 (optional)" width="80%">
 </p>
@@ -177,10 +177,10 @@ Start by completely deleting the content of that file and hitting save.
 **Step 2: Paste the below configuration in the mmu_hardware.cfg file**<br/><br/>
 The below starter setup is for an 8 lane unit. To set up a lower lane count, paste the complete content below and change the below:
 1. **num_gates: 8 -> to equal to the number of lanes you have**
-2. **Delete the unecessary tmc and stepper blocks**. For example if you have a 5 lane unit, delete `[tmc2209 stepper_mmu_gear_5]`, `[tmc2209 stepper_mmu_gear_6]`, `[tmc2209 stepper_mmu_gear_7]` blocks from the below.
-3. **Delete the uncesessary pre_gate_switch_pin lines and post_gear_switch_pin lines**. For example for a 5 lane setup, remove `pre_gate_switch_pin_5`, `pre_gate_switch_pin_6`, `pre_gate_switch_pin_7`, `post_gear_switch_pin_5`, `post_gear_switch_pin_6`, `post_gear_switch_pin_7`
-4. **Delete the uncesessary LED blocks**: add or remove `[neopixel mmuN_leds]` to match your number of lanes
-5. ***Delete the uncesessary LED effect exit leds**: Add / remove `neopixel:mmuN_leds (2)` and `neopixel:mmuN_leds (1)` from the corresponding entry and exit sections in the `[mmu_leds unit0]` block.
+2. **Delete the unnecessary tmc and stepper blocks**. For example if you have a 5 lane unit, delete `[tmc2209 stepper_mmu_gear_5]`, `[tmc2209 stepper_mmu_gear_6]`, `[tmc2209 stepper_mmu_gear_7]` blocks from the below.
+3. **Delete the unnecessary pre_gate_switch_pin lines and post_gear_switch_pin lines**. For example for a 5 lane setup, remove `pre_gate_switch_pin_5`, `pre_gate_switch_pin_6`, `pre_gate_switch_pin_7`, `post_gear_switch_pin_5`, `post_gear_switch_pin_6`, `post_gear_switch_pin_7`
+4. **Delete the unnecessary LED blocks**: add or remove `[neopixel mmuN_leds]` to match your number of lanes
+5. ***Delete the unnecessary LED effect exit leds**: Add / remove `neopixel:mmuN_leds (2)` and `neopixel:mmuN_leds (1)` from the corresponding entry and exit sections in the `[mmu_leds unit0]` block.
 
 If you have more than 8 lanes, insert accordingly additional blocks, following the patterns illustrated in the full configuration file below.
 
@@ -590,7 +590,7 @@ macro_toolhead_min_cruise_ratio: 0.5
 2. There is no need for a sensor at the combiner, simplifying wiring setup and configuration.
 3. You can expand to as many lanes as you want with any combination of passive combiners to bring the lane bowden tubes together to one that feeds the toolhead.
 
-The downside is that the full bowden length needs to be traversed when loading, resulting in slightly longer loading times (however that is almost insignificant) and that the bowden length for each lane needs to be calibrated before first use (this is an automated process described later in this guide).
+The downside is that the full bowden length needs to be traversed when loading, resulting in slightly longer loading times (however that is almost insignificant) and that the bowden length for each lane needs to be calibrated before first use (this is an automated process described later in this section).
 
 In addition, conservative homing max and preload homing max value have been selected, to allow the user time to load the filament and ensure it is gripped by the EMU lane stepper. 
 
@@ -638,7 +638,7 @@ toolhead_homing_max: 250			# Increased from default of 40, to allow more toleran
 toolhead_unload_safety_margin: 50	# Increased from the default of 10, to ensure filament is for sure clear of the extruder during unload.
 toolhead_post_load_tighten: 0		# this is ignored as EMU is a Type B MMU - set to 0
 toolhead_post_load_tension_adjust: 1	# Adjust tension post load to attemt to centre the sync feedback sensor. 
-toolhead_entry_tension_test: 1		# confirm load has occurred using thr sunc sensor if toolhead sensor is not present.
+toolhead_entry_tension_test: 1		# confirm load has occurred using the sync sensor, if toolhead sensor is not present.
 ```
 **Tip Forming:** A toolhead cutter is highly recommended. Venture into tip forming at your own risk!</br>
 ```
@@ -647,7 +647,7 @@ form_tip_macro: _MMU_CUT_TIP
 extruder_form_tip_current: 130		  # Bump up extruder current during tip forming. Helps ensure no skipped steps on the extruder if cutting is not 100% clean
 slicer_tip_park_pos: 0			      # This specifies the position of filament in extruder after slicer completes tip forming. (TURN SLICER TIP FORMING OFF!)
 ```
-**Purging:** If you have the blobifier set up, enable it here. For a baseline, starter setup, the below is recommended. Setting up the blobifier is recommended to be done after this guide is complete and your first test print is completed successfully.</br>
+**Purging:** If you have the blobifier set up, enable it here. For a baseline, starter setup, the below is recommended. Setting up the blobifier is recommended to be done after this setup is complete and your first test print is completed successfully.</br>
 ```
 force_purge_standalone: 0 		# Use slicer purging (purge block) - set to 1 for blobifier
 purge_macro: 			            # Replace this with BLOBIFIER when set up. Leave empty if not using the blobifier. 
@@ -743,7 +743,7 @@ EMU and Happy Hare supports using a [proportional sync feedback sensor](https://
 
 The proportional sensor offers the below key advantages:
 1. Real time tension/compression monitoring in the bowden tube
-2. Precise syncronisation between the extruder and EMU steppers
+2. Precise synchronisation between the extruder and EMU steppers
 3. Real time detection of both clogs and tangles
 
 ### PSF Configuration:
@@ -830,6 +830,6 @@ Notice how the orange and blue lines slowly creep away from neutral and then flo
 Notice how the blue line (RD) and orange line (sensor position) rapidly deviate from neutral when an object with high flow rate is printed.</br></br>
 <img width="1800" height="900" alt="image" src="https://github.com/user-attachments/assets/63324652-7d46-47a6-ad3e-42b72f09fb5a" />
 
+---
 
-
-
+← [Step 3: EMU Board Setup](/docs/software_setup/01-board-setup.md) | [Step 5: Calibration and Startup →](/docs/software_setup/03-calibration-and-startup.md)

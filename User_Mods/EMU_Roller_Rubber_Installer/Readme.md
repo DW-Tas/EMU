@@ -28,7 +28,7 @@ Slip it on the roller
 Either use a sharp object (carefully) to unlock the ziptie and undo or use a pair of snips and cut them
 ![5:](images/Rubber-I_05.jpg)
 <br/>
-Slowly pull the zipies from under the tube. Careful not to split/cut the tube at this stage
+Slowly pull the zipties from under the tube. Careful not to split/cut the tube at this stage
 ![6:](images/Rubber-I_06.jpg)
 <br/>
 Rolled rubber on the roller.

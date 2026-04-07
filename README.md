@@ -10,7 +10,8 @@ The EMU supports any number of lanes and base configurations; whether it is a **
 
 > [!TIP]
 > ### EMU Kits
-> Officially certified kits [are now available here](https://www.aliexpress.com/item/1005012001238187.html).
+> Officially certified kits [are now available here](https://www.aliexpress.com/item/1005012001238187.html).<br>
+> Further information on kits and classification can be found [in the dedicated sourcing page](https://github.com/DW-Tas/EMU/blob/main/docs/sourcing.md).
 > ### Crossbow Filament Cutter And A4T Toolhead
 > Make the EMU part of a complete system with the [Crossbow Filament Cutter](https://github.com/DW-Tas/Crossbow-Filament-Cutter) and the [A4T Toolhead](https://github.com/Armchair-Heavy-Industries/A4T).
 
@@ -18,26 +19,26 @@ The EMU supports any number of lanes and base configurations; whether it is a **
   <img src="/docs/assets/images/EMU_multi_lane_unit.png" width="100%">
 </p>
 
-### Discord - primary support communities
-Join our active communities on Discord using the links below. We are active on both the Armchair Engineering and Happy Hare discord servers below.
-
+## Discord - primary support communities
+Join our active communities on Discord using the links below. We are active on both the Armchair Engineering, Happy Hare and Voron discord servers.
 [![Join me on Discord](https://discord.com/api/guilds/1029426383614648421/widget.png?style=banner2)](https://discord.gg/hG2NRazKG3)   
 <br>
 **HappyHare Discord:** https://discord.gg/Yt8Fe7FkNc
 
-
-
-### Table of Contents
-- [Design Objectives & Key Features](#design-objectives)
+## Table of Contents
+- [Design Objectives](#design-objectives)
+- [Documentation](/docs)
+  - [Sourcing](/docs/sourcing.md)
+  - [Printing, Assembly and Wiring](/docs/assembly_wiring)
+  - [Board Setup and Flashing](/docs/software_setup/01-board-setup.md)
+  - [Happy Hare Setup](/docs/software_setup/02-happy-hare-setup.md)
+  - [Calibration and Startup](/docs/software_setup/03-calibration-and-startup.md)
+  - [Slicer setup and optimisation for multi color prints](/docs/software_setup/05-slicer-setup.md)
 - [Render Gallery](#render-gallery)
 - [Prints Gallery](#prints-gallery)
-- [Documentation](/docs)
-  - [BOM, Printing, Assembly and Wiring instructions](/docs/assembly_wiring)
-  - [Software Setup and Calibration](/docs/software_setup)
-  - [Slicer setup and optimisation for multi color prints](/docs/software_setup/05-slicer-setup.md)
 - [License](#this-work-is-licensed-under-a)
 
-### Highlights
+## EMU Highlights
 - **Modular & Expandable** design, able to add lanes anytime and in any configuration. No reprints when upgrading from a 2 lane setup.
 - **One screw or tool-free** access and servicing, even mid-print.
 - **Sealed dry boxes** able to maintain humidity in the 15% range (with silica gel) or 5–8% range (with molecular sieves) for weeks.  
@@ -51,7 +52,6 @@ Join our active communities on Discord using the links below. We are active on b
   <img src="/docs/assets/images/EMU_two_lane_unit_front.png" width="49%">
 </p>
 
-
 ## Design Objectives
 
 ### Modularity & Upgradeability  
@@ -62,7 +62,7 @@ Expanding later is also straightforward. Just print lane expanders for the base 
 ### Ease of Servicing 
 All electrical and mechanical components are either **one screw or completely tool-free and immediately accessible**, making live troubleshooting possible even during a print. 
 
-Access to the electronics is easy - just lift the dry box off its base for full access. The stepper tensioning screw is accessible without any dissassembly allowing on the fly tuning of filament grip. Finally, removing the filamentalist, stepper and stepper assembly is possible via one screw.
+Access to the electronics is easy - just lift the dry box off its base for full access. The stepper tensioning screw is accessible without any disassembly allowing on the fly tuning of filament grip. Finally, removing the filamentalist, stepper and stepper assembly is possible via one screw.
 
 ### Sealed Dry Boxes  
 Each spool sits in its own purpose built, **fully sealed dry box with an integrated desiccant holder**. The boxes use foam cord in areas of potential air ingress to create a tight seal, with the clear 1.5mm PETG/PC panel also offering visibility inside the dry box.
@@ -82,7 +82,7 @@ Dual pre-stepper sensors ensure **consistent run-out detection** and reliable re
 In addition, the isolated boxes ensure that any left over, rewound, filament cannot interfere with neighbouring lanes, **preventing a jam**.
 
 ### Built on the Filamentalist
-The lane assembly is based on the proven **[filamentalist V3 design with 688 bearings](https://github.com/Enraged-Rabbit-Community/ERCF_v2/tree/master/Recommended_Options/Filamentalist_Rewinder/Filamentalist_FV3_Rewinder)** with wide spool size compatibility. Built on the 74mm filamentalist stock setup, the unit fits even the slighlty wider KVP filament spools.
+The lane assembly is based on the proven **[filamentalist V3 design with 688 bearings](https://github.com/Enraged-Rabbit-Community/ERCF_v2/tree/master/Recommended_Options/Filamentalist_Rewinder/Filamentalist_FV3_Rewinder)** with wide spool size compatibility. Built on the 74mm filamentalist stock setup, the unit fits even the slightly wider KVP filament spools.
 
 <p align="center">
   <img src="/docs/assets/images/EMU_integrated_gate_unit_close_up.png" width="49%">
@@ -143,3 +143,8 @@ The following mods from the community have been adopted into the main EMU releas
 The non-commercial aspect of this license is for cases where EMU is the product, not the use of EMU to create products.<br/>
 I.e. If you wish to sell EMU as a product, you would need to seek a commercial license before doing so. </br>
 It is NOT intended to prevent the use of EMU with a printer that you use to provide commercial services. If you want to run EMU in your print farm, go right ahead.
+
+
+---
+
+[Documentation →](/docs)

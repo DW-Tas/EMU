@@ -17,7 +17,7 @@ Add the below to the base BOM, depending on your LED PCB source:
 Assembly and wiring instructions are outlined [in the manual](https://github.com/DW-Tas/EMU/blob/main/PCB%20(recommended%20options)/multi_led_button/EMU%20LED%20Button%20PCB%20Assembly%20Manual.pdf).
 
 ## Sourcing
-The hatch board PCBs can be sourced from the below location:
+The LED button PCBs can be sourced from the below location:
 1. [Aliexpress](https://www.aliexpress.com/item/1005011529532141.html) in sets of 5
 
 Alternatively use the supplied gerber, BOM and pick and place files to order from your favourite PCB manufacturer.
@@ -60,7 +60,7 @@ frame_rate: 24
 ```
 
 ## Wiring variations
-The DOut pin (LED out) should connect to a 600mm AWG26-28 wire going to the LED IN pin of the lane dry box. Thatway the third wago can be ommitted.
+The DOut pin (LED out) should connect to a 600mm AWG26-28 wire going to the LED IN pin of the lane dry box. That way the third wago can be omitted.
 
 ## Lighting effects
 The multiple LEDs incorporated in the eject button allow you to create loading/unloading animations like the below. Also the integrated SMD switch provides a more tactile feel vs. the D2F switch and magnet assembly. 

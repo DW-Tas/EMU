@@ -1,4 +1,4 @@
-# EMU Cable Entry with Cimpable JST sockets
+# EMU Cable Entry with Crimpable JST sockets
 
 ![Inside](pics/Inside.jpg)
 

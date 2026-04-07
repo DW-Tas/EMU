@@ -1,6 +1,6 @@
-# Slicer setup and optimisation for multi color prints
+# Slicer Setup and Optimisation for Multi Color Prints
 
-Orca slicer is the recommended slicer for the EMU. The guide below will take you through a set of mandatory and recommended settings to help you achieve the best results possible from your EMU. The guide assumes that you are using a toolhead equipped with a cutter. Therefore all tip forming activity in the slicer will be disabled.
+Orca slicer is the recommended slicer for the EMU. This section will take you through a set of mandatory and recommended settings to help you achieve the best results possible from your EMU. It assumes that you are using a toolhead equipped with a cutter. Therefore all tip forming activity in the slicer will be disabled.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/6816fb75-d5b3-4e73-a9d2-ad93d89a7320" alt="1 (4)" width="24%"/>
@@ -122,11 +122,11 @@ One of the biggest downsides to multi-color printing with a single nozzle is **t
 2. Combined with **too low of a purge volume**
 3. And using a **long meltzone hotend**
 
-This happens due to the **molten material sticking to the hotend melt zone** and requiring disproportional amount of filament to "disrupt" that boundary layer and flush the color through. This is made worse by the fact that **filament flows in a laminar way**, hence there is little to no "turbulance" in the hotend to disrupt that layer.. 
+This happens due to the **molten material sticking to the hotend melt zone** and requiring disproportional amount of filament to "disrupt" that boundary layer and flush the color through. This is made worse by the fact that **filament flows in a laminar way**, hence there is little to no "turbulence" in the hotend to disrupt that layer.. 
 
 Ways to mitigate include:
 1. Use a regular flow (not a CHT) nozzle. The extra filament channels multiply the surface area that the boundary layer can be created against
-2. Use a small meltzone nozzle. For multi-color printing, the vast majority of print time is spent swapping filaments and purging. Hence a lower flow hotent will not impact overall print speed by a significant factor
+2. Use a small meltzone nozzle. For multi-color printing, the vast majority of print time is spent swapping filaments and purging. Hence a lower flow hotend will not impact overall print speed by a significant factor
 
 In addition to the above physical changes, the **below slicer settings can help** contain the color bleed
 
@@ -213,5 +213,6 @@ The below are my preferred settings for multi-color printing.
   <img src="https://github.com/user-attachments/assets/70fa07fd-4f7a-4e46-98f5-a3c245e9162a" alt="1 (5)" width="27%"/>
 </p>
 
+---
 
-
+← [Step 5: Calibration and Startup](/docs/software_setup/03-calibration-and-startup.md) | [Documentation Hub →](/docs)

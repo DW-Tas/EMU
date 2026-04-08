@@ -48,6 +48,11 @@ It also allows us to offer feedback to the vendors to ensure the kits can result
   </tr>
 <table>
 
+### Controller Boards
+In addition to the kit of your choice, one controller board per lane is required.
+- **Recommended:** [Solo lane board (SLB)](https://www.aliexpress.com/item/1005012025112049.html) - significantly simplifies wiring of the individual units.
+- **Alternatively:** An EBB 42 or EBB 36 is also functional on the unit, with a bit more effort on crimping the necessary connectors.
+
 ### Certification Tiers
 <table style="width: 100%;">
   <tr>
@@ -111,7 +116,6 @@ While entirely optional, the below upgrades are highly recommended.
 1. [PCB hatch boards](/PCB%20(recommended%20options)/hatch_board) - simplifies wiring, sealing of the box and reduces soldering need.
 2. [Eject button multi-LED PCB](/PCB%20(recommended%20options)/multi_led_button) - simplifies wiring and displays animated effects when loading / unloading filament.
 3. [Proportional Sync Feedback Sensor](https://www.aliexpress.com/item/1005010470743517.html) - allows for clog, tangle detection and more accurate synchronisation between the EMU and the extruder.
-
 
 ---
 

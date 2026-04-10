@@ -58,6 +58,45 @@ entry_leds:
   neopixel:mmuN_leds (5)
 frame_rate: 24
 ```
+Update the **mmu eject button hardware configuration** in the **mmu_eject_buttons_hw.cfg file**<br/><br/>
+The below example setup is for an 8 lane unit. To set up a lower lane count, delete the corresponding `[gcode_button mmu_eject_button_N]` sections. If you have more than 8 lanes, add more blocks following the pattern below. 
+
+Please note the `!` which is different to the software setup that uses D2F switches!
+
+```
+[gcode_button mmu_eject_button_0]
+pin: ^!mmu0:EJECT_BUTTON
+press_gcode: _MMU_EJECT_BUTTON GATE=0
+
+[gcode_button mmu_eject_button_1]
+pin: ^!mmu1:EJECT_BUTTON
+press_gcode: _MMU_EJECT_BUTTON GATE=1
+
+[gcode_button mmu_eject_button_2]
+pin: ^!mmu2:EJECT_BUTTON
+press_gcode: _MMU_EJECT_BUTTON GATE=2
+
+[gcode_button mmu_eject_button_3]
+pin: ^!mmu3:EJECT_BUTTON
+press_gcode: _MMU_EJECT_BUTTON GATE=3
+
+[gcode_button mmu_eject_button_4]
+pin: ^!mmu4:EJECT_BUTTON
+press_gcode: _MMU_EJECT_BUTTON GATE=4
+
+[gcode_button mmu_eject_button_5]
+pin: ^!mmu5:EJECT_BUTTON
+press_gcode: _MMU_EJECT_BUTTON GATE=5
+
+[gcode_button mmu_eject_button_6]
+pin: ^!mmu6:EJECT_BUTTON
+press_gcode: _MMU_EJECT_BUTTON GATE=6
+
+[gcode_button mmu_eject_button_7]
+pin: ^!mmu7:EJECT_BUTTON
+press_gcode: _MMU_EJECT_BUTTON GATE=7
+```
+
 
 ## Wiring variations
 The DOut pin (LED out) should connect to a 600mm AWG26-28 wire going to the LED IN pin of the lane dry box. That way the third wago can be omitted.

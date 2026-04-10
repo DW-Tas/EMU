@@ -2,9 +2,11 @@
 
 This page covers printing the parts, assembling the EMU and wiring the electronics. It is meant to be read in conjunction with the assembly videos linked below.
 
+## Configurator
+Use the [configurator linked here](https://emu.dwtas.net) to select your number of lanes and build options and download the necessary STL's for your EMU build.
+
 ## Table of Contents
 - [EMU – Printing, Assembly and Wiring](#emu--printing-assembly-and-wiring)
-  - [Table of Contents](#table-of-contents)
   - [Print Settings](#print-settings)
     - [Filamentalist components and Lane stepper components:](#filamentalist-components-and-lane-stepper-components)
     - [Dry Box components:](#dry-box-components)

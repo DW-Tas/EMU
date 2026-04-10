@@ -20,7 +20,7 @@ The EMU supports any number of lanes and base configurations; whether it is a **
 </p>
 
 ## Discord - primary support communities
-Join our active communities on Discord using the links below. We are active on both the Armchair Engineering, Happy Hare and Voron discord servers.
+Join our active communities on Discord using the links below. We are active on both the Armchair Engineering, Happy Hare and Voron discord servers.<br/>
 [![Join me on Discord](https://discord.com/api/guilds/1029426383614648421/widget.png?style=banner2)](https://discord.gg/hG2NRazKG3)   
 <br>
 **HappyHare Discord:** https://discord.gg/Yt8Fe7FkNc
@@ -29,6 +29,7 @@ Join our active communities on Discord using the links below. We are active on b
 - [Design Objectives](#design-objectives)
 - [Documentation](/docs)
   - [Sourcing](/docs/sourcing.md)
+  - [Printed parts configurator](https://emu.dwtas.net)
   - [Printing, Assembly and Wiring](/docs/assembly_wiring)
   - [Board Setup and Flashing](/docs/software_setup/01-board-setup.md)
   - [Happy Hare Setup](/docs/software_setup/02-happy-hare-setup.md)

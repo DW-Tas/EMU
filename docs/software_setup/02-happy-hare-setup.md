@@ -655,7 +655,7 @@ extruder_purge_current: 100		# leave this unchanged. If the extruder is skipping
 ```
 **Motor sync:** Setup sync feedback sensor (EMUSync) here. Adjust the below values leaving the rest unchanged.</br>
 ```
-sync_gear_current: 50			    # 50% EMU stepper current during printing -> ~0.4A when printing. Higher than 0.5A can cause PLA to clog the EMU stepper in hot environments.
+sync_gear_current: 55			    # 55% EMU stepper current during printing -> ~0.4-0.45A when printing. Higher than 0.5A can cause PLA to clog the EMU stepper in hot environments.
 sync_feedback_enabled: 1		    # Enable EMU Sync sync feedback sensor
 sync_feedback_buffer_range: 10		# EMU Sync switch to switch distance in mm. PFS is 16mm
 sync_feedback_buffer_maxrange: 25	# EMU Sync max travel. PFS is 16mm

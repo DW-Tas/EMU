@@ -180,5 +180,18 @@
     "notes": "Hello guys! I would like to ask a serial for my 2 lane setup :)",
     "date": "2026-03-15",
     "approved_by": "igiannakas"
+  },
+  {
+    "serial": "#0018",
+    "discord_username": ".cicatrix",
+    "discord_id": "252321325513703424",
+    "media_urls": [
+      "https://emuimages.dwtas.net/252321325513703424-1776112622599-0.jpg",
+      "https://emuimages.dwtas.net/252321325513703424-1776112625904-1.jpg",
+      "https://emuimages.dwtas.net/252321325513703424-1776112629107-2.jpg"
+    ],
+    "notes": "Built with PCB Hatchches and Buttons as well as the PSF Sensor ",
+    "date": "2026-04-13",
+    "approved_by": "igiannakas"
   }
 ]

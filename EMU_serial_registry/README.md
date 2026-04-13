@@ -1,6 +1,6 @@
 # EMU – Expandable Multi-material Unit - Official Serial Registry
 
-![EMU Serial Print by igiannakas](assets/EMU_serial_print_igiannakas.jpeg)
+![EMU Serial Print by igiannakas](/EMU_serial_registry/assets/EMU_serial_print_igiannakas.jpeg)
 
 **Serial #0000:** dw.tas</br>
 **Serial #0001:** igiannakas</br>
@@ -20,6 +20,7 @@
 **Serial #0015:** ammaze</br>
 **Serial #0016:** Doak</br>
 **Serial #0017:** apoth82</br>
+**Serial #0018:** .cicatrix</br>
 </br>
 
 ### How to register:

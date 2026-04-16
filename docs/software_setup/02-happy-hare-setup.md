@@ -421,11 +421,11 @@ effect_error:              mmu_strobe,              (1, 0, 0)
 effect_complete:           mmu_sparkle,             (0.3, 0.3, 0.3)
 effect_gate_selected:      mmu_static_blue,         (0, 0, 1)
 effect_gate_available:     mmu_static_white_dim,    (0.3, 0.3, 0.3)
-effect_gate_available_sel: mmu_ready_white,         (0.75, 0.75, 0.75)
+effect_gate_available_sel: mmu_static_white,        (0.75, 0.75, 0.75)
 effect_gate_unknown:       mmu_static_orange,       (0.5, 0.2, 0)
 effect_gate_unknown_sel:   mmu_ready_orange ,       (0.75, 0.3, 0)
 effect_gate_empty:         mmu_static_black,        (0, 0, 0)
-effect_gate_empty_sel:     mmu_ready_red,           (0.2, 0, 0)
+effect_gate_empty_sel:     mmu_static_red,           (0.2, 0, 0)
 
 ```
 

@@ -6,6 +6,12 @@ This section covers installing and configuring Happy Hare for the EMU. It is mea
 
 - [Installing Happy Hare](#installing-happy-hare)
 - [Configuring the EMU hardware](#configuring-the-emu-hardware)
+  - [Update your printer.cfg](#update-your-printercfg)
+  - [Update mmu/base/mmu.cfg](#update-mmubasemmucfg)
+  - [Update mmu/base/mmu_hardware.cfg](#update-mmubasemmu_hardwarecfg)
+  - [Update mmu/addons/mmu_eject_buttons_hw.cfg](#update-mmuaddonsmmu_eject_buttons_hwcfg)
+  - [Upload the emu_macros.cfg file and reference it in your printer.cfg](#upload-the-emu_macroscfg-file-and-reference-it-in-your-printercfg)
+  - [Save, restart and confirm lanes are visible](#save-restart-and-confirm-lanes-are-visible)
 - [Configuring Happy Hare parameters](#configuring-happy-hare-parameters)
 - [Configuring PSF and Flowguard](#configuring-psf-and-flowguard)
 - [EMUSync PSF insights](#emusync-psf-insights)
@@ -136,11 +142,8 @@ canbus_uuid: your uuid
 canbus_interface: can0
 ```
 
-**Step 3: Update mmu.cfg with the EMU mcu board pin aliases** <br/><br/>
-After the board definitions, insert the board pin aliases. 
-
-> [!IMPORTANT]
-> **Important note:** The first board defines the aliases for the tension and compression sensor too, so it is different to the rest. In the example below I am using an 8 lane configuration. Remove the corresponding `mmuN` reference from the mcu line to match the number of lanes you have (eg. `mcu: mmu0, mmu1` for a two lane setup).
+**Step 3 - Update mmu.cfg with the EMU mcu board pin aliases** <br/><br/>
+**For the EBB42/36:** After the board definitions, insert the board pin aliases. 
 ```
 [board_pins mmu]
 mcu: mmu0, mmu1, mmu2, mmu3, mmu4, mmu5, mmu6, mmu7
@@ -166,8 +169,31 @@ aliases:
 
     EJECT_BUTTON=PB6,
 ```
-This file is now complete! 
 
+**For the Solo Lane Board (SLB):** After the board definitions, insert the board pin aliases.  
+```
+[board_pins mmu]
+mcu: mmu0, mmu1, mmu2, mmu3, mmu4, mmu5, mmu6, mmu7
+aliases:
+    MMU_GEAR_UART=PB6,
+    MMU_GEAR_STEP=PB5,
+    MMU_GEAR_DIR=PB4,
+    MMU_GEAR_ENABLE=PB7,
+    MMU_GEAR_DIAG=,
+
+    MMU_NEOPIXEL_BOX=PA2,
+    MMU_NEOPIXEL_BUTTON=PA4,
+
+    MMU_PRE_GATE=PA1,
+    MMU_POST_GEAR=PA0,
+
+    MMU_TENSION=PB1, # First lane has the sync feedback sensor attached to it!
+    MMU_COMPRESSION=PB0, # First lane has the sync feedback sensor attached to it!
+    MMU_TH=PA3, # First lane has the PFS sensor attached to it!
+
+    MMU_FAN=PA15,
+    EJECT_BUTTON=PC6,
+```
 
 ### Update mmu/base/mmu_hardware.cfg
 
@@ -180,22 +206,18 @@ The below starter setup is for an 8 lane unit. To set up a lower lane count, pas
 2. **Delete the unnecessary tmc and stepper blocks**. For example if you have a 5 lane unit, delete `[tmc2209 stepper_mmu_gear_5]`, `[tmc2209 stepper_mmu_gear_6]`, `[tmc2209 stepper_mmu_gear_7]` blocks from the below.
 3. **Delete the unnecessary pre_gate_switch_pin lines and post_gear_switch_pin lines**. For example for a 5 lane setup, remove `pre_gate_switch_pin_5`, `pre_gate_switch_pin_6`, `pre_gate_switch_pin_7`, `post_gear_switch_pin_5`, `post_gear_switch_pin_6`, `post_gear_switch_pin_7`
 4. **Delete the unnecessary LED blocks**: add or remove `[neopixel mmuN_leds]` to match your number of lanes
-5. ***Delete the unnecessary LED effect exit leds**: Add / remove `neopixel:mmuN_leds (2)` and `neopixel:mmuN_leds (1)` from the corresponding entry and exit sections in the `[mmu_leds unit0]` block.
+5. ***Delete the unnecessary LED effect exit leds**: Add / remove `neopixel:mmuN_leds (x)` and `neopixel:mmuN_leds (x)` from the corresponding entry and exit sections in the `[mmu_leds unit0]` block.
+6. Update your **toolhead sensors** definition to match your setup.
 
 If you have more than 8 lanes, insert accordingly additional blocks, following the patterns illustrated in the full configuration file below.
 
 > [!TIP]
 > If during testing you see that the EMU stepper spins backwards, invert the dir_pin by adding a ! infront of it (!dir_pin).
 
-Finally, update your toolhead sensors definition to match your setup. Here I have the extruder entry (top) sensor in my toolhead can board named EBBCan connected to pin PB6 and the toolhead sensor (post extruder) at pin PB5.
 ```
-extruder_switch_pin: ^EBBCan: PB6
-toolhead_switch_pin: ^EBBCan: PB5
-```
-
-File contents - mmu_hardware.cfg:
-
-```
+# ----------------------------------------------------------------------------
+# MMU Hardware config file ---------------------------------------------------
+# ----------------------------------------------------------------------------
 [mmu_machine]
 num_gates: 8			
 mmu_vendor: EMU			
@@ -210,8 +232,8 @@ has_bypass: 1
 
 # Add your temperature and humidity sensors here for them to be visible in mainsail. One line per lane.
 # Supported in HH vesion 3.42 and above.
-environment_sensors:   temperature_sensor Lane_0, 
-						            temperature_sensor Lane_1,
+environment_sensors:    temperature_sensor Lane_0, 
+                        temperature_sensor Lane_1,
                         temperature_sensor Lane_2,
                         temperature_sensor Lane_3,
                         temperature_sensor Lane_4,
@@ -219,7 +241,10 @@ environment_sensors:   temperature_sensor Lane_0,
                         temperature_sensor Lane_6,
                         temperature_sensor Lane_7 
 
-# FILAMENT DRIVE GEAR STEPPER  -----------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------
+# Stepper definitions --------------------------------------------------------
+# ----------------------------------------------------------------------------
+# Lane 0 --------------------------
 [tmc2209 stepper_mmu_gear]
 uart_pin: mmu0:MMU_GEAR_UART
 run_current: 0.8		
@@ -237,7 +262,7 @@ gear_ratio: 1:1
 microsteps: 32				
 full_steps_per_rotation: 200		
 
-# Filament Drive Gear_1 --------------------------
+# Lane 1 --------------------------
 [tmc2209 stepper_mmu_gear_1]
 uart_pin: mmu1:MMU_GEAR_UART
 
@@ -246,7 +271,7 @@ step_pin: mmu1:MMU_GEAR_STEP
 dir_pin: mmu1:MMU_GEAR_DIR
 enable_pin: !mmu1:MMU_GEAR_ENABLE
 
-# Filament Drive Gear_2 --------------------------
+# Lane 2 --------------------------
 [tmc2209 stepper_mmu_gear_2]
 uart_pin: mmu2:MMU_GEAR_UART
 
@@ -255,7 +280,7 @@ step_pin: mmu2:MMU_GEAR_STEP
 dir_pin: mmu2:MMU_GEAR_DIR
 enable_pin: !mmu2:MMU_GEAR_ENABLE
 
-# Filament Drive Gear_3 --------------------------
+# Lane 3 --------------------------
 [tmc2209 stepper_mmu_gear_3]
 uart_pin: mmu3:MMU_GEAR_UART
 
@@ -264,7 +289,7 @@ step_pin: mmu3:MMU_GEAR_STEP
 dir_pin: mmu3:MMU_GEAR_DIR
 enable_pin: !mmu3:MMU_GEAR_ENABLE
 
-# Filament Drive Gear_4 --------------------------
+# Lane 4 --------------------------
 [tmc2209 stepper_mmu_gear_4]
 uart_pin: mmu4:MMU_GEAR_UART
 
@@ -273,7 +298,7 @@ step_pin: mmu4:MMU_GEAR_STEP
 dir_pin: mmu4:MMU_GEAR_DIR
 enable_pin: !mmu4:MMU_GEAR_ENABLE
 
-# Filament Drive Gear_5 --------------------------
+# Lane 5 --------------------------
 [tmc2209 stepper_mmu_gear_5]
 uart_pin: mmu5:MMU_GEAR_UART
 
@@ -282,7 +307,7 @@ step_pin: mmu5:MMU_GEAR_STEP
 dir_pin: mmu5:MMU_GEAR_DIR
 enable_pin: !mmu5:MMU_GEAR_ENABLE
 
-# Filament Drive Gear_6 --------------------------
+# Lane 6 --------------------------
 [tmc2209 stepper_mmu_gear_6]
 uart_pin: mmu6:MMU_GEAR_UART
 
@@ -291,7 +316,7 @@ step_pin: mmu6:MMU_GEAR_STEP
 dir_pin: mmu6:MMU_GEAR_DIR
 enable_pin: !mmu6:MMU_GEAR_ENABLE
 
-# Filament Drive Gear_7 --------------------------
+# Lane 7 --------------------------
 [tmc2209 stepper_mmu_gear_7]
 uart_pin: mmu7:MMU_GEAR_UART
 
@@ -299,6 +324,10 @@ uart_pin: mmu7:MMU_GEAR_UART
 step_pin: mmu7:MMU_GEAR_STEP
 dir_pin: mmu7:MMU_GEAR_DIR
 enable_pin: !mmu7:MMU_GEAR_ENABLE
+
+# ----------------------------------------------------------------------------
+# Sensors definitions --------------------------------------------------------
+# ----------------------------------------------------------------------------
 
 [mmu_sensors]
 pre_gate_switch_pin_0: ^mmu0:MMU_PRE_GATE
@@ -319,85 +348,204 @@ post_gear_switch_pin_5: ^mmu5:MMU_POST_GEAR
 post_gear_switch_pin_6: ^mmu6:MMU_POST_GEAR
 post_gear_switch_pin_7: ^mmu7:MMU_POST_GEAR
 
-extruder_switch_pin: ^EBBCan: PB6
-toolhead_switch_pin: ^EBBCan: PB5
+# if you have a toolhead sensors, uncomment and insert the definitions here
+# extruder_switch_pin: ^TOOLHEAD_CAN: PB6 
+# toolhead_switch_pin: ^TOOLHEAD_CAN: PB5
 
+# Section below if using the dual switch version of the EMU Sync. Uncomment the below
+# sync_feedback_tension_pin: ^mmu0:MMU_TENSION         # Compression is when you pull the bowden tubes (entry/exit) away from each other. Tension when you push the tubes together.
+# sync_feedback_compression_pin: ^mmu0:MMU_COMPRESSION
 
-# Section below if using the dual switch version of the EMU Sync. 
-sync_feedback_tension_pin: ^mmu0:MMU_TENSION         # Compression is when you pull the bowden tubes (entry/exit) away from each other. Tension when you push the tubes together.
-sync_feedback_compression_pin: ^mmu0:MMU_COMPRESSION
-
-# Section below if using the Proportional (PSF) version of the EMU Sync. Run the calibration routine (MMU_CALIBRATE_PSENSOR) and
-# update the sync_feedback_analog_max_compression, sync_feedback_analog_max_tension and sync_feedback_analog_neutral_point accordingly.
+# Section below if using the Proportional (PSF) version of the EMU Sync.
 # Comment out/delete the dual switch section above and uncomment the section below to use.
-#sync_feedback_analog_pin: mmu0:MMU_TH
-#sync_feedback_analog_max_compression: 0.9435
-#sync_feedback_analog_max_tension:     0.0982
-#sync_feedback_analog_neutral_point:   0.5275
+# Dont forget to run the calibration routine (MMU_CALIBRATE_PSENSOR) and
+# update the sync_feedback_analog_max_compression, sync_feedback_analog_max_tension and sync_feedback_analog_neutral_point accordingly.
 
-# MMU NEOPIXEL LED SUPPORT ------------------------------------------------------------------------------------
+# sync_feedback_analog_pin: mmu0:MMU_TH
+# sync_feedback_analog_max_compression: 0.9435
+# sync_feedback_analog_max_tension:     0.0982
+# sync_feedback_analog_neutral_point:   0.5275
 
-[neopixel mmu0_leds] # one block per lane (Lane 0)
+# ----------------------------------------------------------------------------
+# MMU NEOPIXEL LED SUPPORT EBB42/36 ------------------------------------------
+# Delete or comment out if not using an EBB42/36 -----------------------------
+# Below sample configuration is shown for printed eject button ---------------
+# Update as per instructions for PCB LED eject button ------------------------
+# ----------------------------------------------------------------------------
+
+[neopixel _mmu0_leds] # one block per lane (Lane 0)
 pin: mmu0:MMU_NEOPIXEL
-chain_count: 2			# one for the box and one for the eject button
+chain_count: 2	# one for the box and one for the eject button. Set to 5 for the LED PCB
 color_order: GRBW		
 
-[neopixel mmu1_leds] # one block per lane (Lane 1)
+[neopixel _mmu1_leds] # one block per lane (Lane 1)
 pin: mmu1:MMU_NEOPIXEL
 chain_count: 2			
 color_order: GRBW		
 
-[neopixel mmu2_leds] # one block per lane (Lane 2)
+[neopixel _mmu2_leds] # one block per lane (Lane 2)
 pin: mmu2:MMU_NEOPIXEL
 chain_count: 2		
 color_order: GRBW	
 
-[neopixel mmu3_leds] # one block per lane (Lane 3)
+[neopixel _mmu3_leds] # one block per lane (Lane 3)
 pin: mmu3:MMU_NEOPIXEL
 chain_count: 2			
 color_order: GRBW
 
-[neopixel mmu4_leds] # one block per lane (Lane 4)
+[neopixel _mmu4_leds] # one block per lane (Lane 4)
 pin: mmu4:MMU_NEOPIXEL
 chain_count: 2			
 color_order: GRBW
 
-[neopixel mmu5_leds] # one block per lane (Lane 5)
+[neopixel _mmu5_leds] # one block per lane (Lane 5)
 pin: mmu5:MMU_NEOPIXEL
 chain_count: 2			
 color_order: GRBW
 
-[neopixel mmu6_leds] # one block per lane (Lane 6)
+[neopixel _mmu6_leds] # one block per lane (Lane 6)
 pin: mmu6:MMU_NEOPIXEL
 chain_count: 2			
 color_order: GRBW
 
-[neopixel mmu7_leds] # one block per lane (Lane 7)
+[neopixel _mmu7_leds] # one block per lane (Lane 7)
 pin: mmu7:MMU_NEOPIXEL
 chain_count: 2			
 color_order: GRBW	
 
-# MMU LED EFFECT SEGMENTS ----------------------------------------------------------------------------------------------
 [mmu_leds unit0]
 exit_leds:
-  neopixel:mmu0_leds (1) # add/remove to match number of lanes
-  neopixel:mmu1_leds (1)
-  neopixel:mmu2_leds (1)
-  neopixel:mmu3_leds (1)
-  neopixel:mmu4_leds (1)
-  neopixel:mmu5_leds (1)
-  neopixel:mmu6_leds (1)
-  neopixel:mmu7_leds (1)
+  neopixel:_mmu0_leds (1) # add/remove to match number of lanes. Set to (1,2,3,4) for the LED PCB
+  neopixel:_mmu1_leds (1)
+  neopixel:_mmu2_leds (1)
+  neopixel:_mmu3_leds (1)
+  neopixel:_mmu4_leds (1)
+  neopixel:_mmu5_leds (1)
+  neopixel:_mmu6_leds (1)
+  neopixel:_mmu7_leds (1)
 entry_leds:
-  neopixel:mmu0_leds (2) # add/remove to match number of lanes
-  neopixel:mmu1_leds (2)
-  neopixel:mmu2_leds (2)
-  neopixel:mmu3_leds (2)
-  neopixel:mmu4_leds (2)
-  neopixel:mmu5_leds (2)
-  neopixel:mmu6_leds (2)
-  neopixel:mmu7_leds (2)
-frame_rate: 24
+  neopixel:_mmu0_leds (2) # add/remove to match number of lanes. Set to (5) for the LED PCB
+  neopixel:_mmu1_leds (2)
+  neopixel:_mmu2_leds (2)
+  neopixel:_mmu3_leds (2)
+  neopixel:_mmu4_leds (2)
+  neopixel:_mmu5_leds (2)
+  neopixel:_mmu6_leds (2)
+  neopixel:_mmu7_leds (2)
+frame_rate: 15
+
+# ----------------------------------------------------------------------------
+# MMU NEOPIXEL LED SUPPORT Solo Lane Board (SLB) -----------------------------
+# Delete or comment out if not using an SLB ----------------------------------
+# Below sample configuration is shown for the PCB LED eject button -----------
+# Update as per instructions for printed eject button  -----------------------
+# ----------------------------------------------------------------------------
+
+[neopixel _mmu0_leds_box] # one block per lane (Lane 1)
+pin: mmu0:MMU_NEOPIXEL_BOX
+chain_count: 1			# Always 1 LED for the box
+color_order: GRBW
+
+[neopixel _mmu0_leds_button] # one block per lane (Lane 1)
+pin: mmu0:MMU_NEOPIXEL_BUTTON
+chain_count: 4			# Set to 1 if using Neopixel eject button. Set to 4 if using LED PCB
+color_order: GRBW
+
+[neopixel _mmu1_leds_box] # one block per lane (Lane 2)
+pin: mmu1:MMU_NEOPIXEL_BOX
+chain_count: 1			
+color_order: GRBW
+
+[neopixel _mmu1_leds_button] # one block per lane (Lane 2)
+pin: mmu1:MMU_NEOPIXEL_BUTTON
+chain_count: 4			
+color_order: GRBW
+
+[neopixel _mmu2_leds_box] # one block per lane (Lane 3)
+pin: mmu2:MMU_NEOPIXEL_BOX
+chain_count: 1			
+color_order: GRBW
+
+[neopixel _mmu2_leds_button] # one block per lane (Lane 3)
+pin: mmu2:MMU_NEOPIXEL_BUTTON
+chain_count: 4			
+color_order: GRBW
+
+[neopixel _mmu3_leds_box] # one block per lane (Lane 4)
+pin: mmu3:MMU_NEOPIXEL_BOX
+chain_count: 1			
+color_order: GRBW
+
+[neopixel _mmu3_leds_button] # one block per lane (Lane 4)
+pin: mmu3:MMU_NEOPIXEL_BUTTON
+chain_count: 4			
+color_order: GRBW
+
+[neopixel _mmu4_leds_box] # one block per lane (Lane 5)
+pin: mmu4:MMU_NEOPIXEL_BOX
+chain_count: 1			
+color_order: GRBW
+
+[neopixel _mmu4_leds_button] # one block per lane (Lane 5)
+pin: mmu4:MMU_NEOPIXEL_BUTTON
+chain_count: 4			
+color_order: GRBW
+
+[neopixel _mmu5_leds_box] # one block per lane (Lane 6)
+pin: mmu5:MMU_NEOPIXEL_BOX
+chain_count: 1			
+color_order: GRBW
+
+[neopixel _mmu5_leds_button] # one block per lane (Lane 6)
+pin: mmu5:MMU_NEOPIXEL_BUTTON
+chain_count: 4			
+color_order: GRBW
+
+[neopixel _mmu6_leds_box] # one block per lane (Lane 7)
+pin: mmu6:MMU_NEOPIXEL_BOX
+chain_count: 1			
+color_order: GRBW
+
+[neopixel _mmu6_leds_button] # one block per lane (Lane 7)
+pin: mmu6:MMU_NEOPIXEL_BUTTON
+chain_count: 4			
+color_order: GRBW
+
+[neopixel _mmu7_leds_box] # one block per lane (Lane 8)
+pin: mmu7:MMU_NEOPIXEL_BOX
+chain_count: 1			
+color_order: GRBW
+
+[neopixel _mmu7_leds_button] # one block per lane (Lane 8)
+pin: mmu7:MMU_NEOPIXEL_BUTTON
+chain_count: 4			
+color_order: GRBW
+
+[mmu_leds unit0]
+exit_leds:
+  neopixel:_mmu0_leds_button (1,2,3,4)
+  neopixel:_mmu1_leds_button (1,2,3,4)
+  neopixel:_mmu2_leds_button (1,2,3,4)
+  neopixel:_mmu3_leds_button (1,2,3,4)
+  neopixel:_mmu4_leds_button (1,2,3,4)
+  neopixel:_mmu5_leds_button (1,2,3,4)
+  neopixel:_mmu6_leds_button (1,2,3,4)
+  neopixel:_mmu7_leds_button (1,2,3,4)
+  neopixel:_mmu8_leds_button (1,2,3,4)
+entry_leds:
+  neopixel:_mmu0_leds_box (1)
+  neopixel:_mmu1_leds_box (1)
+  neopixel:_mmu2_leds_box (1)
+  neopixel:_mmu3_leds_box (1)
+  neopixel:_mmu4_leds_box (1)
+  neopixel:_mmu5_leds_box (1)
+  neopixel:_mmu6_leds_box (1)
+  neopixel:_mmu7_leds_box (1)
+frame_rate: 15
+
+# ----------------------------------------------------------------------------
+# MMU EFFECTS - EBB42,36 and Solo Lane Board ---------------------------------
+# ----------------------------------------------------------------------------
 
 enabled: True                           # LEDs are enabled at startup
 animation: True                         # Use led-animation-effects
@@ -436,6 +584,9 @@ Start by completely deleting the content of that file and hitting save.
 **Step 2: Paste the below configuration in the mmu_eject_buttons_hw.cfg file**<br/><br/>
 The below starter setup is for an 8 lane unit. To set up a lower lane count, paste the complete content below and delete the corresponding `[gcode_button mmu_eject_button_N]` sections. If you have more than 8 lanes, add more blocks following the patterns below.
 ```
+# ----------------------------------------------------------------------------
+# Printed Eject Buttons ------------------------------------------------------
+# ----------------------------------------------------------------------------
 [gcode_button mmu_eject_button_0]
 pin: ^mmu0:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=0
@@ -469,33 +620,98 @@ pin: ^mmu7:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=7
 ```
 
+```
+# ----------------------------------------------------------------------------
+# PCB LED Eject Buttons. Notice the (!) in the pin definition! ---------------
+# ----------------------------------------------------------------------------
+[gcode_button mmu_eject_button_0]
+pin: ^!mmu0:EJECT_BUTTON
+press_gcode: _MMU_EJECT_BUTTON GATE=0
+
+[gcode_button mmu_eject_button_1]
+pin: ^!mmu1:EJECT_BUTTON
+press_gcode: _MMU_EJECT_BUTTON GATE=1
+
+[gcode_button mmu_eject_button_2]
+pin: ^!mmu2:EJECT_BUTTON
+press_gcode: _MMU_EJECT_BUTTON GATE=2
+
+[gcode_button mmu_eject_button_3]
+pin: ^!mmu3:EJECT_BUTTON
+press_gcode: _MMU_EJECT_BUTTON GATE=3
+
+[gcode_button mmu_eject_button_4]
+pin: ^!mmu4:EJECT_BUTTON
+press_gcode: _MMU_EJECT_BUTTON GATE=4
+
+[gcode_button mmu_eject_button_5]
+pin: ^!mmu5:EJECT_BUTTON
+press_gcode: _MMU_EJECT_BUTTON GATE=5
+
+[gcode_button mmu_eject_button_6]
+pin: ^!mmu6:EJECT_BUTTON
+press_gcode: _MMU_EJECT_BUTTON GATE=6
+
+[gcode_button mmu_eject_button_7]
+pin: ^!mmu7:EJECT_BUTTON
+press_gcode: _MMU_EJECT_BUTTON GATE=7
+```
+
 ### Upload the emu_macros.cfg file and reference it in your printer.cfg
 The [linked file here](https://github.com/DW-Tas/EMU/tree/main/macros) contains a set of configurations and definitions that are required for EMU to function. In addition, it contains a fan auto control macro, to minimize noise and ensure adequate unit cooling.
 
 Upload that file in your klipper environment and add the below line to include it in your printer.cfg file:
 ```[include emu_macros.cfg]```
 
-That file contains the **BME temperature and humidity sensor definitions** as below. It is set up for an 8 lane unit, so if you have less lanes, delete the corresponding blocks from the file.
+That file contains the **BME temperature and humidity sensor definitions** as below. It is set up for an 8 lane unit, so if you have less lanes or not using the BME sensor, delete the corresponding blocks from the file.
 ```
+# ----------------------------------------------------------------------------
+# Temperature and Humidity Sensors - BME & EBB42/36 --------------------------
+# ----------------------------------------------------------------------------
 [temperature_sensor Lane_N]
 sensor_type: BME280
 i2c_address: 118
-i2c_mcu: mmu0  # mmu0=First lane, mmu1=second lane etc.
-i2c_software_scl_pin: mmu0:PB3 # mmu0=First lane, mmu1=second lane etc.
-i2c_software_sda_pin: mmu0:PB4 # mmu0=First lane, mmu1=second lane etc.
+i2c_mcu: mmuN  # mmu0=First lane, mmu1=second lane etc.
+i2c_software_scl_pin: mmuN:PB3 # mmu0=First lane, mmu1=second lane etc.
+i2c_software_sda_pin: mmuN:PB4 # mmu0=First lane, mmu1=second lane etc.
+
+# ----------------------------------------------------------------------------
+# Temperature and Humidity Sensors - BME & Solo Lane Board (SLB) -------------
+# ----------------------------------------------------------------------------
+[temperature_sensor Lane_N]
+sensor_type: BME280
+i2c_address: 118
+i2c_mcu: mmuN  # mmu0=First lane, mmu1=second lane etc.
+i2c_software_scl_pin: mmuN:PB10 # mmu0=First lane, mmu1=second lane etc.
+i2c_software_sda_pin: mmuN:PB11 # mmu0=First lane, mmu1=second lane etc.
+
 ```
 If you're using the BOM **AHT20 temperature and humidity sensors**, use the below configuration block instead.
 ```
-[temperature_sensor Lane_0]
+# ----------------------------------------------------------------------------
+# Temperature and Humidity Sensors - AHT20 & EBB42/36 ------------------------
+# ----------------------------------------------------------------------------
+[temperature_sensor Lane_N]
 sensor_type: AHT2X
-aht10_report_time: 20
+aht10_report_time: 60
 i2c_address: 56
-i2c_mcu: mmu0 # mmu0=First lane, mmu1=second lane etc.
-i2c_software_scl_pin: mmu0:PB3 # mmu0=First lane, mmu1=second lane etc.
-i2c_software_sda_pin: mmu0:PB4 # mmu0=First lane, mmu1=second lane etc.
+i2c_mcu: mmuN # mmu0=First lane, mmu1=second lane etc.
+i2c_software_scl_pin: mmuN:PB3 # mmu0=First lane, mmu1=second lane etc.
+i2c_software_sda_pin: mmuN:PB4 # mmu0=First lane, mmu1=second lane etc.
+
+# ----------------------------------------------------------------------------
+# Temperature and Humidity Sensors - BME & Solo Lane Board (SLB) -------------
+# ----------------------------------------------------------------------------
+[temperature_sensor Lane_N]
+sensor_type: AHT2X
+aht10_report_time: 60
+i2c_address: 56
+i2c_mcu: mmuN # mmu0=First lane, mmu1=second lane etc.
+i2c_software_scl_pin: mmuN:PB10 # mmu0=First lane, mmu1=second lane etc.
+i2c_software_sda_pin: mmuN:PB11 # mmu0=First lane, mmu1=second lane etc.
 ```
 
-It also contains the definition of the onboard EBB temperature sensors used to control the unit fans. Similarly, it is set up for an 8 lane unit, so if you have less lanes, delete the corresponding blocks from the file.
+It also contains the definition of the onboard temperature sensors used to control the unit fans. Similarly, it is set up for an 8 lane unit, so if you have less lanes, delete the corresponding blocks from the file.
 ```
 [temperature_sensor _Lane_N_onboard]
 sensor_type: temperature_mcu

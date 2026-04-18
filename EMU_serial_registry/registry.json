@@ -193,5 +193,17 @@
     "notes": "Built with PCB Hatchches and Buttons as well as the PSF Sensor ",
     "date": "2026-04-13",
     "approved_by": "igiannakas"
+  },
+  {
+    "serial": "#0019",
+    "discord_username": "zoro__17",
+    "discord_id": "1149781851968376943",
+    "media_urls": [
+      "https://emuimages.dwtas.net/1149781851968376943-1776553639773-0.jpg",
+      "https://emuimages.dwtas.net/1149781851968376943-1776553643620-1.jpg"
+    ],
+    "notes": "It's Cabrio version for now but it works",
+    "date": "2026-04-18",
+    "approved_by": "DW-Tas"
   }
 ]

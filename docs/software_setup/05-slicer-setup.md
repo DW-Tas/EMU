@@ -73,7 +73,7 @@ T[next_extruder]
 If you have the blobifier add-on set up, add the below change filament g-code. This will enable purge volume reporting in the slicer. Also the retraction command is necessary to avoid double de-retracting and oozing on the prime tower.
 ```
 T[next_extruder]
-G1 E-{old_retract_length} F3000
+G1 E-{new_retract_length} F3000
 ; FLUSH_START
 ; EXTERNAL_PURGE {flush_length}
 ; FLUSH_END

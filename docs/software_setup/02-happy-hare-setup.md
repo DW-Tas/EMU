@@ -192,7 +192,7 @@ aliases:
     MMU_TH=PA3, # First lane has the PFS sensor attached to it!
 
     MMU_FAN=PA15,
-    EJECT_BUTTON=PC6,
+    EJECT_BUTTON=PB2,
 ```
 
 ### Update mmu/base/mmu_hardware.cfg

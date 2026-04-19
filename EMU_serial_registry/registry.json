@@ -205,5 +205,18 @@
     "notes": "It's Cabrio version for now but it works",
     "date": "2026-04-18",
     "approved_by": "DW-Tas"
+  },
+  {
+    "serial": "#0020",
+    "discord_username": "jimmyjon711",
+    "discord_id": "178887472590225408",
+    "media_urls": [
+      "https://emuimages.dwtas.net/178887472590225408-1776640041639-0.jpg",
+      "https://emuimages.dwtas.net/178887472590225408-1776640043682-1.jpg",
+      "https://emuimages.dwtas.net/178887472590225408-1776640045660-2.jpg"
+    ],
+    "notes": "",
+    "date": "2026-04-19",
+    "approved_by": "DW-Tas"
   }
 ]

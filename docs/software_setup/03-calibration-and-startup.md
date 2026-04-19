@@ -6,7 +6,7 @@ This section covers the software calibration and first startup instructions. It 
 
 - [Calibrating the unit](#calibrating-the-unit)
 - [First start up](#first-start-up)
-- [Manual unit calibration (optional)](#manual-unit-calibration)
+- [Manual unit calibration (optional - if not satisfied with automated calibrations)](#manual-unit-calibration-optional---if-not-satisfied-with-automated-calibrations)
   - [Lane rotation distance calibration](#lane-rotation-distance-calibration)
   - [Bowden tube calibration](#bowden-tube-calibration)
 
@@ -15,17 +15,24 @@ This section covers the software calibration and first startup instructions. It 
 
 The Happy Hare software together with the advanced sensors the EMU utilises, enable a number of auto-calibration features that simplify initial start up. In short, these features **remove the need for any calibration of the unit**.
 
-To enable the auto calibration routines set the below parameters in the mmu_parameters.cfg file:
+To enable the auto calibration routines make sure the below parameters are set in the mmu_parameters.cfg file:
 ```
 autocal_bowden_length: 1 # on first load of a newly installed lane, the software will automatically calibrate its bowden length.
+autotune_bowden_length: 0	# Disable automated bowden length tuning
 skip_cal_rotation_distance: 1 # skips the lane stepper rotation distance calibration and relies on EMU Sync to coordinate the RD distances of the extruder and lane steppers
+autotune_rotation_distance: 0	# Disable automated gate calibration/tuning.
+skip_cal_encoder: 0		# Encoder not fitted
+autotune_encoder: 0		# Encoder not fitted
 ```
 The above auto calibration has the below pre-requisites:
 1. You are using a **toolhead with an entry sensor**, ie a switch based sensor is present before the extruder and you have enabled `extruder_homing_endstop: extruder` in mmu_parameters.cfg
 2. **OR** you are using the **EMU Sync with dual switches** and you have enabled `extruder_homing_endstop: filament_compression` in mmu_parameters.cfg
 3. **OR** you are using the **EMU Sync with PSF** and [the newly developed code here](https://github.com/moggieuk/Happy-Hare/pull/936) and you have enabled `extruder_homing_endstop: proportional` in mmu_parameters.cfg
 
-If you are not satisfied with the automatically calibrated values, the above calibrations can also be executed manually. This page describes that manual calibration process.
+> [!IMPORTANT]
+> When you load a lane for the first time, it will perform the bowden auto calibration. This process may take a few minutes to complete, especially if using the proportional sync sensor for bowden length homing. If you want to avoid this happening in your first print, simply cycle through the lanes via Tx (T0, T1 etc) commands until all of them are auto calibrated.
+
+If you are not satisfied with the automatically calibrated values or you don't have the required sensors, the above calibrations [can also be executed manually as described later in this page.](https://github.com/DW-Tas/EMU/blob/main/docs/software_setup/03-calibration-and-startup.md#manual-unit-calibration-optional---if-not-satisfied-with-automated-calibrations)
 
 ## First start up
 Follow the below first start up procedure to validate correct wiring of the EMU.
@@ -41,7 +48,7 @@ Follow the below first start up procedure to validate correct wiring of the EMU.
 1. Type MMU_UNLOAD. The toolhead should cut the filament and rewind to the EMU.
 2. If the toolhead fails to cut, the cut tip macro is not configured correctly
 
-## Manual unit calibration
+## Manual unit calibration (optional - if not satisfied with automated calibrations)
 ### Lane rotation distance calibration
 Before you start with this calibration, remove all bowden tubes from the rear of the dry boxes going to the combiner. Add a short length of PTFE tubing (50mm is enough) to the first lane dry box exit. This will help guide the filament and not grind on the ecas connector. Then proceed to load some filament and execute the below instructions to grip it and feed it.
 

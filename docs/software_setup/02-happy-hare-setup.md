@@ -977,15 +977,18 @@ The sensor is plugged in [as per the wiring diagram](https://github.com/DW-Tas/E
 # update the sync_feedback_analog_max_compression, sync_feedback_analog_max_tension and sync_feedback_analog_neutral_point accordingly.
 # Comment out/delete the dual switch section above and uncomment the section below to use.
 sync_feedback_analog_pin: mmu0:MMU_TH
-sync_feedback_analog_max_compression: 0.9435
-sync_feedback_analog_max_tension:     0.0982
-sync_feedback_analog_neutral_point:   0.5275
+sync_feedback_analog_max_compression: 0.9
+sync_feedback_analog_max_tension:     0.1
+sync_feedback_analog_neutral_point:   0.5
 ```
 **Step 3:** Restart and test the sensor. 
 1. Pull the bowden tube and expand the EMUSync PSF sensor. While holding in the expanded position run the below macro in the printer console: `MMU_QUERY_PSENSOR`.
 2. Compress the sensor by pushing the ends together and run the same macro again. Record both values.
 > [!IMPORTANT]
 > You should see a **max raw value** greater than ~0.9 and a **min raw value** or less than ~0.1. If the values do not change when expanding and compressing the sensor recheck your wiring!
+
+> [!IMPORTANT]
+> **If your sensor reads as 1.0 when filament is unloaded** the magnet is positioned in reverse! **Flip the magnet or swap the sync_feedback_analog_max_compression to be equal to 0.1 and sync_feedback_analog_max_tension to equal to 0.9**.
 
 **Step 4:** Set the EMUSync dimensions in the mmu_parameters.cfg file as below. Save and restart.
 ```
@@ -997,12 +1000,12 @@ sync_feedback_boost_multiplier: 3	# % "twolevel" extra gear speed boost for find
 sync_feedback_extrude_threshold: 5	# Extruder movement (mm) for updates
 ```
 
-**Step 5:** Calibrate the sensor. This has to be done [after the main unit calibration sequence has been performed](https://github.com/DW-Tas/EMU/blob/main/docs/software_setup/03-calibration-and-startup.md). 
+**Step 5:** Calibrate the sensor.
 1. Load filament from any lane to the toolhead using a Tx (T0,T1 etc) command.
 2. In the console run `MMU_CALIBRATE_PSENSOR`
 3. Note down the produced values
 > [!IMPORTANT]
-> If the max and min values differ significantly (>0.1) from the min and max raw values above, your calibration has failed due to excess bowden tube slack or because the sensor is getting jammed due to excess friction. Validate that the sensor moves freely and run the calibration command as follows: `MMU_CALIBRATE_PSENSOR MOVE=50`
+> If the max and min values differ significantly (>0.1) from the min and max raw values above, your calibration has failed due to excess bowden tube slack or because the sensor is getting jammed due to excess friction. Validate that the sensor moves freely and run the calibration command again. If you have a long bowden tube you may need to run MMU_CALIBRATE_PSENSOR MOVE=40 to take up the bowden slack`
 
 The produced values should look like the below:
 ```
@@ -1010,7 +1013,6 @@ sync_feedback_analog_max_compression: 0.9435
 sync_feedback_analog_max_tension:     0.0982
 sync_feedback_analog_neutral_point:   0.5275
 ```
-
 Update the corresponding values in the mmu_hardware.cfg file, save and restart.
 
 **Step 6:** Configure flowguard (clog/tangle detection) <br/>

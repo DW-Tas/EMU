@@ -30,6 +30,7 @@ This section covers the software setup for the EMU using Happy Hare v3. Happy Ha
 - [Slicer Setup and Optimisation for Multi Color Prints](/docs/software_setup/05-slicer-setup.md)
   - [Orca slicer mandatory setup](/docs/software_setup/05-slicer-setup.md#orca-slicer-mandatory-setup)
   - [Orca slicer profile tuning for multi-color printing](/docs/software_setup/05-slicer-setup.md#orca-slicer-profile-tuning-for-multi-color-printing)
+- [Updating CAN Boards with UKAM](/docs/software_setup/06-updating-can-boards.md)
 
 ## After Setup
 Once you have completed the steps above you should have a fully functioning EMU unit. You can optionally also set up:

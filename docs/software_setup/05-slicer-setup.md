@@ -215,4 +215,4 @@ The below are my preferred settings for multi-color printing.
 
 ---
 
-← [Step 5: Calibration and Startup](/docs/software_setup/03-calibration-and-startup.md) | [Documentation Hub →](/docs)
+← [Step 5: Calibration and Startup](/docs/software_setup/03-calibration-and-startup.md) | [Step 7: Updating CAN Boards with UKAM →](/docs/software_setup/06-updating-can-boards.md)

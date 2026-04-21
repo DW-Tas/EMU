@@ -53,6 +53,9 @@ Describes the mandatory Orca slicer setup required for single extruder multi-mat
 - [Orca slicer mandatory setup](/docs/software_setup/05-slicer-setup.md#orca-slicer-mandatory-setup)
 - [Orca slicer profile tuning for multi-color printing](/docs/software_setup/05-slicer-setup.md#orca-slicer-profile-tuning-for-multi-color-printing)
 
+## Step 7: [Updating CAN Boards with UKAM](/docs/software_setup/06-updating-can-boards.md)
+Automate Klipper firmware updates across all your EMU CAN bus boards using UKAM (Update Klipper And MCUs), instead of manually flashing each board.
+
 ## Next steps
 Once you have completed the steps above you should have a fully functioning EMU unit! Optionally you can also set up:
 1. Klipper screen integration: https://github.com/moggieuk/Happy-Hare/wiki/KlipperScreen

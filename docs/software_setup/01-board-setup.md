@@ -19,38 +19,38 @@ Prior to setting up the EMU, the EBB boards need to be flashed with Katapult and
 
 **Step 1:** Install katapult:<br/>
 Katapult is a piece of software that sits on the EBB units (and any CAN Bus device) and acts as an easy way to set your board in "flashing mode" making klipper updates super easy. It is highly recommended that Katapult is flashed on the boards.
-```
+```bash
 test -e ~/katapult && (cd ~/katapult && git pull) || (cd ~ && git clone https://github.com/Arksine/katapult) ; cd ~
 ```
 **Step 2:** Connect your first EBB board over USB **outside the EMU**. Make sure the **power by USB jumper is set**.<br/>
 **Step 3:** Set the board in DFU mode by pressing and holding the reset and boot buttons. Release the reset button first, then release the boot button<br/>
 **Step 4:** The board should show as in DFU mode. Run ```lsusb``` and check that something like the below is shown in the command line:<br/>
-```
+```bash
 Bus 001 Device 005: ID 0483:df11 STMicroelectronics STM Device in DFU Mode
 ```
 **Step 5:** initiate menuconfig for Katapult.<br/>
-```
+```bash
 cd ~/katapult
 make menuconfig
 ```
 ![image](https://github.com/user-attachments/assets/9f642d03-d781-4025-bc28-959574c30c8a)
 
-```
+```bash
 make
 ```
 **Step 6:** Flash katapult to the EBB board<br/>
-```
+```bash
 sudo dfu-util -R -a 0 -s 0x08000000:mass-erase:force:leave -D ~/katapult/out/katapult.bin -d 0483:df11
 ```
 **Step 7:** initiate menuconfig for klipper and make the firmware<br/>
-```
+```bash
 sudo service klipper stop
 cd ~/klipper
 make clean
 make menuconfig
 ```
 ![image](https://github.com/user-attachments/assets/f5ab3561-25aa-42c2-b838-8629a2cb38cf)
-```
+```bash
 make
 ```
 **Step 8:** Prepare to flash klipper<br/>
@@ -64,11 +64,11 @@ You have two options to identify them.
 
 **Step 9:** Find the board UUID<br/>
 Run the command below and note the produced UUID
-```
+```bash
 python3 ~/katapult/scripts/flashtool.py -i can0 -q
 ```
 **Step 10:** Flash klipper<br/>
-```
+```bash
 python3 ~/katapult/scripts/flashtool.py -i can0 -f ~/klipper/out/klipper.bin -u youruuid
 ```
 **Flashing the remaining boards:** <br/>

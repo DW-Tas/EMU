@@ -18,7 +18,7 @@ This section covers installing and configuring Happy Hare for the EMU. It is mea
 
 ## Installing Happy Hare
 Install Happy Hare. More detailed instructions can be found here: https://github.com/moggieuk/Happy-Hare/wiki/Installation
-```
+```bash
 cd ~
 git clone https://github.com/moggieuk/Happy-Hare.git
 cd ~/Happy-Hare
@@ -75,7 +75,7 @@ cd ~/Happy-Hare
 </p>
 
 **Moonraker.conf update:** Make sure your moonraker.conf contains [mmu_server] (should be inserted by HappyHare setup). Update it as per the below if it doesn't match:
-```
+```ini
 [file_manager]
 enable_object_processing: True
 
@@ -92,7 +92,7 @@ Baseline setup is now complete!
 
 ### Update your printer.cfg
 Include the below items at the top of your printer.cfg. The mmu/base and client macros should already exist, following the setup wizard.
-```
+```ini
 [include mmu/base/*.cfg]
 [include mmu/addons/mmu_eject_buttons.cfg]
 [include mmu/optional/client_macros.cfg]
@@ -108,7 +108,7 @@ Start by completely deleting the content of that file and hitting save.
 
 **Step 2: Update mmu.cfg with the EMU mcu boards definitions** <br/><br/>
 For each lane you will need one distinct mcu mmu block defining the board name and the canbus UUID as noted earlier. In the example below I am using an 8 lane configuration. For a two lane setup, for example, you'd use `[mcu mmu0]` and `[mcu mmu1]` only.
-```
+```ini
 [mcu mmu0]
 canbus_uuid: your uuid 
 canbus_interface: can0 # if you have multiple canbus buses, define here which canbus has the EMU units on it.
@@ -144,7 +144,7 @@ canbus_interface: can0
 
 **Step 3 - Update mmu.cfg with the EMU mcu board pin aliases** <br/><br/>
 **For the EBB42/36:** After the board definitions, insert the board pin aliases. 
-```
+```ini
 [board_pins mmu]
 mcu: mmu0, mmu1, mmu2, mmu3, mmu4, mmu5, mmu6, mmu7
 aliases:
@@ -171,7 +171,7 @@ aliases:
 ```
 
 **For the Solo Lane Board (SLB):** After the board definitions, insert the board pin aliases.  
-```
+```ini
 [board_pins mmu]
 mcu: mmu0, mmu1, mmu2, mmu3, mmu4, mmu5, mmu6, mmu7
 aliases:
@@ -214,7 +214,7 @@ If you have more than 8 lanes, insert accordingly additional blocks, following t
 > [!TIP]
 > If during testing you see that the EMU stepper spins backwards, invert the dir_pin by adding a ! infront of it (!dir_pin).
 
-```
+```ini
 # ----------------------------------------------------------------------------
 # MMU Hardware config file ---------------------------------------------------
 # ----------------------------------------------------------------------------
@@ -583,7 +583,7 @@ Start by completely deleting the content of that file and hitting save.
 
 **Step 2: Paste the below configuration in the mmu_eject_buttons_hw.cfg file**<br/><br/>
 The below starter setup is for an 8 lane unit. To set up a lower lane count, paste the complete content below and delete the corresponding `[gcode_button mmu_eject_button_N]` sections. If you have more than 8 lanes, add more blocks following the patterns below.
-```
+```ini
 # ----------------------------------------------------------------------------
 # Printed Eject Buttons ------------------------------------------------------
 # ----------------------------------------------------------------------------
@@ -620,7 +620,7 @@ pin: ^mmu7:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=7
 ```
 
-```
+```ini
 # ----------------------------------------------------------------------------
 # PCB LED Eject Buttons. Notice the (!) in the pin definition! ---------------
 # ----------------------------------------------------------------------------
@@ -664,7 +664,7 @@ Upload that file in your klipper environment and add the below line to include i
 ```[include emu_macros.cfg]```
 
 That file contains the **BME temperature and humidity sensor definitions** as below. It is set up for an 8 lane unit, so if you have less lanes or not using the BME sensor, delete the corresponding blocks from the file.
-```
+```ini
 # ----------------------------------------------------------------------------
 # Temperature and Humidity Sensors - BME & EBB42/36 --------------------------
 # ----------------------------------------------------------------------------
@@ -687,7 +687,7 @@ i2c_software_sda_pin: mmuN:PB11 # mmu0=First lane, mmu1=second lane etc.
 
 ```
 If you're using the BOM **AHT20 temperature and humidity sensors**, use the below configuration block instead.
-```
+```ini
 # ----------------------------------------------------------------------------
 # Temperature and Humidity Sensors - AHT20 & EBB42/36 ------------------------
 # ----------------------------------------------------------------------------
@@ -712,7 +712,7 @@ i2c_software_sda_pin: mmuN:PB11 # mmu0=First lane, mmu1=second lane etc.
 ```
 
 It also contains the definition of the onboard temperature sensors used to control the unit fans. Similarly, it is set up for an 8 lane unit, so if you have less lanes, delete the corresponding blocks from the file.
-```
+```ini
 [temperature_sensor _Lane_N_onboard]
 sensor_type: temperature_mcu
 sensor_mcu: mmu0 # mmu0=First lane, mmu1=second lane etc.
@@ -720,7 +720,7 @@ min_temp: 0
 max_temp: 130
 ```
 In addition, it contains the fan definitions for the unit as below. Similarly, it is set up for an 8 lane unit, so if you have less lanes, delete the corresponding blocks from the file.
-```
+```ini
 [fan_generic _emu_fan_N]
 pin: mmu0:MMU_FAN # mmu0=First lane, mmu1=second lane etc.
 max_power: 1
@@ -737,7 +737,8 @@ Finally it contains the fan control macro that controls the fans on a by-lane ba
 
 Finally you can set the temperature where the fans turn on and off. By default, they are set to turn on at 39C and turn off at 37C.
 
-```[gcode_macro MMU_FAN_CFG]
+```ini
+[gcode_macro MMU_FAN_CFG]
 description: Holds configuration/state for multi fan controller.
 variable_on_temp: 39.0
 variable_off_temp: 37.0
@@ -765,12 +766,12 @@ Now that the hardware is set up and visible to klipper, the next step is to conf
 Unlike the hardware setup files, do not delete the content of this file. We will be making targeted changes to match the EMU capabilities as validated through our testing.
 
 **MMU Hardware Limits:** The EMU can operate up to a maximum of 500mm/sec feeding velocity and 400mm/sec2 acceleration. Adjust the maximum hardware limits as below.</br>
-```
+```ini
 gear_max_velocity: 500
 gear_max_accel: 400
 ```
 **Logging:** Reduce log verbosity to reduce SD Card wear and system load</br></br>
-```
+```ini
 log_level: 1
 log_file_level: 1		
 log_statistics: 0 		
@@ -779,7 +780,7 @@ log_startup_status: 1
 log_m117_messages: 1
 ```			
 **Speeds:** Our objective is reliability with operation. While the EMU can operate at 500mm/sec feeding, any snag in the filament path risks the lane stepper skipping steps. As such, it is recommended that conservative values are used in the speed set up, and tune up from there.</br>
-```
+```ini
 gear_from_spool_speed: 250
 gear_from_spool_accel: 120
 gear_from_buffer_speed: 250 
@@ -811,7 +812,7 @@ The downside is that the full bowden length needs to be traversed when loading, 
 In addition, conservative homing max and preload homing max value have been selected, to allow the user time to load the filament and ensure it is gripped by the EMU lane stepper. 
 
 It is therefore recommended to use the below values as is and do not modify unless trying to troubleshoot a specific issue.</br>
-```
+```ini
 gate_homing_endstop: mmu_gear	
 gate_homing_max: 600
 gate_preload_homing_max: 600
@@ -824,7 +825,7 @@ gate_final_eject_distance: 100
 **Bowden load:** As the EMU can accomodate long bowden tubes feeding to the printer, the bowden_homing_max is increased to allow Happy Hare to feed a longer run. 
 
 In addition the correction and unload test moves are disabled as the encoder is not fitted in the base setup. From experience, encoders tend to accumulate dust after a few thousand swap cycles requiring ongoing maintenance. In addition they materially elevate the noise profile of the unit and add a point of "filament impact" in the bowden loading path.</br>
-```
+```ini
 bowden_homing_max: 3000	# if the EMU lane to toolhead distance is larger than 3 meters, increase this value.
 
 bowden_apply_correction: 0	
@@ -838,7 +839,7 @@ bowden_pre_unload_error_tolerance: 60
 > [!IMPORTANT]
 > Depending on your toolhead of choice you may need to adjust the below extruder_homing_endstop parameter. If your toolhead has an entry sensor, set this to extruder_homing_endstop: extruder. If it doesnt, and you are using the EMU Sync with dual switches, set this value to extruder_homing_endstop: filament_compression. Finally if you're using the PSF and your toolhead doesnt have an entry sensor set this value to extruder_homing_endstop: proportional
 
-```
+```ini
 extruder_homing_max: 400			# Larger than the default HH value. This allows for homing to complete even if the filament skips steps during the load/
 extruder_homing_endstop: extruder	# or proportional or filament_compression. See note above.
 extruder_homing_buffer: 30
@@ -849,7 +850,7 @@ extruder_force_homing: 0
 **Toolhead Load:** This section needs to be populated following toolhead dimension calibration. Starter values from the community are available here: https://link.3dcoded.xyz/tipconfigs/ . 
 
 In addition, the below settings have been adjusted to allow more tolerance in case of the extruder delaying grabbing the filament, which improves feeding reliability and allows for more "flex" in a slightly miss-tuned setup</br>
-```
+```ini
 toolhead_homing_max: 250			# Increased from default of 40, to allow more tolerance in the extruder not grabbing the filament immediately.
 toolhead_unload_safety_margin: 50	# Increased from the default of 10, to ensure filament is for sure clear of the extruder during unload.
 toolhead_post_load_tighten: 0		# this is ignored as EMU is a Type B MMU - set to 0
@@ -857,27 +858,27 @@ toolhead_post_load_tension_adjust: 1	# Adjust tension post load to attemt to cen
 toolhead_entry_tension_test: 1		# confirm load has occurred using the sync sensor, if toolhead sensor is not present.
 ```
 **Tip Forming:** A toolhead cutter is highly recommended. Venture into tip forming at your own risk!</br>
-```
+```ini
 force_form_tip_standalone: 1		  # Always standalone tip forming (TURN SLICER OFF!)
 form_tip_macro: _MMU_CUT_TIP	
 extruder_form_tip_current: 130		  # Bump up extruder current during tip forming. Helps ensure no skipped steps on the extruder if cutting is not 100% clean
 slicer_tip_park_pos: 0			      # This specifies the position of filament in extruder after slicer completes tip forming. (TURN SLICER TIP FORMING OFF!)
 ```
 **Purging:** If you have the blobifier set up, enable it here. For a baseline, starter setup, the below is recommended. Setting up the blobifier is recommended to be done after this setup is complete and your first test print is completed successfully.</br>
-```
+```ini
 force_purge_standalone: 0 		# Use slicer purging (purge block) - set to 1 for blobifier
 purge_macro: 			            # Replace this with BLOBIFIER when set up. Leave empty if not using the blobifier. 
 extruder_purge_current: 100		# leave this unchanged. If the extruder is skipping during purging with the blobifier you are most likely exceeding your hotend flow limit.
 ```
 **Motor sync:** Setup sync feedback sensor (EMUSync) here. Adjust the below values leaving the rest unchanged.</br>
-```
+```ini
 sync_gear_current: 55			    # 55% EMU stepper current during printing -> ~0.4-0.45A when printing. Higher than 0.5A can cause PLA to clog the EMU stepper in hot environments.
 sync_feedback_enabled: 1		    # Enable EMU Sync sync feedback sensor
 sync_feedback_buffer_range: 10		# EMU Sync switch to switch distance in mm. PFS is 16mm
 sync_feedback_buffer_maxrange: 25	# EMU Sync max travel. PFS is 16mm
 ```
 **Filament Management:** Disable clog detection (as the encoder is not fitted to the unit) and enable endless spool (automated failover to the next available spool as defined in the gate map, administered via the Mainsail UI or Klipperscreen).</br>
-```
+```ini
 enable_clog_detection: 0		
 enable_endless_spool: 1			    # enable endless spool
 endless_spool_on_load: 0	
@@ -895,7 +896,7 @@ To enable the auto calibration routines set the below parameters in the mmu_para
 
 If you are not satisfied with the automatically calibrated values, [the above calibrations can also be executed manually as described in this page](https://github.com/DW-Tas/EMU/blob/main/docs/software_setup/03-calibration-and-startup.md).
 
-```
+```ini
 autocal_bowden_length: 1	# Disable automated bowden length calibration
 autotune_bowden_length: 0	# Disable automated bowden length tuning
 skip_cal_rotation_distance: 1	# Require gate rotation distance calibration
@@ -905,7 +906,7 @@ autotune_encoder: 0		# Encoder not fitted
 ```
 
 **Misc:** Minor options tuning and instructing Happy Hare that a filamentalist rewinder is used instead of a buffer </br>
-```
+```ini
 timeout_pause: 86400		    # Idle time out in seconds. Set to 24 hours, to allow you to react and fix a pause if a swap issue materialises.
 disable_heater: 60		        # Disable the hotend heater 60 seconds after an error is detected to reduce oozing.
 default_extruder_temp: 230	    # Default temperature for performing swaps and forming tips when not in print (overridden by gate map). 230C is a good all around temperature for most material types.
@@ -936,7 +937,7 @@ gcode_unload_sequence: 0	     # VERY ADVANCED: Gcode unloading sequence, 1=enabl
 ```
 
 **Klipper:** Enable klipper timer too close (TTC) mitigations.</br>
-```
+```ini
 update_trsync: 1		    # 1 = Increase TRSYNC_TIMEOUT, 0 = Leave the klipper default
 canbus_comms_retries: 3		# Number of retries. Recommend the default of 3.
 update_bit_max_time: 1		# 1 = Increase BIT_MAX_TIME, 0 = Leave the klipper default
@@ -949,7 +950,7 @@ Unlike the hardware setup files, do not delete the content of this file. The bel
 > [!WARNING]
 > **WARNING: DO NOT RUN A PRINT WITHOUT CONFIGURING THE ABOVE.** The stock cut tip macro will most likely not work for your setup and you will crash the hotend on the cutter.
 
-```
+```ini
 variable_min_toolchange_z       : 15.0 # Be safe and dont scratch the bed
 variable_park_travel_speed      : 450  # Travel a bit faster to avoid stringing
 ```
@@ -966,13 +967,13 @@ The proportional sensor offers the below key advantages:
 The sensor is plugged in [as per the wiring diagram](https://github.com/DW-Tas/EMU/tree/main/docs/assembly_wiring#wiring-instructions-and-diagrams) - ground and signal plug into the EBB thermistor port and 5V to any unused 5V pins on the EBB.
 
 **Step 1:** Comment out or delete the below section in the mmu_hardware.cfg file: 
-```
+```ini
 # sync_feedback_tension_pin: ^mmu0:MMU_TENSION         # Compression is when you pull the bowden tubes (entry/exit) away from each other. Tension when you push the tubes together.
 # sync_feedback_compression_pin: ^mmu0:MMU_COMPRESSION
 ```
 
 **Step 2:** Uncomment or add the below section right below in the mmu_hardware.cfg file:
-```
+```ini
 # Section below if using the Proportional (PSF) version of the EMU Sync. Run the calibration routine (MMU_CALIBRATE_PSENSOR) and
 # update the sync_feedback_analog_max_compression, sync_feedback_analog_max_tension and sync_feedback_analog_neutral_point accordingly.
 # Comment out/delete the dual switch section above and uncomment the section below to use.
@@ -991,7 +992,7 @@ sync_feedback_analog_neutral_point:   0.5
 > **If your sensor reads as 1.0 when filament is unloaded** the magnet is positioned in reverse! **Flip the magnet or swap the sync_feedback_analog_max_compression to be equal to 0.1 and sync_feedback_analog_max_tension to equal to 0.9**.
 
 **Step 4:** Set the EMUSync dimensions in the mmu_parameters.cfg file as below. Save and restart.
-```
+```ini
 sync_gear_current: 55			    # 55% EMU stepper current during printing -> ~0.4-0.45A when printing. Higher than 0.5A can cause PLA to clog the EMU stepper in hot environments.
 
 sync_feedback_enabled: 1		  # Enable sync feedback
@@ -1010,7 +1011,7 @@ sync_feedback_extrude_threshold: 5	# Extruder movement (mm) for updates
 > If the max and min values differ significantly (>0.1) from the min and max raw values above, your calibration has failed due to excess bowden tube slack or because the sensor is getting jammed due to excess friction. Validate that the sensor moves freely and run the calibration command again. If you have a long bowden tube you may need to run MMU_CALIBRATE_PSENSOR MOVE=40 to take up the bowden slack`
 
 The produced values should look like the below:
-```
+```ini
 sync_feedback_analog_max_compression: 0.9435
 sync_feedback_analog_max_tension:     0.0982
 sync_feedback_analog_neutral_point:   0.5275
@@ -1020,7 +1021,7 @@ Update the corresponding values in the mmu_hardware.cfg file, save and restart.
 **Step 6:** Configure flowguard (clog/tangle detection) <br/>
 Edit the mmu_parameters.cfg file and amend the values below to match the suggested configuration.
 
-```
+```ini
 flowguard_enabled: 1	
 flowguard_max_relief: 2
 flowguard_encoder_mode: 0

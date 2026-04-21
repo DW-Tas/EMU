@@ -152,9 +152,9 @@ UKAM will compile firmware for your current Klipper/Kalico installed version, an
 |------|-------------|
 | `-c` | Check-only — see if an update is available without applying it |
 | `-f` | Firmware flash only, skip Klipper repo update |
-| `-m` | Show menuconfig before building (use after Klipper changes board support) |
+| `-m` | Show menuconfig before building for all MCUs |
 | `-q` | Quiet mode — fully automated, no prompts |
-| `-r` | Rollback to a previous Klipper version |
+| `-r` | Rollback to a previous klipper/kalico version |
 | `-v` | Verbose — debug output showing parsed config |
 
 ---

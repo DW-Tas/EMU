@@ -5,7 +5,8 @@ This section covers flashing Katapult and Klipper to the EBB boards over CAN bus
 ## Table of Contents
 
 - [Setting up CAN Bus](#setting-up-can-bus)
-- [Flashing the EBB boards](#flashing-the-ebb-boards)
+- [Setting up the Solo Lane Boards](#setting-up-the-solo-lane-boards)
+- [Setting up and flashing the EBB boards](#setting-up-and-flashing-the-ebb-boards)
 - [Updating the boards with the latest klipper version](#updating-the-boards-with-the-latest-klipper-version)
 
 
@@ -14,7 +15,16 @@ If your printer does not have canbus set up, follow the excellent guide from Eso
 
 Do not forget to terminate the last EBB board or CANBus device in your bus (depending on your bus topology).
 
-## Flashing the EBB boards
+## Setting up the Solo Lane Boards
+The Solo Lane Boards for EMU come pre-flashed with katapult and klipper. This guide can be skipped and instead
+1. Install the boards
+2. Power on - double press the first lane reset button
+3. In mainsail-> Machine -> Devices -> CAN0 hit refresh
+4. Note the UUID of the device that is in flagged as katapult
+5. Click reset again
+6. Repeat for all lanes, taking note of the UUIDs
+
+## Setting up and flashing the EBB boards
 Prior to setting up the EMU, the EBB boards need to be flashed with Katapult and Klipper. Flashing instructions can be found here https://canbus.esoterical.online/toolhead_flashing.html. The boards are flashed in exactly the same way as if they were used as a toolhead board. Below are some high level instructions; however do refer back to the guide by Esoterical for a more comprehensive guide.<br/>
 
 **Step 1:** Install katapult:<br/>

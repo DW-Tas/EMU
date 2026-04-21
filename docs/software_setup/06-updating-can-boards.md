@@ -2,7 +2,7 @@
 
 UKAM (Update Klipper And MCUs) automates Klipper & Kalico firmware updates for your EMU's CAN bus boards so you don't have to manually run `make menuconfig`, `make`, and `flashtool.py` each time and for every lane.
 
-> **Prerequisite:** Your EBB boards must already have Katapult and Klipper/Kalico flashed per the [EMU board setup guide](/docs/software_setup/01-board-setup.md). You will need the CAN bus UUID for each board as defined in your `mmu.cfg` file.
+> **Prerequisite:** Your EBB boards must already have Katapult flashed per the [EMU board setup guide](/docs/software_setup/01-board-setup.md). You will need the CAN bus UUID for each board as defined in your `mmu.cfg` file.
 
 ---
 

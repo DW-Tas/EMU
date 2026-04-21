@@ -42,8 +42,9 @@ wget -O ~/printer_data/config/ukam/config/config.emu_9 https://raw.githubusercon
 ```bash
 nano ~/printer_data/config/ukam/mcus.ini
 ```
+Save and exit. 
 
-Add a section for **each EMU board**. The section name (e.g. `[emu_0]`) must match the menuconfig filename you created in Step 2 (e.g. `config.emu_0`). The `klipper_section` must match the MCU name in your Klipper config exactly (case-sensitive).
+Open the mcus.ini in mainsail/fluidd, and add a section for **each EMU board**. The section name (e.g. `[emu_0]`) must match the menuconfig filename you created in Step 2 (e.g. `config.emu_0`). The `klipper_section` must match the MCU name in your Klipper config exactly (case-sensitive).
 
 ```ini
 [emu_0]

@@ -19,11 +19,11 @@ UKAM needs a menuconfig config file **for each board**, and the filename must ma
 
 First, create the config directory and download the correct template for your board type:
 
-**For EBB36 boards** (CAN on PB0/PB1):
+**For EBB36/42 boards** (CAN on PB0/PB1):
 ```bash
 mkdir -p ~/printer_data/config/ukam
-wget -O ~/printer_data/config/ukam/config.emu_0 https://raw.githubusercontent.com/DW-Tas/EMU/main/macros/ukam_menuconfig_templates/config.ebb36
-wget -O ~/printer_data/config/ukam/config.emu_1 https://raw.githubusercontent.com/DW-Tas/EMU/main/macros/ukam_menuconfig_templates/config.ebb36
+wget -O ~/printer_data/config/ukam/config.emu_0 https://raw.githubusercontent.com/DW-Tas/EMU/main/macros/ukam_menuconfig_templates/config.ebb36_42
+wget -O ~/printer_data/config/ukam/config.emu_1 https://raw.githubusercontent.com/DW-Tas/EMU/main/macros/ukam_menuconfig_templates/config.ebb36_42
 # Repeat for each EBB36 board (emu_2, emu_3, etc.)
 ```
 
@@ -34,7 +34,8 @@ wget -O ~/printer_data/config/ukam/config.emu_9 https://raw.githubusercontent.co
 # Repeat for each SLB board (emu_10, emu_11, etc.)
 ```
 
-Each board **must have its own copy** of the config file. The filename must match the section name in `mcus.ini` — so `[emu_0]` needs `config.emu_0`, `[emu_1]` needs `config.emu_1`, and so on for all your boards.
+> [!IMPORTANT]
+> Each board **must have its own copy** of the config file. **The filename must match the section name** in `mcus.ini` — so `[emu_0]` needs `config.emu_0`, `[emu_1]` needs `config.emu_1`, and so on for all your boards.
 
 ## Step 3 — Create your `mcus.ini`
 
@@ -62,10 +63,10 @@ Replace each `<UUID_FOR_...>` with the actual CAN bus UUIDs you noted during ini
 
 ## Full worked example
 
-Below is a complete `mcus.ini` for a 13-board EMU setup: 8x EBB36 boards (`emu_0`–`emu_7`) and 5x SLB boards (`emu_8`–`emu_12`). Each board has a matching `config.emu_X` menuconfig file in `~/printer_data/config/ukam/` downloaded in Step 2.
+Below is a complete `mcus.ini` for a 13-board EMU setup: 8x EBB36/42 boards (`emu_0`–`emu_7`) and 5x SLB boards (`emu_8`–`emu_12`). Each board has a matching `config.emu_X` menuconfig file in `~/printer_data/config/ukam/` downloaded in Step 2.
 
 ```ini
-# EBB36 boards
+# EBB36/42 boards
 [emu_0]
 klipper_section: mcu mmu0
 action_command: ~/klippy-env/bin/python3 ~/katapult/scripts/flashtool.py -i can0 -u cc8f39d714ce

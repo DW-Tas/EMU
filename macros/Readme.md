@@ -1,8 +1,9 @@
 # EMU – Custom macros and Klipper modules
 
-This folder contains two sets of files:
+This folder contains three sets of files:
 1. `emu_macros.cfg`
 2. Klipper module patches for the AHT and BME sensors
+3. UKAM menuconfig templates to automate Klipper firmware updates
 
 ## Using the emu_macros.cfg file
 Place the `emu_macros.cfg` file in your printer configuration folder. Update your `printer.cfg` to use it by adding the following line after all the MMU macro inclusions:
@@ -21,7 +22,7 @@ The two included files are drop-in replacements for Klipper modules and address 
 ```
 [temperature_sensor Lane_0]
 sensor_type: BME280
-bme280_report_time: 60 # new parameter controlling polling frequency
+bme280_report_time: 120 # new parameter controlling polling frequency
 i2c_address: 118
 i2c_mcu: mmu0
 i2c_software_scl_pin: mmu0:PB3

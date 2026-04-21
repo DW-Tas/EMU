@@ -78,18 +78,6 @@ Repeat step 2 (connect via USB),3 (set in DFU mode),4 (lsusb to confirm DFU),6 (
 > [!IMPORTANT]
 > Remember to note down the UUID - Lane values for your reference. This combination will be used later to set up Happy Hare.
 
-## Updating the boards with the latest klipper version
-```
-sudo service klipper stop
-cd ~/klipper
-make clean
-make menuconfig
-make
-python3 ~/katapult/scripts/flashtool.py -i can0 -u youruuid -r
-python3 ~/katapult/scripts/flashtool.py -i can0 -u youruuid -f ~/klipper/out/klipper.bin
-```
-Repeat the last two steps for each EBB board. Note the uuid used with the lane number in your documentation. This will be used later.
-
 ---
 
 ← [Step 2: Printing, Assembly and Wiring](/docs/assembly_wiring) | [Step 4: Happy Hare Setup →](/docs/software_setup/02-happy-hare-setup.md)

@@ -238,19 +238,35 @@ This parts describes the recommended wire length for easy assembly and maintenan
 </p>
 
 ### PCB Hatch wiring dimensions
-> These dimensions are for the latest version of the PCB (Post sensor at the rear). If you have the older board (Post Sensor at the center) [refer to this image](/docs/assets/wiring_diagrams/EMU%20PCB%20Hatch%20wiring%20dimensions%20-%20Old%20PCB.jpg) for sensor wire lengths.
+These dimensions are for the latest version of the PCB (Post sensor at the rear). If you have the older board (Post Sensor at the center) [refer to this image](/docs/assets/wiring_diagrams/EMU%20PCB%20Hatch%20wiring%20dimensions%20-%20Old%20PCB.jpg) for sensor wire lengths.
 <p align="center">
   <img src="/docs/assets/wiring_diagrams/EMU PCB Hatch wiring dimensions.jpg" width="95%">
 </p>
 
 
 ### DIY Hatch (no pcb) wiring dimensions
-
-> These wiring dimensions assume you mount the BME sensor on the led cover and connect `5V` and `Ground` of the BME sensor to the led out `5V` and `Ground`.
+These wiring dimensions assume you mount the BME sensor on the led cover and connect `5V` and `Ground` of the BME sensor to the led out `5V` and `Ground`.
 
 <p align="center">
   <img src="/docs/assets/wiring_diagrams/EMU DIY Hatch wiring dimensions.jpg" width="95%">
 </p>
+
+### Solo Lane Board (SLB) wiring dimensions
+The Solo Lane Board uses a much simpler wiring arrangement. Key dimensions outlined below
+1. 4 pin stepper connector from Box to SLB - **300mm**
+2. 8 pin box connector from Box to SLB - **300mm**
+3. 5 pin front LED PCB connector to SLB - **300mm**
+4. Between lanes power connection (SLB - SLB) - **60mm** (power and ground - AWG18)
+5. Between lanes CANBus connection (SLB - SLB) - **70mm**
+6. Wiring dimensions inside the box (3x filament sensors, Temp and Humidity sensor, Stepper, Neopixel) **remain the same as above**
+
+Entry PCB to first Solo Lane Board
+1. Power:
+2. CANBus:
+3. Sync Feedback (PSF/Switch Based):
+
+<img width="5712" height="4284" alt="IMG_0879" src="https://github.com/user-attachments/assets/4d8bbfc2-4118-4cd1-9014-42f5917ac350" />
+
 
 ---
 

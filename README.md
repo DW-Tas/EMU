@@ -10,8 +10,7 @@ The EMU supports any number of lanes and base configurations; whether it is a **
 
 > [!TIP]
 > ### EMU Kits
-> Officially certified kits [are now available here](https://www.aliexpress.com/item/1005012001238187.html).<br>
-> Further information on kits and classification can be found [in the dedicated sourcing page](https://github.com/DW-Tas/EMU/blob/main/docs/sourcing.md).
+> Officially certified kits are now available. Further information on sourcing links, kits and kit classification can be found [in the dedicated sourcing page](https://github.com/DW-Tas/EMU/blob/main/docs/sourcing.md).
 > ### Crossbow Filament Cutter And A4T Toolhead
 > Make the EMU part of a complete system with the [Crossbow Filament Cutter](https://github.com/DW-Tas/Crossbow-Filament-Cutter) and the [A4T Toolhead](https://github.com/Armchair-Heavy-Industries/A4T).
 

@@ -13,8 +13,8 @@ This section covers installing and configuring Happy Hare for the EMU. It is mea
   - [Upload the emu_macros.cfg file and reference it in your printer.cfg](#upload-the-emu_macroscfg-file-and-reference-it-in-your-printercfg)
   - [Save, restart and confirm lanes are visible](#save-restart-and-confirm-lanes-are-visible)
 - [Configuring Happy Hare parameters](#configuring-happy-hare-parameters)
-- [Configuring PSF and Flowguard](#configuring-psf-and-flowguard)
-- [EMUSync PSF insights](#emusync-psf-insights)
+- [Configuring PSF and Flowguard (optional)](#configuring-psf-and-flowguard)
+- [EMUSync PSF insights (optional)](#emusync-psf-insights)
 
 ## Installing Happy Hare
 Install Happy Hare. More detailed instructions can be found here: https://github.com/moggieuk/Happy-Hare/wiki/Installation

@@ -142,7 +142,7 @@ From now on, updating Klipper and all EMU boards is a single command:
 ~/ukam/ukam.sh -f
 ```
 
-UKAM will pull the latest Klipper, compile firmware, and flash each board via Katapult over CAN bus. It skips boards whose firmware is already current.
+UKAM will compile firmware for your current Klipper/Kalico installed version, and flash each board via Katapult over CAN bus. It skips boards whose firmware is already current.
 
 ---
 

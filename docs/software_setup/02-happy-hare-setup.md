@@ -248,10 +248,10 @@ environment_sensors:    temperature_sensor Lane_0,
 [tmc2209 stepper_mmu_gear]
 uart_pin: mmu0:MMU_GEAR_UART
 run_current: 0.8		
-hold_current: 0.15
-interpolate: False
+hold_current: 0.10
+interpolate: True
 sense_resistor: 0.110	
-stealthchop_threshold: 1		
+stealthchop_threshold: 0		
 
 [stepper_mmu_gear]
 step_pin: mmu0:MMU_GEAR_STEP
@@ -259,7 +259,7 @@ dir_pin: mmu0:MMU_GEAR_DIR
 enable_pin: !mmu0:MMU_GEAR_ENABLE
 rotation_distance: 22.7574		
 gear_ratio: 1:1			
-microsteps: 32				
+microsteps: 4				
 full_steps_per_rotation: 200		
 
 # Lane 1 --------------------------
@@ -992,7 +992,9 @@ sync_feedback_analog_neutral_point:   0.5
 
 **Step 4:** Set the EMUSync dimensions in the mmu_parameters.cfg file as below. Save and restart.
 ```
-sync_feedback_enabled: 1		
+sync_gear_current: 55			    # 55% EMU stepper current during printing -> ~0.4-0.45A when printing. Higher than 0.5A can cause PLA to clog the EMU stepper in hot environments.
+
+sync_feedback_enabled: 1		  # Enable sync feedback
 sync_feedback_buffer_range: 16		# Travel in "buffer" between compression/tension or one sensor and end
 sync_feedback_buffer_maxrange: 16	# Absolute maximum end-to-end travel (mm) provided by buffer
 sync_feedback_speed_multiplier: 5	# % "twolevel" gear speed delta to keep filament neutral in buffer

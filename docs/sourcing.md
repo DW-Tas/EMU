@@ -28,7 +28,7 @@ It also allows us to offer feedback to the vendors to ensure the kits can result
   </tr>
   <tr>
     <td><strong>Vano3dla Maker Store</strong></td>
-    <td><a href="https://www.aliexpress.com/item/1005012001238187.html">Purchase on Aliexpress</a></td>
+    <td><a href="https://www.aliexpress.com/item/1005012001238187.html">2 lane and 5 lane kit</a></td>
     <td>
       Platinum
     </td>

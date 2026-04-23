@@ -116,6 +116,7 @@ While entirely optional, the below upgrades are highly recommended.
 1. [PCB hatch boards](/PCB%20(recommended%20options)/hatch_board) - simplifies wiring, sealing of the box and reduces soldering need.
 2. [Eject button multi-LED PCB](/PCB%20(recommended%20options)/multi_led_button) - simplifies wiring and displays animated effects when loading / unloading filament.
 3. [Proportional Sync Feedback Sensor](https://www.aliexpress.com/item/1005010470743517.html) - allows for clog, tangle detection and more accurate synchronisation between the EMU and the extruder.
+4. [Input / Output (IO) Board](https://www.aliexpress.com/item/1005011529532141.html) - removes need to solder the XT30 2+2 and JST connector and simplifies wiring of the base IO.
 
 ---
 

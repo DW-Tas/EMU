@@ -37,13 +37,16 @@ It also allows us to offer feedback to the vendors to ensure the kits can result
     </td>
   </tr>
     <tr>
-    <td><strong>Triangle Lab</strong></td>
-    <td>Pending validation</td>
-    <td>
-      Pending validation
+    <td><strong>Triangle Lab /</strong><br><strong>BLV</strong></td>
+    <td><a href="https://aliexpress.com/item/1005012037255888.html">5 lane kit (trianglelab)</a>
+    <br>
+    <a href="https://aliexpress.com/item/1005012052899600.html">5 lane kit (BLV)</a>
     </td>
     <td>
-      Pending validation
+      Silver
+    </td>
+    <td>
+      Good quality core components kit requiring some additional effort in wiring/assembly.
     </td>
   </tr>
 <table>

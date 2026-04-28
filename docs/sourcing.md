@@ -46,7 +46,19 @@ It also allows us to offer feedback to the vendors to ensure the kits can result
       Silver
     </td>
     <td>
-      Good quality core components kit requiring some additional effort in wiring/assembly.
+    Good quality core components kit requiring some additional wiring and assembly effort. Kit specifics:
+    <ol>
+      <li>Front switch PCB LED out wire is 300mm instead of 600mm. If using the Solo Lane Board, this is correct. If using an EBB, the user will need one additional WAGO, replacement of the 300mm LED out wire with a 600mm wire, or to solder the 300mm LED out wire to the 300mm LED in wire of the Hatch PCB.</li>
+      <li>PCBs require soldering of the JST headers. All required JST headers and wires to assemble the kit are included.</li>
+      <li>Wires are pre-crimped and assembled on the Box/front LED PCB connector side. The board side is uncrimped, but JST and Dupont crimps and plugs are provided.</li>
+      <li>WAGO alternatives are used. An alternative holder is required to be printed; the file is included in the usermod directory.</li>
+      <li>Clear panel is 1.2mm thick. It is easier to assemble into place, with no expected impact on air-tightness.</li>
+      <li>Sampled kit panel was 344mm instead of 343mm in length. Ensure the lid is correctly shrinkage compensated.</li>
+      <li>Initial kits contain a Trianglelab-specific stepper. It provides higher torque at low speeds versus the BOM stepper, for example during printing, although maximum speed is limited to approximately 375mm/s. The stepper is planned to be swapped with the OMC BOM stepper in the future.</li>
+      <li>One-way bearing and shaft, although hollow, are BOM-equivalent and showed correct, smooth motion.</li>
+      <li>Stamped discs are included instead of demagnetised magnets for the Filamentalist sensors. These are functionally and dimensionally equivalent.</li>
+      <li>Sampled kit did not include the M3x12 BHCS, or SHCS alternative. Subsequent kits should have this corrected.</li>
+    </ol>
     </td>
   </tr>
 <table>

@@ -38,9 +38,10 @@ It also allows us to offer feedback to the vendors to ensure the kits can result
   </tr>
     <tr>
     <td><strong>Triangle Lab /</strong><br><strong>BLV</strong></td>
-    <td><a href="https://aliexpress.com/item/1005012037255888.html">5 lane kit (trianglelab)</a>
+    <td><a href="https://aliexpress.com/item/1005012037255888.html">5 lane kit (trianglelab - aliexpress)</a>
     <br>
-    <a href="https://aliexpress.com/item/1005012052899600.html">5 lane kit (BLV)</a>
+    <a href="https://aliexpress.com/item/1005012052899600.html">5 lane kit (BLV - aliexpress)</a><br>
+      <a href="https://trianglelab.net/products/emu-5-lane-kit">5 lane kit (trianglelab direct)</a>
     </td>
     <td>
       Silver

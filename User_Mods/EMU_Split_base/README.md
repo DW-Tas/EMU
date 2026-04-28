@@ -24,16 +24,16 @@ These are the extra requirements for a single side, multiply by 2 if printing bo
 
 |Amount | Part | Placement |
 |---|---|---|
-| 2x | M3x8 SHCS | On outer side of the box | 
-| 4x | M3x8 BHCS | On bottom of the inner side connector |
-| 4x | Square nuts | On the top the inner side connector |
+| 2x | M3x8 SHCS | On the outer side of the box | 
+| 4x | M3x8 BHCS | On the bottom of the inner side connector |
+| 4x | Square nuts | On the top of the inner side connector |
 
-### Middle lane(s)
+### Expander lane(s)
 
 |Amount | Part | Placement |
 |---|---|---|
-| 8x | M3x8 BHCS | On bottom of the side connectors |
-| 8x | Square nuts | On the top the side connectors |
+| 8x | M3x8 BHCS | On the bottom of the side connectors |
+| 8x | Square nuts | On the top of the side connectors |
 
 
 ## Credits

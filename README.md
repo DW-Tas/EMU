@@ -82,7 +82,7 @@ Dual pre-stepper sensors ensure **consistent run-out detection** and reliable re
 In addition, the isolated boxes ensure that any left over, rewound, filament cannot interfere with neighbouring lanes, **preventing a jam**.
 
 ### Built on the Filamentalist
-The lane assembly is based on the proven **[filamentalist V3 design with 688 bearings](https://github.com/Enraged-Rabbit-Community/ERCF_v2/tree/master/Recommended_Options/Filamentalist_Rewinder/Filamentalist_FV3_Rewinder)** with wide spool size compatibility. Built on the 74mm filamentalist stock setup, the unit fits even the slightly wider KVP filament spools.
+The lane assembly is based on the proven **[filamentalist V3 design with 688 bearings](https://github.com/Enraged-Rabbit-Community/ERCF_v2/tree/master/Recommended_Options/Filamentalist_Rewinder/Filamentalist_FV3_Rewinder)** with wide spool size compatibility. Built on the 74mm filamentalist setup, the unit fits even the slightly wider KVP filament spools.
 
 <p align="center">
   <img src="/docs/assets/images/EMU_integrated_gate_unit_close_up.png" width="49%">
@@ -95,9 +95,9 @@ Each lane has its own driving stepper inside the dry box, resulting in a compact
 In addition, you can **swap out complete dry boxes** by unplugging two JST plugs and the bowden tube. This is helpful if you want to maintain a particularly moisture sensitive filament undisturbed when swapping it out from the EMU.
 
 ### Simple Electronics
-The recommended BOM uses **readily available EBB42 boards** (with EBB36 fully compatible). MMB v2 boards can also be reused, though without humidity sensing due to I²C limitations and a slightly more intricate wiring.
+The recommended BOM uses the custom designed [Solo Lane Boards](https://www.aliexpress.com/item/1005012025112049.html) which simplify wiring greatly. Also the **readily available EBB42 & EBB36 boards** are fully compatible. MMB v2 boards (or any other controller board with adequate number of endstops) can also be reused, though without humidity sensing due to I²C limitations and a slightly more intricate wiring. 
 
-In addition, **each lane has its own ventilation fan**, ensuring the stepper drivers do not overheat, even when the unit is placed on top of a hot printer. With the EBB42 and EBB36, the ventilation fans can also be speed controlled to minimize noise.
+In addition, **each lane has its own ventilation fan**, ensuring the stepper drivers do not overheat, even when the unit is placed on top of a hot printer.
 
 ### Easy mounting
 The EMU base assembly can be securely **mounted on extrusions** or using **rubber feet** directly on the printer or besides it. In either case the **electronics remain accessible** without needing to remove the unit from its mounts.

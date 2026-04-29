@@ -18,3 +18,4 @@ Community-contributed modifications and additions for the EMU (Expandable Multi-
 | [Micron EMU Hat](MicronEMU) | [burkfers](https://github.com/burkfers) | Base unit mod fitting three EMU boxes onto a Micron with a stealth aesthetic | <img src="MicronEMU/assets/M.239.png" width="160"> |
 | [printable TPU feet](TPU_feet) | [burkfers](https://github.com/burkfers) | Small M3-mounted printable feet for the bottom of the base | <img src="TPU_feet/assets/cover.jpg" width="160"> |
 | [Rim Roller with Square Nuts](Rim_Roller_with_square_nuts) | [martijnvanduijneveldt](https://github.com/martijnvanduijneveldt) | Rim roller remix using square nuts instead of screwing directly into plastic | <img src="Rim_Roller_with_square_nuts/images/Rim_roller_square_nut_1_hole.jpg" width="160"> |
+| [Trianglelab BLV kit mods](Trianglelab_BLV%20kit%20mods) | [DW-Tas](https://github.com/DW-Tas) | PTC212-413 connector holder as a Wago 221 alternative for the Trianglelab BLV kit | — |

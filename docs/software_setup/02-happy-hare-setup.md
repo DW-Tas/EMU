@@ -1028,7 +1028,7 @@ flowguard_encoder_mode: 0
 ```
 Save and restart. 
 
-**Step 7:** You can now start a print and test the sensor in a print
+**Step 7:** After you've completed setup (slicer setup) you can now start a print and test the sensor
 1. Start a print and monitor the flowguard value in the MMU panel. It should remain close to the neutral (0) threshold
 2. Expand the sensor manually - flowguard should trigger a pause. Let go, and click resume. The print should continue uninterrupted.
 

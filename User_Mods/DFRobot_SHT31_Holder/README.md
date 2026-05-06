@@ -3,7 +3,7 @@
 ![Hot & Sweaty](assets/sensors.jpg)
 
 ## Overview
-High(er) accuracy temperature & humidity sensor for use in the box instead of the standard BME280.
+High(er) accuracy temperature & humidity sensor for use in the boxes instead of a BME280.
 
 - Pros
     - ±2%RH at 0%RH to 100%RH (at 25°C）humidity accuracy Vs. ±3%RH 20%RH to 80%RH
@@ -22,7 +22,7 @@ High(er) accuracy temperature & humidity sensor for use in the box instead of th
 Stick to suppliers with a known supply chain.
 
 #### Worldwide
-- [Mouser](https://www.mouser.co.uk/ProductDetail/DFRobot/SEN0331)
+- [Mouser](https://www.mouser.co.uk/c/?q=SEN0331)
 - [Digikey](https://www.digikey.co.uk/en/products/detail/dfrobot/SEN0331/12324931)
 
 #### UK
@@ -36,7 +36,7 @@ Standard EMU settings (999 walls) with shrinkage factor for your chosen filament
 
 ## Code
 
-By default the SHT3X klipper module expects the sensor on 68 (0x44), however the DFRobot sensors can be found at 69 (0x45) unless ADR is connected to connected to GND.
+By default the SHT3X klipper module expects the sensor on 68 (0x44), however the DFRobot sensors can be found at 69 (0x45) unless ADR is connected to connected to GND.  Report time is set to poll every 120secs to reduce load on the mcus.
 
 #### Example config for Lane_0 found in emu_macros.cfg
 
@@ -46,6 +46,7 @@ By default the SHT3X klipper module expects the sensor on 68 (0x44), however the
     i2c_mcu: mmu0
     i2c_software_scl_pin: mmu0:PB3
     i2c_software_sda_pin: mmu0:PB4
+    sht3x_report_time: 120
 
 #### How it should look when working (4 lane example)
 

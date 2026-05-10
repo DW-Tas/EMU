@@ -25,6 +25,7 @@
 **Serial #0020:** jimmyjon711</br>
 **Serial #0021:** etherwalker</br>
 **Serial #0022:** _yomgui_</br>
+**Serial #0023:** sauyri</br>
 </br>
 
 ### How to register:

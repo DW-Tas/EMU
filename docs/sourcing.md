@@ -33,7 +33,7 @@ It also allows us to offer feedback to the vendors to ensure the kits can result
       Platinum
     </td>
     <td>
-      Platinum tier kit with all optional PCB options and exclusive PCB options included. High quality components, with exceptional fit and finish. Active support by the vendor in the Discord communities.
+      Platinum tier kit with all optional PCB options and exclusive PCB options included. High quality components, with exceptional fit and finish. Active support by the vendor in the Discord communities. <br> Initial batch of kits had the DIn - DOut silk screen on the Neopixel LEDs swapped around. 
     </td>
   </tr>
     <tr>

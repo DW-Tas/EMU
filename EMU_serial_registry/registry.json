@@ -279,5 +279,18 @@
     "notes": "Going for that #0025. Hopefully its okay I didnt use prime tower (thought the wiper will be enough)",
     "date": "2026-05-11",
     "approved_by": "igiannakas"
+  },
+  {
+    "serial": "#0026",
+    "discord_username": "ningpj",
+    "discord_id": "878389918643146854",
+    "media_urls": [
+      "https://emuimages.dwtas.net/878389918643146854-1778540288672-0.jpg",
+      "https://emuimages.dwtas.net/878389918643146854-1778540289014-1.jpg",
+      "https://emuimages.dwtas.net/878389918643146854-1778540289191-2.png"
+    ],
+    "notes": "Only two lanes complete until additional dual lane kit arrives.  Makermark printed using performance profile rather than for quality. QR code still scan-able though.\r\n\r\nv0.2, no mmu augmentation - tip forming, purge tower, no toolhead sensors with PSF homing.",
+    "date": "2026-05-12",
+    "approved_by": "igiannakas"
   }
 ]

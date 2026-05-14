@@ -292,5 +292,17 @@
     "notes": "Only two lanes complete until additional dual lane kit arrives.  Makermark printed using performance profile rather than for quality. QR code still scan-able though.\r\n\r\nv0.2, no mmu augmentation - tip forming, purge tower, no toolhead sensors with PSF homing.",
     "date": "2026-05-12",
     "approved_by": "igiannakas"
+  },
+  {
+    "serial": "#0027",
+    "discord_username": "supercrossed",
+    "discord_id": "154825704041742336",
+    "media_urls": [
+      "https://emuimages.dwtas.net/154825704041742336-1778758068312-0.jpg",
+      "https://emuimages.dwtas.net/154825704041742336-1778758070471-1.jpg"
+    ],
+    "notes": "7 Lane EMU - build progress over on the EMU channel in Armchair Heavy Industries discord",
+    "date": "2026-05-14",
+    "approved_by": "DW-Tas"
   }
 ]

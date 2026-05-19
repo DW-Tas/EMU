@@ -24,6 +24,13 @@ A short reminder before you start: every measurement is a difference between **a
 
 If you have a Belay (or similar tension/compression sensor) on the bowden path, lock or remove it for the whole procedure — its movement will corrupt every measurement.
 
+For context, the diagrams below show the filament geometry the measurements below are characterising — tip cutting on the top, tip forming on the bottom:
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/wiki/moggieuk/Happy-Hare/Blobbing-and-Stringing/Unloading_Tip_Cutting.png" alt="Unloading with tip cutting" width="100%"/>
+  <img src="https://raw.githubusercontent.com/wiki/moggieuk/Happy-Hare/Blobbing-and-Stringing/Unloading_Tip_Forming.png" alt="Unloading with tip forming" width="100%"/>
+</p>
+
 ---
 
 ## Step 0 — Cold pull the nozzle

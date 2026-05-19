@@ -853,6 +853,10 @@ extruder_force_homing: 0
 If your toolhead does **not** have a filament sensor and you need to derive the Happy Hare toolhead dimensions (`toolhead_extruder_to_nozzle`, `toolhead_entry_to_extruder`, `toolhead_residual_filament`, plus the cutter parameters) by hand, follow the dedicated guide:
 → [Manual Sensorless Toolhead Calibration for Happy Hare](/docs/software_setup/07-manual-toolhead-calibration.md)
 
+## Manual two-sensor toolhead calibration
+If your toolhead has **two filament sensors** (a pre-extruder entry sensor and a post-extruder toolhead sensor) and you need to derive the Happy Hare toolhead dimensions (`toolhead_extruder_to_nozzle`, `toolhead_entry_to_extruder`, `toolhead_sensor_to_nozzle`, `toolhead_residual_filament`, plus the cutter parameters) by hand, follow the dedicated guide:
+→ [Manual Toolhead Calibration with Two Sensors for Happy Hare](/docs/software_setup/08-manual_toolhead_calibration_two_sensors.md)
+
 In addition, the below settings have been adjusted to allow more tolerance in case of the extruder delaying grabbing the filament, which improves feeding reliability and allows for more "flex" in a slightly miss-tuned setup</br>
 ```ini
 toolhead_homing_max: 250			# Increased from default of 40, to allow more tolerance in the extruder not grabbing the filament immediately.

@@ -36,6 +36,7 @@ Join our active communities on Discord using the links below. We are active on b
   - [Slicer setup and optimisation for multi color prints](/docs/software_setup/05-slicer-setup.md)
   - [Updating CAN Boards with UKAM](/docs/software_setup/06-updating-can-boards.md)
   - [Manual Sensorless Toolhead Calibration for Happy Hare](/docs/software_setup/07-manual-toolhead-calibration.md)
+  - [Manual Toolhead Calibration with Two Sensors for Happy Hare](/docs/software_setup/08-manual_toolhead_calibration_two_sensors.md)
 - [Render Gallery](#render-gallery)
 - [Prints Gallery](#prints-gallery)
 - [License](#this-work-is-licensed-under-a)

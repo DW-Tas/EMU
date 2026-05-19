@@ -31,6 +31,17 @@ This section covers the software setup for the EMU using Happy Hare v3. Happy Ha
   - [Orca slicer mandatory setup](/docs/software_setup/05-slicer-setup.md#orca-slicer-mandatory-setup)
   - [Orca slicer profile tuning for multi-color printing](/docs/software_setup/05-slicer-setup.md#orca-slicer-profile-tuning-for-multi-color-printing)
 - [Updating CAN Boards with UKAM](/docs/software_setup/06-updating-can-boards.md)
+- [Manual Sensorless Toolhead Calibration for Happy Hare](/docs/software_setup/07-manual-toolhead-calibration.md)
+  - [What you need](/docs/software_setup/07-manual-toolhead-calibration.md#what-you-need)
+  - [Step 0 — Cold pull the nozzle](/docs/software_setup/07-manual-toolhead-calibration.md#step-0--cold-pull-the-nozzle)
+  - [Step 1 — Measure `toolhead_extruder_to_nozzle`](/docs/software_setup/07-manual-toolhead-calibration.md#step-1--measure-toolhead_extruder_to_nozzle-cold-clean-nozzle)
+  - [Step 2 — Measure `toolhead_entry_to_extruder`](/docs/software_setup/07-manual-toolhead-calibration.md#step-2--measure-toolhead_entry_to_extruder-cold)
+  - [Step 3 — Dirty the nozzle](/docs/software_setup/07-manual-toolhead-calibration.md#step-3--dirty-the-nozzle-simulate-a-real-unload)
+  - [Step 4 — Measure `toolhead_residual_filament`](/docs/software_setup/07-manual-toolhead-calibration.md#step-4--measure-toolhead_residual_filament-cold-dirty-nozzle)
+  - [Step 5 — Cutter parameters](/docs/software_setup/07-manual-toolhead-calibration.md#step-5--cutter-parameters-skip-if-you-dont-have-a-toolhead-cutter)
+  - [Step 6 — Update your config files](/docs/software_setup/07-manual-toolhead-calibration.md#step-6--update-your-config-files)
+  - [Step 7 — Sanity check the result](/docs/software_setup/07-manual-toolhead-calibration.md#step-7--sanity-check-the-result)
+  - [Common pitfalls](/docs/software_setup/07-manual-toolhead-calibration.md#common-pitfalls)
 
 ## After Setup
 Once you have completed the steps above you should have a fully functioning EMU unit. You can optionally also set up:

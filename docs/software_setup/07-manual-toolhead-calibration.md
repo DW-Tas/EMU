@@ -208,3 +208,7 @@ Derived:
 - **Buckled filament during push.** If filament bends in the bowden or above the extruder, your "stop" is bogus and the number will be short. Use a fresh straight piece, push slowly.
 - **Skipping the cold pull.** Hidden residue at the nozzle shoulder will give you a short `toolhead_extruder_to_nozzle` and then a fake-large `toolhead_residual_filament`.
 - **Forgetting to subtract B.** Several of the parameters are *from the extruder*, but you're measuring *from the coupler*. The B subtraction is what converts one to the other.
+
+---
+
+← [Step 4: Happy Hare Setup](/docs/software_setup/02-happy-hare-setup.md) | [Documentation Hub →](/docs)

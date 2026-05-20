@@ -14,7 +14,7 @@ Add the below to the base BOM, depending on your LED PCB source:
 1. 1x JST-XH 5 pin PCB header
 
 ## Manual
-Assembly and wiring instructions are outlined [in the manual](https://github.com/DW-Tas/EMU/blob/main/PCB%20(recommended%20options)/multi_led_button/EMU%20LED%20Button%20PCB%20Assembly%20Manual.pdf).
+Assembly and wiring instructions are outlined [in the manual](/Manuals/EMU_LED_Button_PCB.pdf).
 
 ## Sourcing
 The LED button PCBs can be sourced from the below location:

@@ -148,7 +148,7 @@ You will derive `variable_blade_pos` (distance from extruder gears to the blade)
 
 Then:
 
-> `variable_blade_pos` = **D − B**
+> `variable_blade_pos` = **A - D**
 
 
 ### Setting `variable_retract_length`
@@ -175,7 +175,7 @@ toolhead_residual_filament:  <A − C>
 If you have a cutter, open `mmu_macro_vars.cfg` and update:
 
 ```
-variable_blade_pos:       <D − B>   # (or D − B + 0.5 with Method B)
+variable_blade_pos:       <A - D>   # (or A - D + 0.5 with Method B)
 variable_retract_length:  <blade_pos − 5>
 ```
 

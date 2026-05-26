@@ -34,6 +34,9 @@ The above auto calibration has the below pre-requisites:
 
 If you are not satisfied with the automatically calibrated values or you don't have the required sensors, the above calibrations [can also be executed manually as described later in this page.](https://github.com/DW-Tas/EMU/blob/main/docs/software_setup/03-calibration-and-startup.md#manual-unit-calibration-optional---if-not-satisfied-with-automated-calibrations)
 
+> [!TIP]
+> **`MMU_CALIBRATE_BOWDENS` convenience macro:** `emu_macros.cfg` includes a `MMU_CALIBRATE_BOWDENS` macro that loops `MMU_CALIBRATE_BOWDEN` across every gate, replacing the per-gate `MMU_SELECT` / `MMU_CALIBRATE_BOWDEN` sequence used in the manual bowden calibration below. Pre-requisite: filament must be loaded and parked on all gates. It is also the recommended way to re-calibrate after maintenance that can change bowden length or a lane's effective rotation distance — e.g. bowden tube replacement or lane refurbishing.
+
 ## First start up
 Follow the below first start up procedure to validate correct wiring of the EMU.
 

@@ -12,6 +12,8 @@ Place the `emu_macros.cfg` file in your printer configuration folder. Update you
 
 Configure the macros [as per the instructions](https://github.com/DW-Tas/EMU/blob/main/docs/software_setup/02-happy-hare-setup.md#upload-the-emu_macroscfg-file-and-reference-it-in-your-printercfg).
 
+Both HW and SW I2C bus definitions are included. If planning to use the upcomming EMU NFC reader functionality, HW I2C is required. Please note in some setups HW I2C may generate NACK errors. If you do encounter that, check wiring crimping and at worst revert to SW I2C (but without NFC functionality).
+
 ## Using the custom Klipper modules
 The stock Klipper setup has two shortcomings when using a BME or AHT sensor:
 1. The BME sensor polls every 0.8 seconds, placing needless load on the MCU.

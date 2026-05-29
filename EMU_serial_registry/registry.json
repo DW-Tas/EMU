@@ -379,5 +379,17 @@
     "notes": "5 lane with SLBs",
     "date": "2026-05-21",
     "approved_by": "DW-Tas"
+  },
+  {
+    "serial": "#0034",
+    "discord_username": "yssaril",
+    "discord_id": "696224450152104077",
+    "media_urls": [
+      "https://emuimages.dwtas.net/696224450152104077-1779669566181-0.jpg",
+      "https://emuimages.dwtas.net/696224450152104077-1779669568559-1.jpg"
+    ],
+    "notes": "is it possible to get serial #42 :)",
+    "date": "2026-05-29",
+    "approved_by": "DW-Tas"
   }
 ]

@@ -124,7 +124,7 @@ Then:
 
 (Where **A** is the clean measurement from Step 1.)
 
-Sanity check: residual is normally **1–5 mm** for standard hotends, **3–7 mm** for CHT / high-flow setups. If you get a negative number or > 10 mm, something has shifted in your measurement plane — repeat.
+Sanity check: residual is normally **10-20 mm** for standard hotends, **20-30 mm** for CHT / high-flow setups. If you get a negative number or > 40 mm, something has shifted in your measurement plane — repeat.
 
 Notes:
 - It is normal for **C** to differ slightly between filament types (PETG residual is often ≥ PLA). You can recalibrate per filament if you care.
@@ -176,7 +176,7 @@ If you have a cutter, open `mmu_macro_vars.cfg` and update:
 
 ```
 variable_blade_pos:       <A - D>   # (or A - D + 0.5 with Method B)
-variable_retract_length:  <blade_pos − 5>
+variable_retract_length:  <blade_pos − residual − 5>
 ```
 
 Then `RESTART` (or `FIRMWARE_RESTART` if Klipper requires it).

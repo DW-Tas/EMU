@@ -379,5 +379,30 @@
     "notes": "5 lane with SLBs",
     "date": "2026-05-21",
     "approved_by": "DW-Tas"
+  },
+  {
+    "serial": "#0034",
+    "discord_username": "yssaril",
+    "discord_id": "696224450152104077",
+    "media_urls": [
+      "https://emuimages.dwtas.net/696224450152104077-1779669566181-0.jpg",
+      "https://emuimages.dwtas.net/696224450152104077-1779669568559-1.jpg"
+    ],
+    "notes": "is it possible to get serial #42 :)",
+    "date": "2026-05-29",
+    "approved_by": "DW-Tas"
+  },
+  {
+    "serial": "#0035",
+    "discord_username": "_zimbo_",
+    "discord_id": "804776827792916510",
+    "media_urls": [
+      "https://emuimages.dwtas.net/804776827792916510-1781337267556-0.jpg",
+      "https://emuimages.dwtas.net/804776827792916510-1781337270193-1.jpg",
+      "https://emuimages.dwtas.net/804776827792916510-1781337273422-2.jpg"
+    ],
+    "notes": "This EMU is installed on my Micron .  Thanks for help @igiannakas and @burkfers",
+    "date": "2026-06-13",
+    "approved_by": "igiannakas"
   }
 ]

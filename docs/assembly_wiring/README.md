@@ -34,7 +34,7 @@ Use the [configurator linked here](https://emu.dwtas.net) to select your number 
 ## Print Settings
 
 > [!WARNING]
-> **Parts are not shrinkage compensated** - calibrate your filament shrinkage first! If the bearings are loose, you're either under extruding, or over compensating for shrinkage.<br/>
+> **Parts are not shrinkage compensated** - calibrate your filament shrinkage first! 
 
 ### Filamentalist components and Lane stepper components:
 The below print settings are recommended for the filamentalist and lane stepper components. These are structural parts hence require print settings optimised for strength:
@@ -50,6 +50,8 @@ The below print settings are recommended for the filamentalist and lane stepper 
 - Disable thick bridges
 - Z hop enabled to avoid nozzle scraping (0.2 is sufficient)
 
+> [!IMPORTANT]
+> If the bearings are loose, you're either under extruding, or over compensating for shrinkage.<br/>
 
 > [!IMPORTANT]
 > The [Idler_Roller_Axle](https://github.com/DW-Tas/EMU/blob/main/STL/Filamentalist/Idler_Roller_Axle.stl) and [[a]_Stepper_Tension_Arm](https://github.com/DW-Tas/EMU/blob/main/STL/Stepper/%5Ba%5D_Stepper_Tension_Arm%5BMR693zz%5D.stl) are best to be printed with **999 walls** to ensure adequate strength of the part and less chance of breakage.

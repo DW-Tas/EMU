@@ -47,7 +47,7 @@ Join our active communities on Discord using the links below. We are active on b
 - **Sealed dry boxes** able to maintain humidity in the 15% range (with silica gel) or 5–8% range (with molecular sieves) for weeks.  
 - **Humidity sensors** per lane for filament environmental monitoring.
 - **Reliable endless spool** with no chance of the rewound filament interfering with neighbouring rolls.
-- **Off-the-shelf electronics** (EBB42 with EBB36 also fully compatible).  
+- **Off-the-shelf electronics** (EBB42 with EBB36 also fully compatible). Custom designed Solo Lane Boards (SLB) available as an option, to ease wiring.
 - **Per-lane controls** - eject button + LEDs.
 
 <p align="center">

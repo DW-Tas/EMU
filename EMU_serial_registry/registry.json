@@ -404,5 +404,17 @@
     "notes": "This EMU is installed on my Micron .  Thanks for help @igiannakas and @burkfers",
     "date": "2026-06-13",
     "approved_by": "igiannakas"
+  },
+  {
+    "serial": "#0036",
+    "discord_username": "madscientist_304",
+    "discord_id": "510654329858818066",
+    "media_urls": [
+      "https://emuimages.dwtas.net/510654329858818066-1782002090319-0.jpg",
+      "https://emuimages.dwtas.net/510654329858818066-1782002093855-1.jpg"
+    ],
+    "notes": "Rough 1st print with it...70% Happy.",
+    "date": "2026-06-21",
+    "approved_by": "DW-Tas"
   }
 ]

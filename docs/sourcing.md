@@ -36,6 +36,16 @@ It also allows us to offer feedback to the vendors to ensure the kits can result
       Platinum tier kit with all optional PCB options and exclusive PCB options included. High quality components, with exceptional fit and finish. Active support by the vendor in the Discord communities. <br> Initial batch of kits had the DIn - DOut silk screen on the Neopixel LEDs swapped around. 
     </td>
   </tr>
+  <tr>
+  <td><strong>DREMC (Vano3dla reseller)</strong></td>
+  <td><a href="https://store.dremc.com.au/products/emu-the-expandable-multi-material-unit-hardware-kit">2 lane and 5 lane kit</a><br>Local Australian Stockist</td>
+  <td>
+    Platinum
+  </td>
+  <td>
+    Platinum tier kit with all optional PCB options and exclusive PCB options included. High quality components, with exceptional fit and finish. Active support by the vendor in the Discord communities. <br> Initial batch of kits had the DIn - DOut silk screen on the Neopixel LEDs swapped around. 
+  </td>
+  </tr>
     <tr>
     <td><strong>Triangle Lab /</strong><br><strong>BLV</strong></td>
     <td><a href="https://aliexpress.com/item/1005012037255888.html">5 lane kit (trianglelab)</a>

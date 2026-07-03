@@ -429,5 +429,19 @@
     "notes": "",
     "date": "2026-06-25",
     "approved_by": "DW-Tas"
+  },
+  {
+    "serial": "#0038",
+    "discord_username": "searsay3208",
+    "discord_id": "114079389196484616",
+    "media_urls": [
+      "https://emuimages.dwtas.net/114079389196484616-1783108695049-0.jpg",
+      "https://emuimages.dwtas.net/114079389196484616-1783108697623-1.jpg",
+      "https://emuimages.dwtas.net/114079389196484616-1783108700051-2.jpg",
+      "https://youtu.be/bmoe94E01XQ"
+    ],
+    "notes": "EMU attached to a ZeroG Mercuruy 1.1 plus build\r\nVideo and Pics are from two different runs as i worked through tuning.",
+    "date": "2026-07-03",
+    "approved_by": "igiannakas"
   }
 ]

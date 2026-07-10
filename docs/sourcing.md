@@ -46,6 +46,16 @@ It also allows us to offer feedback to the vendors to ensure the kits can result
     Platinum tier kit with all optional PCB options and exclusive PCB options included. High quality components, with exceptional fit and finish. Active support by the vendor in the Discord communities. <br> Initial batch of kits had the DIn - DOut silk screen on the Neopixel LEDs swapped around. 
   </td>
   </tr>
+  <tr>
+    <td><strong>onetwo3D</strong></td>
+    <td><a href="https://www.onetwo3d.co.uk/product/emu-expandable-multi-material-unit-kit/">EMU base kit + lane kit(s)</a><br>Local UK Stockist</td>
+    <td>
+      Pending validation
+    </td>
+    <td>
+      Modular purchase model: buy one Base Kit per EMU system, then add one Lane Kit per lane required. Listing states the kit includes core hardware / electronics / wiring / connectors.<br><br>Controller boards are sold separately, also stocked by onetwo3D.<br>(Printed parts not included)
+    </td>
+  </tr>
     <tr>
     <td><strong>Triangle Lab /</strong><br><strong>BLV</strong></td>
     <td><a href="https://aliexpress.com/item/1005012037255888.html">5 lane kit (trianglelab)</a>

@@ -1,21 +1,57 @@
-# Calibration and startup guide
+# Calibration and Startup
 
-This is a provisional sofware setup guide for the EMU using Happy Hare v3. This guide is meant to be read in conjunction with the Happy Hare setup guide as found here: https://github.com/moggieuk/Happy-Hare/wiki
+This section covers the software calibration and first startup instructions. It is meant to be read in conjunction with the [Happy Hare wiki](https://github.com/moggieuk/Happy-Hare/wiki).
 
 ## Table of Contents
 
 - [Calibrating the unit](#calibrating-the-unit)
+- [First start up](#first-start-up)
+- [Manual unit calibration (optional - if not satisfied with automated calibrations)](#manual-unit-calibration-optional---if-not-satisfied-with-automated-calibrations)
   - [Lane rotation distance calibration](#lane-rotation-distance-calibration)
   - [Bowden tube calibration](#bowden-tube-calibration)
-- [First start up](#first-start-up)
+
 
 ## Calibrating the unit
-Now that the baseline software is set up, the unit needs to be calibrated. There are 2 key calibrations that need to be done before the unit allows you to print.
-1. Lane rotation distance
-2. Bowden length per lane
 
-Detailed instructions can be found here: https://github.com/moggieuk/Happy-Hare/wiki/MMU-Calibration-TypeB . The below will outline the mandatory minimum steps to calibrate the unit.
+The Happy Hare software together with the advanced sensors the EMU utilises, enable a number of auto-calibration features that simplify initial start up. In short, these features **remove the need for any calibration of the unit**.
 
+To enable the auto calibration routines make sure the below parameters are set in the mmu_parameters.cfg file:
+```
+autocal_bowden_length: 1 # on first load of a newly installed lane, the software will automatically calibrate its bowden length.
+autotune_bowden_length: 0	# Disable automated bowden length tuning
+skip_cal_rotation_distance: 1 # skips the lane stepper rotation distance calibration and relies on EMU Sync to coordinate the RD distances of the extruder and lane steppers
+autotune_rotation_distance: 0	# Disable automated gate calibration/tuning.
+skip_cal_encoder: 0		# Encoder not fitted
+autotune_encoder: 0		# Encoder not fitted
+```
+The above auto calibration has the below pre-requisites:
+1. You are using a **toolhead with an entry sensor**, ie a switch based sensor is present before the extruder and you have enabled `extruder_homing_endstop: extruder` in mmu_parameters.cfg
+2. **OR** you are using the **EMU Sync with dual switches** and you have enabled `extruder_homing_endstop: filament_compression` in mmu_parameters.cfg
+3. **OR** you are using the **EMU Sync with PSF** and [the newly developed code here](https://github.com/moggieuk/Happy-Hare/pull/936) and you have enabled `extruder_homing_endstop: proportional` in mmu_parameters.cfg
+
+> [!IMPORTANT]
+> When you load a lane for the first time, it will perform the bowden auto calibration. This process may take a few minutes to complete, especially if using the proportional sync sensor for bowden length homing. If you want to avoid this happening in your first print, simply cycle through the lanes via Tx (T0, T1 etc) commands until all of them are auto calibrated.
+
+If you are not satisfied with the automatically calibrated values or you don't have the required sensors, the above calibrations [can also be executed manually as described later in this page.](https://github.com/DW-Tas/EMU/blob/main/docs/software_setup/03-calibration-and-startup.md#manual-unit-calibration-optional---if-not-satisfied-with-automated-calibrations)
+
+> [!TIP]
+> **`MMU_CALIBRATE_BOWDENS` convenience macro:** `emu_macros.cfg` includes a `MMU_CALIBRATE_BOWDENS` macro that loops `MMU_CALIBRATE_BOWDEN` across every gate, replacing the per-gate `MMU_SELECT` / `MMU_CALIBRATE_BOWDEN` sequence used in the manual bowden calibration below. Pre-requisite: filament must be loaded and parked on all gates. It is also the recommended way to re-calibrate after maintenance that can change bowden length or a lane's effective rotation distance — e.g. bowden tube replacement or lane refurbishing.
+
+## First start up
+Follow the below first start up procedure to validate correct wiring of the EMU.
+
+1. Load filament to each gate. The filament should be parked right before the post stepper sensor. In the UI, verify that the MMU Pre Gate sensor for the lane is marked as **detected** and the MMU Gear sensor for the lane is marked as **empty**. If not, you have them wired backwards. Swap their position in the mmu_hardware.cfg file.
+2. Run the MMU_TEST_MOVE MOVE=50 command. Verify that the MMU Gear sensor for the lane is marked as **detected**. If not, you may have a wire break in the system.
+3. Press the eject button. The filament should now be ejected from the unit. If not, you may have a wire break in the system.
+4. Verify that the LEDs change color as the filament is inserted. From off to white for the eject button and off to white (if not using spoolman) for the led inside the box. If not, you may have either a power issue to the LED's or the in-out wiring sequence in the LED chain is wrong.
+5. Validate your sync feedback sensor wiring. Bring the two sides of the bowden tube together. The tension switch should be showing as **detected** in the UI. Move the two sides of the bowden tube away from each other till the switch clicks. The compression switch should be showing as **detected** in the UI. If not, you have them wired backwards. Swap their position in the mmu_hardware.cfg file.
+6. Home the printer, load filament to the first lane and type T0. The hotend should heat up to 230C and load filament to the toolhead. If the filament crashes to the extruder entry, your bowden distance calibration is off. If there is excessive material coming out of the nozzle, the toolhead calibration is off.
+
+**After you have setup your Cut Tip macro** parameters:
+1. Type MMU_UNLOAD. The toolhead should cut the filament and rewind to the EMU.
+2. If the toolhead fails to cut, the cut tip macro is not configured correctly
+
+## Manual unit calibration (optional - if not satisfied with automated calibrations)
 ### Lane rotation distance calibration
 Before you start with this calibration, remove all bowden tubes from the rear of the dry boxes going to the combiner. Add a short length of PTFE tubing (50mm is enough) to the first lane dry box exit. This will help guide the filament and not grind on the ecas connector. Then proceed to load some filament and execute the below instructions to grip it and feed it.
 
@@ -63,18 +99,6 @@ MMU_CALIBRATE_BOWDEN
 ```
 The unit calibration is now done and the unit is ready to be used!
 
-## First start up
-Follow the below first start up procedure to validate correct wiring of the EMU.
+---
 
-1. Load filament to each gate. The filament should be parked right before the post stepper sensor. In the UI, verify that the MMU Pre Gate sensor for the lane is marked as **detected** and the MMU Gear sensor for the lane is marked as **empty**. If not, you have them wired backwards. Swap their position in the mmu_hardware.cfg file.
-2. Run the MMU_TEST_MOVE MOVE=50 command. Verify that the MMU Gear sensor for the lane is marked as **detected**. If not, you may have a wire break in the system.
-3. Press the eject button. The filament should now be ejected from the unit. If not, you may have a wire break in the system.
-4. Verify that the LEDs change color as the filament is inserted. From off to white for the eject button and off to white (if not using spoolman) for the led inside the box. If not, you may have either a power issue to the LED's or the in-out wiring sequence in the LED chain is wrong.
-5. Validate your sync feedback sensor wiring. Bring the two sides of the bowden tube together. The tension switch should be showing as **detected** in the UI. Move the two sides of the bowden tube away from each other till the switch clicks. The compression switch should be showing as **detected** in the UI. If not, you have them wired backwards. Swap their position in the mmu_hardware.cfg file.
-6. Home the printer, load filament to the first lane and type T0. The hotend should heat up to 230C and load filament to the toolhead. If the filament crashes to the extruder entry, your bowden distance calibration is off. If there is excessive material coming out of the nozzle, the toolhead calibration is off.
-
-**After you have setup your Cut Tip macro** parameters:
-1. Type MMU_UNLOAD. The toolhead should cut the filament and rewind to the EMU.
-2. If the toolhead fails to cut, the cut tip macro is not configured correctly
-
-
+← [Step 4: Happy Hare Setup](/docs/software_setup/02-happy-hare-setup.md) | [Step 6: Slicer Setup →](/docs/software_setup/05-slicer-setup.md)

@@ -1,10 +1,14 @@
-# EMU - BOM, Printing, Assembly and Wiring Guide
+# EMU – Printing, Assembly and Wiring
+
+This page covers printing the parts, assembling the EMU and wiring the electronics. It is meant to be read in conjunction with the assembly videos linked below.
+
+## Configurator
+Use the [configurator linked here](https://emu.dwtas.net) to select your number of lanes and build options and download the necessary STL's for your EMU build.
 
 ## Table of Contents
-- [EMU - BOM, Printing, Assembly and Wiring Guide](#emu---bom-printing-assembly-and-wiring-guide)
+- [EMU – Printing, Assembly and Wiring](#emu--printing-assembly-and-wiring)
+  - [Configurator](#configurator)
   - [Table of Contents](#table-of-contents)
-  - [BOM](#bom)
-  - [Recommended Upgrades](#recommended-upgrades)
   - [Print Settings](#print-settings)
     - [Filamentalist components and Lane stepper components:](#filamentalist-components-and-lane-stepper-components)
     - [Dry Box components:](#dry-box-components)
@@ -21,21 +25,16 @@
     - [Base wiring dimensions](#base-wiring-dimensions)
     - [PCB Hatch wiring dimensions](#pcb-hatch-wiring-dimensions)
     - [DIY Hatch (no pcb) wiring dimensions](#diy-hatch-no-pcb-wiring-dimensions)
+    - [Solo Lane Board (SLB) wiring dimensions](#solo-lane-board-slb-wiring-dimensions)
 
 <p align="center">
   <img src="/docs/assets/images/EMU_multi_lane_unit.png" width="100%">
 </p>
 
-## BOM  
-The EMU Bill of Materials can be found here: [Draft BOM](https://docs.google.com/spreadsheets/d/1jYJXBgpc_iLDfC17fC2LTYKrSEy5ocPbGEQ_EEOGCvI)
-
-## Recommended Upgrades
-While entirely optional, the below upgrades are highly recommended. 
-1. [PCB hatch boards](https://github.com/DW-Tas/EMU/tree/main/PCB%20(recommended%20options)/hatch_board) - simplifies wiring, sealing of the box and reduces soldering need.
-2. [Eject button multi-LED PCB](https://github.com/DW-Tas/EMU/tree/main/PCB%20(recommended%20options)/multi_led_button) - simplifies wiring and displays animated effects when loading / unloading filament.
-3. [Proportional Sync Feedback Sensor](https://www.aliexpress.com/item/1005010470743517.html) - allows for clog, tangle detection and more accurate syncronisation between the EMU and the extruder.
-
 ## Print Settings
+
+> [!WARNING]
+> **Parts are not shrinkage compensated** - calibrate your filament shrinkage first! 
 
 ### Filamentalist components and Lane stepper components:
 The below print settings are recommended for the filamentalist and lane stepper components. These are structural parts hence require print settings optimised for strength:
@@ -51,12 +50,13 @@ The below print settings are recommended for the filamentalist and lane stepper 
 - Disable thick bridges
 - Z hop enabled to avoid nozzle scraping (0.2 is sufficient)
 
+> [!IMPORTANT]
+> If the bearings are loose, you're either under extruding, or over compensating for shrinkage.<br/>
 
 > [!IMPORTANT]
 > The [Idler_Roller_Axle](https://github.com/DW-Tas/EMU/blob/main/STL/Filamentalist/Idler_Roller_Axle.stl) and [[a]_Stepper_Tension_Arm](https://github.com/DW-Tas/EMU/blob/main/STL/Stepper/%5Ba%5D_Stepper_Tension_Arm%5BMR693zz%5D.stl) are best to be printed with **999 walls** to ensure adequate strength of the part and less chance of breakage.
 
 > [!IMPORTANT]
-> **Parts are not shrinkage compensated** - calibrate your filament shrinkage first! If the bearings are loose, you're either under extruding, or over compensating for shrinkage.<br/>
 > **Disable thick bridges** in your slicer and make sure your flow rate (EM) is on point! **Over extrusion, thick bridges and insufficient cooling will cause your sensor magnets and bearings not to fit as the bridges will sag.**
 
 **For the TPU filamentalist CDR ring:**
@@ -122,15 +122,16 @@ The below print settings are recommended for the base units and their accessorie
 <br/>
 **Errata:**
 1. BMG Gear insertion is not visible in the video. Do this before adding the stepper main body and screwing it on.
-2. Switch sensor screws are M2x10 self taping
+2. Switch sensor screws are M2x10 self-tapping
 3. Filament path - BMG gear alignment step is not shown in the video. Insert some filament through the unit manually, loosen the BMG gear set screw and move it back and forth. Screw down the BMG gear.
 4. For the BMG tensioning arm, the bushing is no longer an option. 
 5. Add a washer to the stepper tensioning arm on both sides of the spring.
 6. Add a washer to the filamentalist tensioning arm on both sides of the spring.
-7. Stepper body screws are all M3x20
+7. Stepper body screws are all M3x20. Stepper wiring comes out the front, not the rear as shown in the video.
 8. Front ECAS is no longer required
 9. PTFE tube lengths have been updated since the video release. [Use the dedicated cutter STL](https://github.com/DW-Tas/EMU/blob/main/STL/Tools/PTFE%20Cutter%20and%20Length%20Tool.stl) to measure and cut the PTFE tubes.
 10. Front wheels now use a single M3x12 FHCS screw with a square nut placed in the corresponding wheel slot.
+11. Insert the front PTFE tube while assembling the body, not after as shown in the video.
 
 ### Part 2: Drybox Assembly Guide
 [![EMU Dry Box Assembly Guide](https://img.youtube.com/vi/JZzMyOBCdSM/0.jpg)](https://www.youtube.com/watch?v=JZzMyOBCdSM)
@@ -150,7 +151,7 @@ The below print settings are recommended for the base units and their accessorie
 2. The board and wago connectors now thread into heatset inserts from the top of the unit.
 
 ### Part 4: Electronics Assembly Guide
-[![EMU Elecrronics Assembly Guide](https://img.youtube.com/vi/Iang2JYkTh8/0.jpg)](https://www.youtube.com/watch?v=Iang2JYkTh8)
+[![EMU Electronics Assembly Guide](https://img.youtube.com/vi/Iang2JYkTh8/0.jpg)](https://www.youtube.com/watch?v=Iang2JYkTh8)
 <br/>
 
 **Errata:**
@@ -158,7 +159,7 @@ The below print settings are recommended for the base units and their accessorie
 2. External combiner sensor is no longer required. That wiring part can be omitted.
 3. Encoder is no longer required in the default setup. That wiring part can be omitted.
 4. In the video, LED wiring is performed using the legacy method where a single LED chain was being created tied to the first EBB board. Current wiring approach wires each lane's LED's to the corresponding lane EBB, effectively moving away from one chain to N chains, where N is the number of lanes in the system. This simplifies wiring greatly and contains the wiring for each lane within the lane itself.
-5. CANbus entry wires (Yellow/Green) are now connected directly to the first lane EBB42/36, ommiting the WAGO connectors. Only the power wires and LED signal wire are now connected to the WAGO connectors.
+5. CANbus entry wires (Yellow/Green) are now connected directly to the first lane EBB42/36, omitting the WAGO connectors. Only the power wires and LED signal wire are now connected to the WAGO connectors.
 
 ### Part 5: EMU Sync Assembly images
 <table>
@@ -241,20 +242,40 @@ This parts describes the recommended wire length for easy assembly and maintenan
 ### Base wiring dimensions
 
 <p align="center">
-  <img src="../assets/wiring_diagrams/EMU Base wiring dimensions.jpg" width="95%">
+  <img src="/docs/assets/wiring_diagrams/EMU Base wiring dimensions.jpg" width="95%">
 </p>
 
 ### PCB Hatch wiring dimensions
-> These dimensions are for the latest version of the PCB (Post sensor at the rear). If you have the older board (Post Sensor at the center) [refer to this image](../assets/wiring_diagrams/EMU%20PCB%20Hatch%20wiring%20dimensions%20-%20Old%20PCB.jpg) for sensor wire lengths.
+These dimensions are for the latest version of the PCB (Post sensor at the rear). If you have the older board (Post Sensor at the center) [refer to this image](/docs/assets/wiring_diagrams/EMU%20PCB%20Hatch%20wiring%20dimensions%20-%20Old%20PCB.jpg) for sensor wire lengths.
 <p align="center">
-  <img src="../assets/wiring_diagrams/EMU PCB Hatch wiring dimensions.jpg" width="95%">
+  <img src="/docs/assets/wiring_diagrams/EMU PCB Hatch wiring dimensions.jpg" width="95%">
 </p>
 
 
 ### DIY Hatch (no pcb) wiring dimensions
-
-> These wiring dimensions assume you mount the BME sensor on the led cover and connect `5V` and `Ground` of the BME sensor to the led out `5V` and `Ground`.
+These wiring dimensions assume you mount the BME sensor on the led cover and connect `5V` and `Ground` of the BME sensor to the led out `5V` and `Ground`.
 
 <p align="center">
-  <img src="../assets/wiring_diagrams/EMU DIY Hatch wiring dimensions.jpg" width="95%">
+  <img src="/docs/assets/wiring_diagrams/EMU DIY Hatch wiring dimensions.jpg" width="95%">
 </p>
+
+### Solo Lane Board (SLB) wiring dimensions
+The Solo Lane Board uses a much simpler wiring arrangement. Key dimensions outlined below
+1. 4 pin stepper connector from Box to SLB - **300mm**
+2. 8 pin box connector from Box to SLB - **300mm**
+3. 5 pin front LED PCB connector to SLB - **300mm**
+4. Between lanes power connection (SLB - SLB) - **60mm** (power and ground - AWG18)
+5. Between lanes CANBus connection (SLB - SLB) - **70mm**
+6. Wiring dimensions inside the box (3x filament sensors, Temp and Humidity sensor, Stepper, Neopixel) **remain the same as above**
+
+Entry PCB to first Solo Lane Board
+1. Power:
+2. CANBus:
+3. Sync Feedback (PSF/Switch Based):
+
+<img width="5712" height="4284" alt="IMG_0879" src="https://github.com/user-attachments/assets/4d8bbfc2-4118-4cd1-9014-42f5917ac350" />
+
+
+---
+
+← [Step 1: Sourcing](/docs/sourcing.md) | [Step 3: EMU Board Setup →](/docs/software_setup/01-board-setup.md)

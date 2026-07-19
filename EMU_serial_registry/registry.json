@@ -180,5 +180,292 @@
     "notes": "Hello guys! I would like to ask a serial for my 2 lane setup :)",
     "date": "2026-03-15",
     "approved_by": "igiannakas"
+  },
+  {
+    "serial": "#0018",
+    "discord_username": ".cicatrix",
+    "discord_id": "252321325513703424",
+    "media_urls": [
+      "https://emuimages.dwtas.net/252321325513703424-1776112622599-0.jpg",
+      "https://emuimages.dwtas.net/252321325513703424-1776112625904-1.jpg",
+      "https://emuimages.dwtas.net/252321325513703424-1776112629107-2.jpg"
+    ],
+    "notes": "Built with PCB Hatchches and Buttons as well as the PSF Sensor ",
+    "date": "2026-04-13",
+    "approved_by": "igiannakas"
+  },
+  {
+    "serial": "#0019",
+    "discord_username": "zoro__17",
+    "discord_id": "1149781851968376943",
+    "media_urls": [
+      "https://emuimages.dwtas.net/1149781851968376943-1776553639773-0.jpg",
+      "https://emuimages.dwtas.net/1149781851968376943-1776553643620-1.jpg"
+    ],
+    "notes": "It's Cabrio version for now but it works",
+    "date": "2026-04-18",
+    "approved_by": "DW-Tas"
+  },
+  {
+    "serial": "#0020",
+    "discord_username": "jimmyjon711",
+    "discord_id": "178887472590225408",
+    "media_urls": [
+      "https://emuimages.dwtas.net/178887472590225408-1776640041639-0.jpg",
+      "https://emuimages.dwtas.net/178887472590225408-1776640043682-1.jpg",
+      "https://emuimages.dwtas.net/178887472590225408-1776640045660-2.jpg"
+    ],
+    "notes": "",
+    "date": "2026-04-19",
+    "approved_by": "DW-Tas"
+  },
+  {
+    "serial": "#0021",
+    "discord_username": "etherwalker",
+    "discord_id": "461166830866792451",
+    "media_urls": [
+      "https://emuimages.dwtas.net/461166830866792451-1776729526034-0.jpg",
+      "https://emuimages.dwtas.net/461166830866792451-1776729528438-1.jpg"
+    ],
+    "notes": "",
+    "date": "2026-04-21",
+    "approved_by": "DW-Tas"
+  },
+  {
+    "serial": "#0022",
+    "discord_username": "_yomgui_",
+    "discord_id": "578402988545015820",
+    "media_urls": [
+      "https://emuimages.dwtas.net/578402988545015820-1778096931556-0.jpg"
+    ],
+    "notes": "Again thanks for all thé help during the build!",
+    "date": "2026-05-06",
+    "approved_by": "igiannakas"
+  },
+  {
+    "serial": "#0023",
+    "discord_username": "sauyri",
+    "discord_id": "125569374336712704",
+    "media_urls": [
+      "https://emuimages.dwtas.net/125569374336712704-1778421342517-0.jpg",
+      "https://emuimages.dwtas.net/125569374336712704-1778421346475-1.jpg",
+      "https://emuimages.dwtas.net/125569374336712704-1778421350365-2.jpg"
+    ],
+    "notes": "",
+    "date": "2026-05-10",
+    "approved_by": "igiannakas"
+  },
+  {
+    "serial": "#0024",
+    "discord_username": "reapola",
+    "discord_id": "345546284272451587",
+    "media_urls": [
+      "https://emuimages.dwtas.net/345546284272451587-1778457305502-0.jpg"
+    ],
+    "notes": "",
+    "date": "2026-05-11",
+    "approved_by": "DW-Tas"
+  },
+  {
+    "serial": "#0025",
+    "discord_username": "realadamator",
+    "discord_id": "320846703928410113",
+    "media_urls": [
+      "https://emuimages.dwtas.net/320846703928410113-1778518885107-0.jpg",
+      "https://emuimages.dwtas.net/320846703928410113-1778518888606-1.jpg",
+      "https://emuimages.dwtas.net/320846703928410113-1778518892355-2.jpg",
+      "https://youtu.be/EyuN9O0oHOU"
+    ],
+    "notes": "Going for that #0025. Hopefully its okay I didnt use prime tower (thought the wiper will be enough)",
+    "date": "2026-05-11",
+    "approved_by": "igiannakas"
+  },
+  {
+    "serial": "#0026",
+    "discord_username": "ningpj",
+    "discord_id": "878389918643146854",
+    "media_urls": [
+      "https://emuimages.dwtas.net/878389918643146854-1778540288672-0.jpg",
+      "https://emuimages.dwtas.net/878389918643146854-1778540289014-1.jpg",
+      "https://emuimages.dwtas.net/878389918643146854-1778540289191-2.png"
+    ],
+    "notes": "Only two lanes complete until additional dual lane kit arrives.  Makermark printed using performance profile rather than for quality. QR code still scan-able though.\r\n\r\nv0.2, no mmu augmentation - tip forming, purge tower, no toolhead sensors with PSF homing.",
+    "date": "2026-05-12",
+    "approved_by": "igiannakas"
+  },
+  {
+    "serial": "#0027",
+    "discord_username": "supercrossed",
+    "discord_id": "154825704041742336",
+    "media_urls": [
+      "https://emuimages.dwtas.net/154825704041742336-1778758068312-0.jpg",
+      "https://emuimages.dwtas.net/154825704041742336-1778758070471-1.jpg"
+    ],
+    "notes": "7 Lane EMU - build progress over on the EMU channel in Armchair Heavy Industries discord",
+    "date": "2026-05-14",
+    "approved_by": "DW-Tas"
+  },
+  {
+    "serial": "#0028",
+    "discord_username": "moadmoosa",
+    "discord_id": "506021936330178560",
+    "media_urls": [
+      "https://emuimages.dwtas.net/506021936330178560-1778855338235-0.jpg",
+      "https://emuimages.dwtas.net/506021936330178560-1778855340774-1.jpg",
+      "https://emuimages.dwtas.net/506021936330178560-1778855342551-2.jpg",
+      "https://emuimages.dwtas.net/506021936330178560-1778855343558-3.jpg"
+    ],
+    "notes": "",
+    "date": "2026-05-15",
+    "approved_by": "igiannakas"
+  },
+  {
+    "serial": "#0029",
+    "discord_username": "niju5975",
+    "discord_id": "586548318155571212",
+    "media_urls": [
+      "https://emuimages.dwtas.net/586548318155571212-1778974870492-0.jpg",
+      "https://emuimages.dwtas.net/586548318155571212-1778974874380-1.jpg"
+    ],
+    "notes": "",
+    "date": "2026-05-16",
+    "approved_by": "DW-Tas"
+  },
+  {
+    "serial": "#0030",
+    "discord_username": "jb3duk",
+    "discord_id": "197660886800793600",
+    "media_urls": [
+      "https://emuimages.dwtas.net/197660886800793600-1779032476735-0.jpg"
+    ],
+    "notes": "I finally did it, yes it has a brim, yes the printer is messy.",
+    "date": "2026-05-17",
+    "approved_by": "igiannakas"
+  },
+  {
+    "serial": "#0031",
+    "discord_username": "badman996",
+    "discord_id": "139183083890016256",
+    "media_urls": [
+      "https://emuimages.dwtas.net/139183083890016256-1779262698739-0.jpg",
+      "https://emuimages.dwtas.net/139183083890016256-1779262700233-1.jpg"
+    ],
+    "notes": "And now to learn MMU tuning and finish off the other 3 lanes I have waiting.\r\nTwo Step ASA-GF Black, Fusion Filaments ABS 1.5 Carbon Rod Black and Thorium Thilver (Lid will be Thorium Thilver).",
+    "date": "2026-05-20",
+    "approved_by": "igiannakas"
+  },
+  {
+    "serial": "#0032",
+    "discord_username": "der_pw",
+    "discord_id": "880765735658471457",
+    "media_urls": [
+      "https://emuimages.dwtas.net/880765735658471457-1779305011714-0.jpg",
+      "https://emuimages.dwtas.net/880765735658471457-1779305015987-1.jpg",
+      "https://emuimages.dwtas.net/880765735658471457-1779305019784-2.jpg"
+    ],
+    "notes": "Last Lid isn't still completed, because I wanted to print the serial in it. ;)\r\n\r\nThanks for all that work and sharing this project with us.",
+    "date": "2026-05-20",
+    "approved_by": "igiannakas"
+  },
+  {
+    "serial": "#0033",
+    "discord_username": "hamido.",
+    "discord_id": "298061913886162944",
+    "media_urls": [
+      "https://emuimages.dwtas.net/298061913886162944-1779397964404-0.jpg",
+      "https://emuimages.dwtas.net/298061913886162944-1779397967807-1.jpg",
+      "https://emuimages.dwtas.net/298061913886162944-1779397993982-2.jpg"
+    ],
+    "notes": "5 lane with SLBs",
+    "date": "2026-05-21",
+    "approved_by": "DW-Tas"
+  },
+  {
+    "serial": "#0034",
+    "discord_username": "yssaril",
+    "discord_id": "696224450152104077",
+    "media_urls": [
+      "https://emuimages.dwtas.net/696224450152104077-1779669566181-0.jpg",
+      "https://emuimages.dwtas.net/696224450152104077-1779669568559-1.jpg"
+    ],
+    "notes": "is it possible to get serial #42 :)",
+    "date": "2026-05-29",
+    "approved_by": "DW-Tas"
+  },
+  {
+    "serial": "#0035",
+    "discord_username": "_zimbo_",
+    "discord_id": "804776827792916510",
+    "media_urls": [
+      "https://emuimages.dwtas.net/804776827792916510-1781337267556-0.jpg",
+      "https://emuimages.dwtas.net/804776827792916510-1781337270193-1.jpg",
+      "https://emuimages.dwtas.net/804776827792916510-1781337273422-2.jpg"
+    ],
+    "notes": "This EMU is installed on my Micron .  Thanks for help @igiannakas and @burkfers",
+    "date": "2026-06-13",
+    "approved_by": "igiannakas"
+  },
+  {
+    "serial": "#0036",
+    "discord_username": "madscientist_304",
+    "discord_id": "510654329858818066",
+    "media_urls": [
+      "https://emuimages.dwtas.net/510654329858818066-1782002090319-0.jpg",
+      "https://emuimages.dwtas.net/510654329858818066-1782002093855-1.jpg"
+    ],
+    "notes": "Rough 1st print with it...70% Happy.",
+    "date": "2026-06-21",
+    "approved_by": "DW-Tas"
+  },
+  {
+    "serial": "#0037",
+    "discord_username": "mrga73",
+    "discord_id": "990738604907176039",
+    "media_urls": [
+      "https://emuimages.dwtas.net/990738604907176039-1782308369015-0.jpg",
+      "https://emuimages.dwtas.net/990738604907176039-1782308373040-1.jpg",
+      "https://emuimages.dwtas.net/990738604907176039-1782308377033-2.jpg"
+    ],
+    "notes": "",
+    "date": "2026-06-25",
+    "approved_by": "DW-Tas"
+  },
+  {
+    "serial": "#0038",
+    "discord_username": "searsay3208",
+    "discord_id": "114079389196484616",
+    "media_urls": [
+      "https://emuimages.dwtas.net/114079389196484616-1783108695049-0.jpg",
+      "https://emuimages.dwtas.net/114079389196484616-1783108697623-1.jpg",
+      "https://emuimages.dwtas.net/114079389196484616-1783108700051-2.jpg",
+      "https://youtu.be/bmoe94E01XQ"
+    ],
+    "notes": "EMU attached to a ZeroG Mercuruy 1.1 plus build\r\nVideo and Pics are from two different runs as i worked through tuning.",
+    "date": "2026-07-03",
+    "approved_by": "igiannakas"
+  },
+  {
+    "serial": "#0039",
+    "discord_username": "8992",
+    "discord_id": "266517729131888640",
+    "media_urls": [
+      "https://emuimages.dwtas.net/266517729131888640-1783725352620-0.jpg",
+      "https://emuimages.dwtas.net/266517729131888640-1783725352965-1.jpg"
+    ],
+    "notes": "",
+    "date": "2026-07-10",
+    "approved_by": "igiannakas"
+  },
+  {
+    "serial": "#0040",
+    "discord_username": "mrzottel79",
+    "discord_id": "463756254414635048",
+    "media_urls": [
+      "https://emuimages.dwtas.net/463756254414635048-1784285940817-0.jpg",
+      "https://emuimages.dwtas.net/463756254414635048-1784285943060-1.jpg"
+    ],
+    "notes": "",
+    "date": "2026-07-17",
+    "approved_by": "DW-Tas"
   }
 ]

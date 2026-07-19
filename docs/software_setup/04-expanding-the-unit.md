@@ -1,6 +1,6 @@
-# EMU Happy Hare Hardware and Software Setup Guide
+# EMU Happy Hare Hardware and Software Setup
 
-This is a provisional sofware setup guide for the EMU using Happy Hare v3. This guide is meant to be read in conjunction with the Happy Hare setup guide as found here: https://github.com/moggieuk/Happy-Hare/wiki
+This section covers adding lanes to an existing EMU installation. It is meant to be read in conjunction with the [Happy Hare wiki](https://github.com/moggieuk/Happy-Hare/wiki).
 
 ## Table of Contents
 
@@ -12,14 +12,14 @@ Beyond the electrical connections, the below steps need to be undertaken when ad
 **mmu.cfg**
 
 Add an additional MCU block for each new lane:
-```
+```ini
 [mcu mmuN]
 canbus_uuid: UUID 
 canbus_interface: can0
 ```
 
 Add the additional mmu board to the board pins section:
-```
+```ini
 [board_pins mmu]
 mcu: mmu0, mmu1, mmu2, mmu3, mmu4, mmu5, mmu6, mmuN
 aliases:
@@ -42,12 +42,12 @@ aliases:
 **mmu_hardware.cfg:**
 
 Update the below to reflect your current lane count:
-```
+```ini
 [mmu_machine]
 num_gates: 8
 ```
 Add the additional environment sensors block.
-```
+```ini
 environment_sensors:   temperature_sensor Lane_0,
 						temperature_sensor Lane_1,
                         temperature_sensor Lane_2,
@@ -56,7 +56,7 @@ environment_sensors:   temperature_sensor Lane_0,
                         temperature_sensor Lane_N
 ```
 Add additional stepper definitions, where N is the lane number:
-```
+```ini
 ...
 [tmc2209 stepper_mmu_gear_N]
 uart_pin: mmuN:MMU_GEAR_UART_N
@@ -69,7 +69,7 @@ enable_pin: !mmuN:MMU_GEAR_ENABLE_N
 ```
 
 Define the additional pre-gate and post gear sensors (pre-stepper, post-stepper)
-```
+```ini
 [mmu_sensors]
 ...
 pre_gate_switch_pin_N: ^mmuN:MMU_PRE_GATE
@@ -78,7 +78,7 @@ post_gear_switch_pin_N: ^mmuN:MMU_POST_GEAR
 ```
 
 Add another neopixel LED's block
-```
+```ini
 [neopixel mmuN_leds]
 pin: mmuN:MMU_NEOPIXEL
 chain_count: 2			
@@ -86,7 +86,7 @@ color_order: GRBW
 ```
 
 Update the mmu_led's entry and exit LED numbers
-```
+```ini
 [mmu_leds unit0]
 exit_leds:
   neopixel:mmu0_leds (1) # add/remove to match number of lanes
@@ -114,7 +114,7 @@ frame_rate: 24
 **mmu_eject_buttons_hw.cfg**
 
 Define the additional eject buttons in the mmu_eject_buttons_hw.cfg file:
-```
+```ini
 [gcode_button mmu_eject_button_N]
 pin: mmuN:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=N
@@ -123,7 +123,7 @@ press_gcode: _MMU_EJECT_BUTTON GATE=N
 **mmu_macro_vars.cfg:**
 
 Add an additional tool change gcode macro at the end of the file for each new lane:
-```
+```ini
 [gcode_macro TN]
 gcode: MMU_CHANGE_TOOL TOOL=N
 ```
@@ -132,9 +132,9 @@ gcode: MMU_CHANGE_TOOL TOOL=N
 
 Add additional temperature sensor, fan and BME sensor definitions and update the custom fan control macro to use them
 
-Finally dont forget to execute the 2 calibrations for the new lanes - MMU_CALIBRATE_BOWDEN and  MMU_CALIBRATE_GEAR as descibed in the calibration section.
+Finally dont forget to execute the 2 calibrations for the new lanes - MMU_CALIBRATE_BOWDEN and  MMU_CALIBRATE_GEAR as described in the calibration section.
 
-```
+```ini
 [temperature_sensor Lane_N]
 sensor_type: BME280
 i2c_address: 118
@@ -160,5 +160,6 @@ variable_fans:    "......,_emu_fan_N"
 ...
 ```
 
+---
 
-
+← [Documentation Hub](/docs)

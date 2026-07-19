@@ -22,46 +22,76 @@ async function main() {
   const submission = JSON.parse(jsonMatch[1]);
   console.log('Parsed submission:', submission.discord_username);
 
-  // Read current registry
-  const registry = JSON.parse(fs.readFileSync(REGISTRY_PATH, 'utf8'));
-
-  // Determine next serial
-  let maxNum = -1;
-  for (const entry of registry) {
-    const match = entry.serial.match(/#(\d+)/);
-    if (match) {
-      const num = parseInt(match[1], 10);
-      if (num > maxNum) maxNum = num;
-    }
-  }
-  const nextNum = maxNum + 1;
-  const serial = `#${String(nextNum).padStart(4, '0')}`;
-  console.log(`Assigning serial: ${serial}`);
-
-  // Append new entry (email is stored privately in R2, not in the public registry)
-  const newEntry = {
-    serial,
-    discord_username: submission.discord_username,
-    discord_id: submission.discord_id,
-    media_urls: submission.media_urls || (submission.photo_url ? [submission.photo_url] : []),
-    notes: submission.notes || '',
-    date: new Date().toISOString().split('T')[0],
-    approved_by: approvedBy,
-  };
-  registry.push(newEntry);
-
-  // Write updated registry
-  fs.writeFileSync(REGISTRY_PATH, JSON.stringify(registry, null, 2) + '\n');
-
-  // Regenerate README
-  generateReadme(registry);
-
-  // Git commit and push
+  // Configure git identity once
   execFileSync('git', ['config', 'user.name', 'github-actions[bot]']);
   execFileSync('git', ['config', 'user.email', 'github-actions[bot]@users.noreply.github.com']);
-  execFileSync('git', ['add', REGISTRY_PATH, README_PATH]);
-  execFileSync('git', ['commit', '-m', `Assign serial ${serial} to ${submission.discord_username}`]);
-  execFileSync('git', ['push']);
+
+  // Retry loop: another commit may land on main between our checkout and
+  // our push (e.g. a racing approved-label run). On any failure we sync to
+  // the latest main and recompute the serial — otherwise we'd risk issuing
+  // a duplicate number.
+  const MAX_ATTEMPTS = 5;
+  let serial;
+  let lastErr;
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    try {
+      // Sync to latest main, discarding any commit from a prior attempt
+      execFileSync('git', ['fetch', 'origin', 'main']);
+      execFileSync('git', ['reset', '--hard', 'origin/main']);
+
+      // Read current registry (now reflects any commits that beat us)
+      const registry = JSON.parse(fs.readFileSync(REGISTRY_PATH, 'utf8'));
+
+      // Determine next serial
+      let maxNum = -1;
+      for (const entry of registry) {
+        const match = entry.serial.match(/#(\d+)/);
+        if (match) {
+          const num = parseInt(match[1], 10);
+          if (num > maxNum) maxNum = num;
+        }
+      }
+      const nextNum = maxNum + 1;
+      serial = `#${String(nextNum).padStart(4, '0')}`;
+      console.log(`Attempt ${attempt}: assigning serial ${serial}`);
+
+      // Append new entry (email is stored privately in R2, not in the public registry)
+      const newEntry = {
+        serial,
+        discord_username: submission.discord_username,
+        discord_id: submission.discord_id,
+        media_urls: submission.media_urls || (submission.photo_url ? [submission.photo_url] : []),
+        notes: submission.notes || '',
+        date: new Date().toISOString().split('T')[0],
+        approved_by: approvedBy,
+      };
+      registry.push(newEntry);
+
+      // Write updated registry and regenerate README
+      fs.writeFileSync(REGISTRY_PATH, JSON.stringify(registry, null, 2) + '\n');
+      generateReadme(registry);
+
+      // Commit and push
+      execFileSync('git', ['add', REGISTRY_PATH, README_PATH]);
+      execFileSync('git', ['commit', '-m', `Assign serial ${serial} to ${submission.discord_username}`]);
+      execFileSync('git', ['push']);
+
+      console.log(`Pushed serial ${serial} on attempt ${attempt}`);
+      lastErr = null;
+      break;
+    } catch (err) {
+      lastErr = err;
+      console.warn(`Attempt ${attempt} failed: ${err.message}`);
+      if (attempt < MAX_ATTEMPTS) {
+        const delayMs = 500 * attempt;
+        console.log(`Retrying in ${delayMs}ms...`);
+        await new Promise((r) => setTimeout(r, delayMs));
+      }
+    }
+  }
+  if (lastErr) {
+    throw new Error(`Push failed after ${MAX_ATTEMPTS} attempts: ${lastErr.message}`);
+  }
 
   // Comment on the issue
   const comment = `## Serial Assigned: \`${serial}\`\n\nCongratulations **${submission.discord_username}**! Your EMU serial number is \`${serial}\`.\n\nYour entry has been added to the [Official EMU Serial Registry](https://github.com/DW-Tas/emu/tree/main/EMU_serial_registry).`;

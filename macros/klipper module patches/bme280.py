@@ -161,7 +161,7 @@ class BME280:
 
     def handle_connect(self):
         self._init_bmxx80()
-# WoodWorker 0719/2026 added to do an immediate read and not wait for next timer        
+# WoodWorker 07/19/2026 added to do an immediate read and not wait for next timer        
 #   prevents humidity holding at 97% until the next timee poll
 # Issue #72 in main EMU repo
         if self.max_sample_time is not None:

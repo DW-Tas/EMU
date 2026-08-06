@@ -6,6 +6,7 @@ Community-contributed modifications and additions for the EMU (Expandable Multi-
 
 | Mod | Author | Description | Preview |
 |-----|--------|-------------|---------|
+| [EMU_I2C_MUX_Board](EMU_I2C_MUX_Board) | [kashine6](https://github.com/kashine6) | Custom TCA9548A I2C Mux Board for MMB Users | <img src="EMU_I2C_MUX_Board/assets/2.jpg" width="160"> |
 | [DFRobot SHT31 Holder](DFRobot_SHT31_Holder) | [reapola](https://github.com/reapola) | High-accuracy temperature & humidity sensor holder, replacing the standard BME280 | <img src="DFRobot_SHT31_Holder/assets/sensors.jpg" width="160"> |
 | [EMU Cable Entry – Crimpable JST](EMU%20Cable%20Entry_Crimpable_JST) | [Dragi2k](https://github.com/Dragi2k) | Cable entry module with crimpable JST socket options for 3- and 4-pin configurations | <img src="EMU%20Cable%20Entry_Crimpable_JST/pics/Inside.jpg" width="160"> |
 | [EMUSync Mount](EMUSync_Mount) | [cwiegert](https://github.com/cwiegert) | Mount to stabilise the PSF body in the bowden path with perpendicular or parallel mounting options | <img src="https://github.com/user-attachments/assets/e96dcf03-3760-4f06-922f-4864d7a0e60a" width="160"> |

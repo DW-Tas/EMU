@@ -29,4 +29,4 @@ If you get stuck, the [Happy Hare Discord](https://discord.gg/aABQUjkZPk) is a g
 
 ---
 
-← [Printing, Assembly and Wiring](/docs/assembly_wiring) | [Documentation Hub →](/docs)
+[Documentation Hub →](/docs)

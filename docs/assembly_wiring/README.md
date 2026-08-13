@@ -10,9 +10,10 @@ Use the [configurator linked here](https://emu.dwtas.net) to select your number 
   - [Configurator](#configurator)
   - [Table of Contents](#table-of-contents)
   - [Print Settings](#print-settings)
-    - [Filamentalist components and Lane stepper components:](#filamentalist-components-and-lane-stepper-components)
-    - [Dry Box components:](#dry-box-components)
-    - [Base unit components:](#base-unit-components)
+    - [Filamentalist components and Lane stepper components](#filamentalist-components-and-lane-stepper-components)
+    - [Dry Box components](#dry-box-components)
+    - [Base unit components](#base-unit-components)
+  - [Assembly Manuals](#assembly-manuals)
   - [Assembly Videos](#assembly-videos)
     - [Part 1: Filamentalist and Stepper Assembly Guide](#part-1-filamentalist-and-stepper-assembly-guide)
     - [Part 2: Drybox Assembly Guide](#part-2-drybox-assembly-guide)
@@ -114,6 +115,9 @@ The below print settings are recommended for the base units and their accessorie
 > **Paint on fuzzy skin** on the outer walls of the base unit will improve appearance.<br/>
 > Paint on ONLY, not full model fuzzy skin. <br/>
 > 0.1 distance, 0.1 or 0.2mm depth. Displacement method (orca slicer)
+
+## Assembly Manuals
+Assembly manuals are gradually becoming available in the [Manuals folder](/Manuals), replacing the assembly videos below.
 
 ## Assembly Videos
 

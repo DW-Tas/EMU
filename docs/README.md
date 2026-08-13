@@ -12,13 +12,14 @@
 The dedicated [sourcing page](/docs/sourcing.md) contains kit, certification and BOM information.
 
 ## Step 2: [Printing, Assembly and Wiring](/docs/assembly_wiring)
-This page explains the EMU parts printing, assembly and wiring. It contains the [printed parts configurator, which allows you to select the desired number of lanes and build options](https://emu.dwtas.net), detailed print settings for all of the EMU parts, including tips on how to achieve the optimal print results. It also includes the assembly videos and covers multi-lane and single-lane wiring for both EBB42/36 boards.
+This page explains the EMU parts printing, assembly and wiring. It contains the [printed parts configurator, which allows you to select the desired number of lanes and build options](https://emu.dwtas.net), detailed print settings for all of the EMU parts, including tips on how to achieve the optimal print results. It also includes the [assembly manuals](/Manuals), (legacy) videos and covers multi-lane and single-lane wiring for EMU SLB, EBB42 & 36 boards.
 
 - [Printed parts configurator](https://emu.dwtas.net)
 - [Print Settings](/docs/assembly_wiring/#print-settings)
   - [Filamentalist components and Lane stepper components](/docs/assembly_wiring/#filamentalist-components-and-lane-stepper-components)
   - [Dry Box components](/docs/assembly_wiring/#dry-box-components)
   - [Base unit components](/docs/assembly_wiring/#base-unit-components)
+- [Assembly Manuals](/docs/assembly_wiring/#assembly-manuals)
 - [Assembly Videos](/docs/assembly_wiring/#assembly-videos)
   - [Part 1: Filamentalist and Stepper Assembly Guide](/docs/assembly_wiring/#part-1-filamentalist-and-stepper-assembly-guide)
   - [Part 2: Drybox Assembly Guide](/docs/assembly_wiring/#part-2-drybox-assembly-guide)

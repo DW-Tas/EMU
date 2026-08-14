@@ -7,18 +7,21 @@ This section covers adding lanes to an existing EMU installation. It is meant to
 - [Expanding the unit with more lanes](#expanding-the-unit-with-more-lanes)
 
 ## Expanding the unit with more lanes
+
 Beyond the electrical connections, the below steps need to be undertaken when adding additional lanes to the EMU unit.
 
 **mmu.cfg**
 
 Add an additional MCU block for each new lane:
+
 ```ini
 [mcu mmuN]
-canbus_uuid: UUID 
+canbus_uuid: UUID
 canbus_interface: can0
 ```
 
 Add the additional mmu board to the board pins section:
+
 ```ini
 [board_pins mmu]
 mcu: mmu0, mmu1, mmu2, mmu3, mmu4, mmu5, mmu6, mmuN
@@ -42,20 +45,25 @@ aliases:
 **mmu_hardware.cfg:**
 
 Update the below to reflect your current lane count:
+
 ```ini
 [mmu_machine]
 num_gates: 8
 ```
+
 Add the additional environment sensors block.
+
 ```ini
 environment_sensors:   temperature_sensor Lane_0,
-						temperature_sensor Lane_1,
+      temperature_sensor Lane_1,
                         temperature_sensor Lane_2,
                         temperature_sensor Lane_3,
                         ...
                         temperature_sensor Lane_N
 ```
+
 Add additional stepper definitions, where N is the lane number:
+
 ```ini
 ...
 [tmc2209 stepper_mmu_gear_N]
@@ -69,6 +77,7 @@ enable_pin: !mmuN:MMU_GEAR_ENABLE_N
 ```
 
 Define the additional pre-gate and post gear sensors (pre-stepper, post-stepper)
+
 ```ini
 [mmu_sensors]
 ...
@@ -78,14 +87,16 @@ post_gear_switch_pin_N: ^mmuN:MMU_POST_GEAR
 ```
 
 Add another neopixel LED's block
+
 ```ini
 [neopixel mmuN_leds]
 pin: mmuN:MMU_NEOPIXEL
-chain_count: 2			
-color_order: GRBW	
+chain_count: 2
+color_order: GRBW
 ```
 
 Update the mmu_led's entry and exit LED numbers
+
 ```ini
 [mmu_leds unit0]
 exit_leds:
@@ -114,15 +125,17 @@ frame_rate: 24
 **mmu_eject_buttons_hw.cfg**
 
 Define the additional eject buttons in the mmu_eject_buttons_hw.cfg file:
+
 ```ini
 [gcode_button mmu_eject_button_N]
-pin: mmuN:EJECT_BUTTON
+pin: ^!mmuN:EJECT_BUTTON
 press_gcode: _MMU_EJECT_BUTTON GATE=N
 ```
 
 **mmu_macro_vars.cfg:**
 
 Add an additional tool change gcode macro at the end of the file for each new lane:
+
 ```ini
 [gcode_macro TN]
 gcode: MMU_CHANGE_TOOL TOOL=N
@@ -132,7 +145,7 @@ gcode: MMU_CHANGE_TOOL TOOL=N
 
 Add additional temperature sensor, fan and BME sensor definitions and update the custom fan control macro to use them
 
-Finally dont forget to execute the 2 calibrations for the new lanes - MMU_CALIBRATE_BOWDEN and  MMU_CALIBRATE_GEAR as described in the calibration section.
+Finally dont forget to execute the 2 calibrations for the new lanes - MMU_CALIBRATE_BOWDEN and MMU_CALIBRATE_GEAR as described in the calibration section.
 
 ```ini
 [temperature_sensor Lane_N]

@@ -1,7 +1,5 @@
 # EMU Split base
 
-> [!WARNING]  
-> Highly experimental & untested
 
 | Top view | Bottom view |
 |---|---|
@@ -38,3 +36,4 @@ These are the extra requirements for a single side, multiply by 2 if printing bo
 
 ## Credits
 - Original mod by [martijnvanduijneveldt](https://github.com/martijnvanduijneveldt)
+- Printed & tested by [DeWarePeb](https://github.com/DeWarePeb)

@@ -10,7 +10,7 @@ Place the `emu_macros.cfg` file in your printer configuration folder. Update you
 
 `[include emu_macros.cfg]`
 
-Configure the macros [as per the instructions](https://github.com/DW-Tas/EMU/blob/main/docs/software_setup/02-happy-hare-setup.md#upload-the-emu_macroscfg-file-and-reference-it-in-your-printercfg).
+Configure the macros [as per the instructions in the legacy Happy Hare v3 setup guide](https://github.com/DW-Tas/EMU/blob/main/docs/software_setup/legacy_hhv3/02-happy-hare-setup.md#upload-the-emu_macroscfg-file-and-reference-it-in-your-printercfg).
 
 Both HW and SW I2C bus definitions are included. If planning to use the upcomming EMU NFC reader functionality, HW I2C is required. Please note in some setups HW I2C may generate NACK errors. If you do encounter that, check wiring crimping and at worst revert to SW I2C (but without NFC functionality).
 

@@ -31,22 +31,22 @@ This page explains the EMU parts printing, assembly and wiring. It contains the 
 This page explains in detail how to setup your EMU boards with CANBus, how to flash Katapult and klipper as well as the procedure to update the klipper firmware.
 
 - [Setting up CAN Bus](/docs/software_setup/01-board-setup.md#setting-up-can-bus)
-- [Flashing the EBB boards](/docs/software_setup/01-board-setup.md#flashing-the-ebb-boards)
+- [Setting up and flashing the EBB boards](/docs/software_setup/01-board-setup.md#setting-up-and-flashing-the-ebb-boards)
 - [Updating the boards with the latest klipper version](/docs/software_setup/01-board-setup.md#updating-the-boards-with-the-latest-klipper-version)
 
 ## Step 4: [Happy Hare Setup](/docs/software_setup/02-happy-hare-setup.md)
-This page explains the step by step process to install and set up Happy Hare, the MMU management software that drives the EMU.
+Happy Hare v4, the MMU management software that drives the EMU, supports the EMU natively. The step by step install and set up process is maintained in the Happy Hare documentation, with EMU-specific notes on the [companion page in this repo](/docs/software_setup/02-happy-hare-setup.md).
 
-- [Installing Happy Hare](/docs/software_setup/02-happy-hare-setup.md#installing-happy-hare)
-- [Configuring the EMU hardware](/docs/software_setup/02-happy-hare-setup.md#configuring-the-emu-hardware)
-- [Configuring Happy Hare parameters](/docs/software_setup/02-happy-hare-setup.md#configuring-happy-hare-parameters)
-      
+- [Getting Started with EMU (Happy Hare v4 documentation)](https://moggieuk.github.io/Happy-Hare-Doc/GettingStarted-EMU/)
+- [EMU notes for the v4 installer](/docs/software_setup/02-happy-hare-setup.md#emu-notes-for-the-v4-installer)
+- [Legacy Happy Hare v3 setup guide](/docs/software_setup/legacy_hhv3/02-happy-hare-setup.md) (existing v3 installs only)
+
 ## Step 5: [Calibration and Startup](/docs/software_setup/03-calibration-and-startup.md)
-This page explains the step by step process to calibrate the unit and the initial start up checks required to ensure successful first operation.
+This page explains the initial start up checks required to ensure successful first operation, and the step by step process to calibrate the unit.
 
-- [Lane rotation distance calibration](/docs/software_setup/03-calibration-and-startup.md#lane-rotation-distance-calibration)
-- [Bowden tube calibration](/docs/software_setup/03-calibration-and-startup.md#bowden-tube-calibration)
 - [First start up](/docs/software_setup/03-calibration-and-startup.md#first-start-up)
+- [Calibrating the unit](/docs/software_setup/03-calibration-and-startup.md#calibrating-the-unit)
+- [Manual unit calibration (optional)](/docs/software_setup/03-calibration-and-startup.md#manual-unit-calibration-optional---if-not-satisfied-with-automated-calibrations)
 
 ## Step 6: [Slicer Setup and Optimisation for Multi Color Prints](/docs/software_setup/05-slicer-setup.md)
 Describes the mandatory Orca slicer setup required for single extruder multi-material printing, including print profile settings to achieve optimal quality results.
@@ -59,11 +59,14 @@ Automate Klipper firmware updates across all your EMU CAN bus boards using UKAM 
 
 ## Next steps
 Once you have completed the steps above you should have a fully functioning EMU unit! Optionally you can also set up:
-1. Klipper screen integration: https://github.com/moggieuk/Happy-Hare/wiki/KlipperScreen
-2. Mainsail / Fluid MMU panel: https://github.com/moggieuk/Happy-Hare/wiki/Mainsail-Fluidd-Integration
-3. Spoolman: https://github.com/moggieuk/Happy-Hare/wiki/Spoolman-Support
+1. Klipper screen integration: https://moggieuk.github.io/Happy-Hare-Doc/KlipperScreen/
+2. Mainsail / Fluidd MMU panel: https://moggieuk.github.io/Happy-Hare-Doc/Mainsail-Fluidd-Integration/
+3. Spoolman: https://moggieuk.github.io/Happy-Hare-Doc/Feature-Spoolman/
 
-In addition, to add further lanes, follow  the instructions here: [Expanding the unit](/docs/software_setup/04-expanding-the-unit.md)
+In addition, to add further lanes, follow the instructions here: [Expanding the unit](/docs/software_setup/04-expanding-the-unit.md)
+
+> [!NOTE]
+> **Running Happy Hare v3?** The previous v3 setup, calibration and expansion guides are kept in the [legacy Happy Hare v3 archive](/docs/software_setup/legacy_hhv3).
 
 ## Seeking help
 

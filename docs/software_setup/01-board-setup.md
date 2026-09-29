@@ -1,6 +1,6 @@
 # EMU Board Setup
 
-This section covers flashing Katapult and Klipper to the EBB boards over CAN bus for Happy Hare v3. It is meant to be read in conjunction with the [Happy Hare wiki](https://github.com/moggieuk/Happy-Hare/wiki).
+This section covers flashing Katapult and Klipper to the EBB boards over CAN bus. It applies to both Happy Hare v4 and v3 installs, and is meant to be read in conjunction with the [Happy Hare documentation](https://moggieuk.github.io/Happy-Hare-Doc/).
 
 ## Table of Contents
 

@@ -1,20 +1,29 @@
-# Happy Hare Setup
+# Software Setup
+
+The EMU needs MMU control software running alongside Klipper. Both of the options below support the EMU natively. The EMU was developed on Happy Hare and it's the software we have the most experience with. However, AFC is equally an option if you prefer it or already use it, with its setup covered in the AFC documentation.
+
+- **[Happy Hare v4](#happy-hare-v4):** Set up with the Happy Hare `menuconfig` installer. The EMU-specific notes are below.
+- **[AFC (AFC-Klipper-Add-On)](#afc-afc-klipper-add-on):** Set up with the AFC installer, following the AFC documentation.
+
+## Table of Contents
+
+- [Happy Hare v4](#happy-hare-v4)
+  - [EMU notes for the v4 installer](#emu-notes-for-the-v4-installer)
+  - [After installing](#after-installing)
+- [AFC (AFC-Klipper-Add-On)](#afc-afc-klipper-add-on)
+
+## Happy Hare v4
 
 The EMU is supported natively in **Happy Hare v4**. Select **EMU** in the new `menuconfig` installer and it sets up the EMU defaults for you: per-lane MCUs, SLB or EBB pin mappings, LEDs, eject buttons, environment sensors, fans, the EMU Sync (PSF) buffer and the recommended speeds. You no longer need to hand-edit `mmu.cfg`, `mmu_hardware.cfg` or `mmu_parameters.cfg`.
 
 The step-by-step installation guide is maintained in the Happy Hare documentation:
 
-### ➡️ [Getting Started with EMU – Happy Hare v4](https://moggieuk.github.io/Happy-Hare-Doc/GettingStarted-EMU/)
+**➡️ [Getting Started with EMU – Happy Hare v4](https://moggieuk.github.io/Happy-Hare-Doc/GettingStarted-EMU/)**
 
 > [!NOTE]
 > **Still running Happy Hare v3?** The previous v3 setup guide is kept in the [legacy v3 archive](/docs/software_setup/legacy_hhv3/02-happy-hare-setup.md). The v3 instructions and config snippets don't apply to v4. If you're moving from v3 to v4, read the Happy Hare [Upgrading from v3 to v4](https://moggieuk.github.io/Happy-Hare-Doc/Upgrade-v3-v4/) guide first.
 
-## Table of Contents
-
-- [EMU notes for the v4 installer](#emu-notes-for-the-v4-installer)
-- [After installing](#after-installing)
-
-## EMU notes for the v4 installer
+### EMU notes for the v4 installer
 
 Keep these in mind as you work through the Happy Hare guide:
 
@@ -50,13 +59,24 @@ Keep these in mind as you work through the Happy Hare guide:
 10. **Speeds.** The EMU defaults (250 mm/s bowden moves, 80 mm/s short moves, 16 mm/s extruder moves) are the same conservative values validated on the EMU with Happy Hare v3. Start with these, and only raise them once the unit is running reliably.
 11. **Changing settings later.** Run `./install.sh -i` from the `Happy-Hare` folder to re-open `menuconfig`. Make changes there rather than editing the generated `.cfg` files. This keeps them from being overwritten on the next install.
 
-## After installing
+### After installing
 
 1. Complete the **Validating Hardware Setup** section of the [Happy Hare EMU guide](https://moggieuk.github.io/Happy-Hare-Doc/GettingStarted-EMU/#validating-hardware-setup). This covers gear direction, sensors, the sync-feedback buffer and LEDs.
 2. Continue with [Step 5: Calibration and Startup](/docs/software_setup/03-calibration-and-startup.md) for the EMU first start up checks and calibration.
 3. Then set up your slicer with [Step 6: Slicer Setup](/docs/software_setup/05-slicer-setup.md).
 
 For anything else, the [Happy Hare v4 documentation](https://moggieuk.github.io/Happy-Hare-Doc/) covers every feature in detail, including [Sync-Feedback Buffer](https://moggieuk.github.io/Happy-Hare-Doc/Feature-Sync-Feedback-Buffer/), [FlowGuard](https://moggieuk.github.io/Happy-Hare-Doc/Feature-FlowGuard/), [Environment Manager](https://moggieuk.github.io/Happy-Hare-Doc/Feature-Environment-Manager/) and [Eject Buttons](https://moggieuk.github.io/Happy-Hare-Doc/Feature-Eject-Buttons/).
+
+## AFC (AFC-Klipper-Add-On)
+
+AFC also supports the EMU natively. In the AFC installer (`install-afc.sh`), choose **EMU** as the unit type, then set your lane count and board type (SLB or EBB). Follow the [AFC documentation](https://www.afcproject.dev/) for the full process:
+
+- [AFC installation guide](https://www.afcproject.dev/installation/getting-started.html)
+- [AFC Initial Startup & Commissioning guide](https://www.afcproject.dev/initial-startup/01-overview.html) (select the EMU tab)
+- [AFC calibration guide](https://www.afcproject.dev/installation/calibration.html)
+- [AFC slicer setup guide](https://www.afcproject.dev/installation/slicer-setup.html)
+
+The [Happy Hare notes](#happy-hare-v4) above, [Step 5: Calibration and Startup](/docs/software_setup/03-calibration-and-startup.md), [Expanding the Unit](/docs/software_setup/04-expanding-the-unit.md) and the machine G-code in [Step 6: Slicer Setup](/docs/software_setup/05-slicer-setup.md) are written for Happy Hare. They don't apply to AFC.
 
 ---
 

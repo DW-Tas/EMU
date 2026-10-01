@@ -230,4 +230,4 @@ Derived:
 
 ---
 
-← [Step 4: Happy Hare Setup](/docs/software_setup/02-happy-hare-setup.md) | [Documentation Hub →](/docs)
+← [Step 4: Software Setup](/docs/software_setup/02-software-setup.md) | [Documentation Hub →](/docs)

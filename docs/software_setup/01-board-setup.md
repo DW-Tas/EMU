@@ -1,6 +1,6 @@
 # EMU Board Setup
 
-This section covers flashing Katapult and Klipper to the EBB boards over CAN bus. It applies to both Happy Hare v4 and v3 installs, and is meant to be read in conjunction with the [Happy Hare documentation](https://moggieuk.github.io/Happy-Hare-Doc/).
+This section covers flashing Katapult and Klipper to the EBB boards over CAN bus. It applies whichever MMU software you use (Happy Hare v4, Happy Hare v3 or AFC), and is meant to be read in conjunction with that software's documentation: the [Happy Hare documentation](https://moggieuk.github.io/Happy-Hare-Doc/) or the [AFC documentation](https://www.afcproject.dev/).
 
 ## Table of Contents
 
@@ -90,4 +90,4 @@ Repeat step 2 (connect via USB),3 (set in DFU mode),4 (lsusb to confirm DFU),6 (
 
 ---
 
-← [Step 2: Printing, Assembly and Wiring](/docs/assembly_wiring) | [Step 4: Happy Hare Setup →](/docs/software_setup/02-happy-hare-setup.md)
+← [Step 2: Printing, Assembly and Wiring](/docs/assembly_wiring) | [Step 4: Software Setup →](/docs/software_setup/02-software-setup.md)

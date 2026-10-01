@@ -1,6 +1,11 @@
 # EMU Software Setup
 
-This section covers the software setup for the EMU using **Happy Hare v4**. Happy Hare is an open-source filament changer controller for multi-color printing, and the EMU needs it to work. Happy Hare v4 supports the EMU natively. The main installation guide is the [EMU Getting Started guide](https://moggieuk.github.io/Happy-Hare-Doc/GettingStarted-EMU/) in the [Happy Hare documentation](https://moggieuk.github.io/Happy-Hare-Doc/). The pages below cover what's specific to the EMU. The board setup step also references [Esoterical's CANBus setup](https://canbus.esoterical.online).
+This section covers the software setup for the EMU. The EMU needs MMU control software running alongside Klipper. Both of the options below support the EMU natively. The EMU was developed on Happy Hare and it's the software we have the most experience with. However, AFC is equally an option if you prefer it or already use it, with its setup covered in the AFC documentation.
+
+- **Happy Hare v4:** The main installation guide is the [EMU Getting Started guide](https://moggieuk.github.io/Happy-Hare-Doc/GettingStarted-EMU/) in the [Happy Hare documentation](https://moggieuk.github.io/Happy-Hare-Doc/). The Happy Hare pages below cover what's specific to the EMU.
+- **AFC (AFC-Klipper-Add-On):** Follow the [AFC documentation](https://www.afcproject.dev/), starting with the [Initial Startup & Commissioning guide](https://www.afcproject.dev/initial-startup/01-overview.html) (select the EMU tab). In the AFC installer, choose **EMU** as the unit type.
+
+Board setup and UKAM apply whichever option you choose. The Happy Hare section of Software Setup, Calibration and Startup, Expanding the Unit and the slicer machine G-code are written for Happy Hare. The board setup step also references [Esoterical's CANBus setup](https://canbus.esoterical.online).
 
 > [!NOTE]
 > **Still on Happy Hare v3?** The previous v3 guides are kept in the [legacy Happy Hare v3 archive](/docs/software_setup/legacy_hhv3), along with how to stay on v3 or upgrade to v4.
@@ -12,9 +17,11 @@ This section covers the software setup for the EMU using **Happy Hare v4**. Happ
   - [Setting up the Solo Lane Boards](/docs/software_setup/01-board-setup.md#setting-up-the-solo-lane-boards)
   - [Setting up and flashing the EBB boards](/docs/software_setup/01-board-setup.md#setting-up-and-flashing-the-ebb-boards)
   - [Updating the boards with the latest klipper version](/docs/software_setup/01-board-setup.md#updating-the-boards-with-the-latest-klipper-version)
-- [Happy Hare Setup](/docs/software_setup/02-happy-hare-setup.md) – [Getting Started with EMU (Happy Hare v4)](https://moggieuk.github.io/Happy-Hare-Doc/GettingStarted-EMU/)
-  - [EMU notes for the v4 installer](/docs/software_setup/02-happy-hare-setup.md#emu-notes-for-the-v4-installer)
-  - [After installing](/docs/software_setup/02-happy-hare-setup.md#after-installing)
+- [Software Setup](/docs/software_setup/02-software-setup.md)
+  - [Happy Hare v4](/docs/software_setup/02-software-setup.md#happy-hare-v4) – [Getting Started with EMU (Happy Hare v4)](https://moggieuk.github.io/Happy-Hare-Doc/GettingStarted-EMU/)
+    - [EMU notes for the v4 installer](/docs/software_setup/02-software-setup.md#emu-notes-for-the-v4-installer)
+    - [After installing](/docs/software_setup/02-software-setup.md#after-installing)
+  - [AFC (AFC-Klipper-Add-On)](/docs/software_setup/02-software-setup.md#afc-afc-klipper-add-on)
 - [Calibration and Startup](/docs/software_setup/03-calibration-and-startup.md)
   - [First start up](/docs/software_setup/03-calibration-and-startup.md#first-start-up)
   - [Calibrating the unit](/docs/software_setup/03-calibration-and-startup.md#calibrating-the-unit)

@@ -1,6 +1,6 @@
 # Calibration and Startup
 
-This section covers the first start up checks and calibrating the EMU with Happy Hare v4. It's meant to be read alongside the Happy Hare [Calibration](https://moggieuk.github.io/Happy-Hare-Doc/Calibration/) documentation.
+This section covers the first start up checks and calibrating the EMU with Happy Hare v4. It's meant to be read alongside the Happy Hare [Calibration](https://moggieuk.github.io/Happy-Hare-Doc/Calibration/) documentation. If you use AFC instead of Happy Hare, follow the [AFC calibration guide](https://www.afcproject.dev/installation/calibration.html).
 
 > [!NOTE]
 > **Running Happy Hare v3?** Use the [legacy v3 Calibration and Startup guide](/docs/software_setup/legacy_hhv3/03-calibration-and-startup.md). The v3 parameter names and the `proportional` extruder homing option don't exist in v4.
@@ -34,7 +34,7 @@ Follow the first start up procedure below to check that the EMU is wired and wor
    - **PSF:** Covered in [Calibrate the EMU Sync PSF sensor](#calibrate-the-emu-sync-psf-sensor-psf-only).
 6. **First load.** If you're using the PSF, first do Steps 1 and 2 of [Calibrate the EMU Sync PSF sensor](#calibrate-the-emu-sync-psf-sensor-psf-only). The installer's placeholder PSF values can make the first load fail. Then home the printer, load filament to the first lane and run `T0`. The hotend heats up and the lane loads filament to the nozzle. If this is the lane's first load, its bowden length is auto-calibrated first. If the filament crashes into the extruder entry, your bowden length calibration is off. If too much material comes out of the nozzle, your toolhead dimensions are off.
 
-**After you have set up your filament cutter** (tip cutting, see [toolhead cutter setup](/docs/software_setup/02-happy-hare-setup.md#toolhead-cutter)):
+**After you have set up your filament cutter** (tip cutting, see [toolhead cutter setup](/docs/software_setup/02-software-setup.md#toolhead-cutter)):
 1. Run `MMU_UNLOAD`. The toolhead should cut the filament and rewind it back to the EMU.
 2. If the toolhead fails to cut, the cutter settings aren't right. See the Happy Hare [tip cutting](https://moggieuk.github.io/Happy-Hare-Doc/Macro-Toolhead-Tip-Cutting/) docs.
 
@@ -42,7 +42,7 @@ Follow the first start up procedure below to check that the EMU is wired and wor
 
 The EMU's sensors let Happy Hare calibrate the unit automatically, so **in most setups you don't need to run any calibration commands by hand**:
 
-- **Bowden length** is measured automatically for each lane the first time that lane is loaded. This uses the [extruder homing method](/docs/software_setup/02-happy-hare-setup.md#extruder-homing-method) you chose in Step 4.
+- **Bowden length** is measured automatically for each lane the first time that lane is loaded. This uses the [extruder homing method](/docs/software_setup/02-software-setup.md#extruder-homing-method) you chose in Step 4.
 - **Lane rotation distance** doesn't need calibrating. During printing, the EMU Sync keeps each lane stepper synchronised with the extruder.
 - **The EMU Sync PSF sensor** (if fitted) needs a one-off calibration with `MMU_CALIBRATE_PSENSOR`.
 - **Toolhead dimensions** come from the toolhead you picked in `menuconfig`, or from your own measurements.
@@ -110,7 +110,7 @@ analog_neutral_point:   0.5275
 
 With `autocal_bowden_length: 1`, the first time you load a lane it feeds filament until the extruder endstop triggers. It then saves that distance as the lane's bowden length. Each lane has its own bowden length, because each lane has a different path to the combiner.
 
-This needs the [extruder homing method](/docs/software_setup/02-happy-hare-setup.md#extruder-homing-method) set in Step 4. Bowden auto-calibration won't work if the method is `none`.
+This needs the [extruder homing method](/docs/software_setup/02-software-setup.md#extruder-homing-method) set in Step 4. Bowden auto-calibration won't work if the method is `none`.
 
 > [!IMPORTANT]
 > Auto-calibration can take a few minutes per lane, especially when homing with the PSF. To avoid this happening during your first print, load each lane once beforehand using Tx commands (T0, T1, etc.) until every lane has been calibrated.
@@ -193,4 +193,4 @@ The unit is now fully calibrated and ready to use!
 
 ---
 
-← [Step 4: Happy Hare Setup](/docs/software_setup/02-happy-hare-setup.md) | [Step 6: Slicer Setup →](/docs/software_setup/05-slicer-setup.md)
+← [Step 4: Software Setup](/docs/software_setup/02-software-setup.md) | [Step 6: Slicer Setup →](/docs/software_setup/05-slicer-setup.md)

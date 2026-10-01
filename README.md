@@ -31,7 +31,7 @@ Join our active communities on Discord using the links below. We are active on b
   - [Printed parts configurator](https://emu.dwtas.net)
   - [Printing, Assembly and Wiring](/docs/assembly_wiring)
   - [Board Setup and Flashing](/docs/software_setup/01-board-setup.md)
-  - [Happy Hare Setup (Happy Hare v4)](/docs/software_setup/02-happy-hare-setup.md#emu-notes-for-the-v4-installer)
+  - [Software Setup](/docs/software_setup/02-software-setup.md)
   - [Calibration and Startup](/docs/software_setup/03-calibration-and-startup.md)
   - [Expanding the Unit](/docs/software_setup/04-expanding-the-unit.md)
   - [Slicer setup and optimisation for multi color prints](/docs/software_setup/05-slicer-setup.md)

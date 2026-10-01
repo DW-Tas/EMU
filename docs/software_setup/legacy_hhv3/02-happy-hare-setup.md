@@ -1,7 +1,7 @@
 # Happy Hare Setup (Happy Hare v3 – legacy)
 
 > [!WARNING]
-> **Legacy guide for Happy Hare v3.** This page is kept for existing Happy Hare v3 installs only. For new installs, or to upgrade to Happy Hare v4, follow the [EMU Getting Started guide for Happy Hare v4](https://moggieuk.github.io/Happy-Hare-Doc/GettingStarted-EMU/) (via [Step 4: Happy Hare Setup](/docs/software_setup/02-happy-hare-setup.md)). See the [legacy v3 guide index](/docs/software_setup/legacy_hhv3) for the rest of the v3 guides.
+> **Legacy guide for Happy Hare v3.** This page is kept for existing Happy Hare v3 installs only. For new installs, or to upgrade to Happy Hare v4, follow the [EMU Getting Started guide for Happy Hare v4](https://moggieuk.github.io/Happy-Hare-Doc/GettingStarted-EMU/) (via [Step 4: Software Setup](/docs/software_setup/02-software-setup.md)). See the [legacy v3 guide index](/docs/software_setup/legacy_hhv3) for the rest of the v3 guides.
 
 This section covers installing and configuring Happy Hare for the EMU. It is meant to be read in conjunction with the [Happy Hare wiki](https://github.com/moggieuk/Happy-Hare/wiki).
 

@@ -2,7 +2,7 @@
 
 ### Dry box lid with a separate screw-on latch
 
-A simple modification that allows the EMU dry box lid to be printed on a **250 mm build plate**. The integrated catch is removed from the lid and replaced with a separate printed latch, secured with an M2.5 screw and heat-set insert.
+A simple modification that allows the EMU dry box lid to be printed on a **250 mm build plate**. The integrated catch is removed from the lid and replaced with a separate printed latch, secured with an M2 screw and heat-set insert.
 
 ---
 
@@ -43,14 +43,14 @@ Additional hardware required **per lid**:
 | Qty | Item |
 | :---: | --- |
 | 1 | M2 heat-set insert |
-| 1 | M2 × 8 mm screw |
+| 1 | M2 × 6 mm screw |
 
 ## Assembly
 
 1. Print the modified lid and separate latch.
 2. Install the M2.5 heat-set insert in the provided insert pocket and allow it to cool.
 3. Align the latch with the mounting features on the lid.
-4. Secure the latch with the M2.5 × 8 mm screw. Tighten until secure, taking care not to overtighten into the printed parts.
+4. Secure the latch with the M2 × 6 mm screw. Tighten until secure, taking care not to overtighten into the printed parts.
 5. Check that the lid closes and the latch engages correctly before use.
 
 ---

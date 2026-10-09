@@ -42,8 +42,8 @@ Additional hardware required **per lid**:
 
 | Qty | Item |
 | :---: | --- |
-| 1 | M2.5 heat-set insert |
-| 1 | M2.5 × 8 mm screw |
+| 1 | M2 heat-set insert |
+| 1 | M2 × 8 mm screw |
 
 ## Assembly
 

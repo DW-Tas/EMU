@@ -71,9 +71,19 @@ If using a purge block set up:
 T[next_extruder]
 ```
 If you have the blobifier add-on set up, add the below change filament g-code. This will enable purge volume reporting in the slicer. Also the retraction command is necessary to avoid double de-retracting and oozing on the prime tower.
+
+For HH V3:
 ```
 T[next_extruder]
 G1 E-{new_retract_length} F3000
+; FLUSH_START
+; EXTERNAL_PURGE {flush_length}
+; FLUSH_END
+```
+
+For HH V4
+```
+T[next_extruder] SLICER_RETRACTION={old_retract_length} SLICER_FW_RETRACTION={use_firmware_retraction}
 ; FLUSH_START
 ; EXTERNAL_PURGE {flush_length}
 ; FLUSH_END

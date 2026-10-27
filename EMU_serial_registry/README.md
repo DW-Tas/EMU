@@ -50,6 +50,7 @@
 **Serial #0045:** margaale</br>
 **Serial #0046:** bne6708</br>
 **Serial #0047:** hcwarrior13</br>
+**Serial #0048:** ddt_diablo</br>
 </br>
 
 ### How to register:

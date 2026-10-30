@@ -52,6 +52,7 @@
 **Serial #0047:** hcwarrior13</br>
 **Serial #0048:** ddt_diablo</br>
 **Serial #0049:** aleblazer</br>
+**Serial #0050:** _chhe</br>
 </br>
 
 ### How to register:

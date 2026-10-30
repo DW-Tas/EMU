@@ -587,5 +587,18 @@
     "notes": "5 Lane Self-Sourced",
     "date": "2026-10-30",
     "approved_by": "igiannakas"
+  },
+  {
+    "serial": "#0050",
+    "discord_username": "_chhe",
+    "discord_id": "870626732410019880",
+    "media_urls": [
+      "https://emuimages.dwtas.net/870626732410019880-1793399900488-0.jpg",
+      "https://emuimages.dwtas.net/870626732410019880-1793399901883-1.jpg",
+      "https://emuimages.dwtas.net/870626732410019880-1793399903206-2.jpg"
+    ],
+    "notes": "4 lane EMU based on the Vano3dla 5 lane kit\r\nThanks for this project!! <3",
+    "date": "2026-10-30",
+    "approved_by": "DW-Tas"
   }
 ]

@@ -51,6 +51,7 @@
 **Serial #0046:** bne6708</br>
 **Serial #0047:** hcwarrior13</br>
 **Serial #0048:** ddt_diablo</br>
+**Serial #0049:** aleblazer</br>
 </br>
 
 ### How to register:

@@ -53,6 +53,7 @@
 **Serial #0048:** ddt_diablo</br>
 **Serial #0049:** aleblazer</br>
 **Serial #0050:** _chhe</br>
+**Serial #0051:** darryl_lpkb</br>
 </br>
 
 ### How to register:

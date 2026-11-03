@@ -150,10 +150,10 @@ While kits make sourcing convenient, the EMU can also be fully self sourced usin
 
 ## Recommended Upgrades
 While entirely optional, the below upgrades are highly recommended. 
-1. [PCB hatch boards](/PCB%20(recommended%20options)/hatch_board) [AliExpress](https://www.aliexpress.com/item/1005011529532141.html), [OneTwo3D](https://www.onetwo3d.co.uk/product/emu-hatch-pcb-wiring-board-with-connectors/) - simplifies wiring, sealing of the box and reduces soldering need.
-2. [Eject button multi-LED PCB](/PCB%20(recommended%20options)/multi_led_button) [AliExpress](https://www.aliexpress.com/item/1005011529532141.html) [OneTwo3D](https://www.onetwo3d.co.uk/product/emu-led-pcb-with-connectors/) - simplifies wiring and displays animated effects when loading / unloading filament.
-3. Proportional Sync Feedback Sensor (PSF) [AliExpress](https://www.aliexpress.com/item/1005010470743517.html) [OneTwo3D](https://www.onetwo3d.co.uk/product/psf-proportional-sync-feedback-sensor-for-mmu/) - allows for clog, tangle detection and more accurate synchronisation between the EMU and the extruder.
-4. Input / Output (IO) Board [AliExpress](https://www.aliexpress.com/item/1005011529532141.html) [OneTwo3D](https://www.onetwo3d.co.uk/product/emu-i-o-board/) - removes need to solder the XT30 2+2 and JST connector and simplifies wiring of the base IO.
+1. [PCB hatch boards](/PCB%20(recommended%20options)/hatch_board) [AliExpress](https://www.aliexpress.com/item/1005011529532141.html), [OneTwo3D](https://www.onetwo3d.co.uk/product/emu-hatch-pcb-wiring-board-with-connectors/), [Pjotr3DShop](https://pjotr3dshop.com/collections/emu) - simplifies wiring, sealing of the box and reduces soldering need.
+2. [Eject button multi-LED PCB](/PCB%20(recommended%20options)/multi_led_button) [AliExpress](https://www.aliexpress.com/item/1005011529532141.html) [OneTwo3D](https://www.onetwo3d.co.uk/product/emu-led-pcb-with-connectors/) [Pjotr3DShop](https://pjotr3dshop.com/collections/emu) - simplifies wiring and displays animated effects when loading / unloading filament.
+3. Proportional Sync Feedback Sensor (PSF) [AliExpress](https://www.aliexpress.com/item/1005010470743517.html) [OneTwo3D](https://www.onetwo3d.co.uk/product/psf-proportional-sync-feedback-sensor-for-mmu/) [Pjotr3DShop](https://pjotr3dshop.com/collections/emu) - allows for clog, tangle detection and more accurate synchronisation between the EMU and the extruder.
+4. Input / Output (IO) Board [AliExpress](https://www.aliexpress.com/item/1005011529532141.html) [OneTwo3D](https://www.onetwo3d.co.uk/product/emu-i-o-board/) [Pjotr3DShop](https://pjotr3dshop.com/collections/emu) - removes need to solder the XT30 2+2 and JST connector and simplifies wiring of the base IO.
 
 ---
 

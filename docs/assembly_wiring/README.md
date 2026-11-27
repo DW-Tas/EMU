@@ -277,6 +277,10 @@ Entry PCB to first Solo Lane Board
 2. CANBus:
 3. Sync Feedback (PSF/Switch Based):
 
+<p align="center">
+  <img src="/docs/assets/wiring_diagrams/EMU_wiring_SLB.png" width="95%">
+</p>
+
 <img width="5712" height="4284" alt="IMG_0879" src="https://github.com/user-attachments/assets/4d8bbfc2-4118-4cd1-9014-42f5917ac350" />
 
 
